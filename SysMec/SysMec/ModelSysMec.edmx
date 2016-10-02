@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SysMecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ci_Cita">
+          <Key>
+            <PropertyRef Name="i_PK_id_cita" />
+          </Key>
+          <Property Name="i_PK_id_cita" Type="int" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="vc_id_medico" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="dt_hora_inicio" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dt_hora_fin" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diag_Diagnostico">
+          <Key>
+            <PropertyRef Name="i_PK_diagnostico" />
+          </Key>
+          <Property Name="i_PK_diagnostico" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="date_diagnostico" Type="datetime" Nullable="false" />
+          <Property Name="vc_diagnostico" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Empresa">
+          <Key>
+            <PropertyRef Name="vc_PK_id_empresa" />
+          </Key>
+          <Property Name="vc_PK_id_empresa" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_nombre_empresa" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="i_telefono" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Puesto">
+          <Key>
+            <PropertyRef Name="vc_PK_id_puesto" />
+          </Key>
+          <Property Name="vc_PK_id_puesto" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_nombre_puesto" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_id_empresa" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_SysMec.dbo.Enc_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Enc_Comprobante">
+          <Key>
+            <PropertyRef Name="i_id_comprobante" />
+            <PropertyRef Name="date_comprobante" />
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="i_id_comprobante" Type="int" Nullable="false" />
+          <Property Name="date_comprobante" Type="datetime" Nullable="false" />
+          <Property Name="id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ex_Examen_Diagnostico">
+          <Key>
+            <PropertyRef Name="id_PK_examen_medico" />
+          </Key>
+          <Property Name="id_PK_examen_medico" Type="int" Nullable="false" />
+          <Property Name="vc_diagnostico" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exp_Expediente">
+          <Key>
+            <PropertyRef Name="i_PK_expediente" />
+          </Key>
+          <Property Name="i_PK_expediente" Type="int" Nullable="false" />
+          <Property Name="vc_id_puesto" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="dt_fecha" Type="date" Nullable="false" />
+          <Property Name="ch_pract_deporte" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="vc_deporte" Type="varchar" MaxLength="10" />
+          <Property Name="ch_fuma" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="vc_cantidad" Type="varchar" MaxLength="10" />
+          <Property Name="dt_inicio_fumado" Type="date" />
+          <Property Name="ch_licor" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="vc_frecuencia" Type="varchar" MaxLength="10" />
+          <Property Name="i_cantidad" Type="int" />
+          <Property Name="ch_hijos" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="i_cant_hijos" Type="int" />
+          <Property Name="vc_clinica_abscrita" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fnc_Funcion">
+          <Key>
+            <PropertyRef Name="vc_PK_funcion_id" />
+          </Key>
+          <Property Name="vc_PK_funcion_id" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_nombre_funcion" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_SysMec.dbo.Fnc_usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Fnc_usuario">
+          <Key>
+            <PropertyRef Name="vc_id_usuario" />
+            <PropertyRef Name="vc_funcion_id" />
+          </Key>
+          <Property Name="vc_id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="vc_funcion_id" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Med_Medico">
+          <Key>
+            <PropertyRef Name="vc_id_medico" />
+          </Key>
+          <Property Name="vc_id_medico" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="vc_Nombre_Medico" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_Primer_Apellido" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_Segundo_Apellido" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_Especialidad" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Us_Usuario">
+          <Key>
+            <PropertyRef Name="vc_Pk_id_usuario" />
+          </Key>
+          <Property Name="vc_Pk_id_usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="vc_clave" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_apellido" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_direccion" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_telefono" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="dt_nacimiento" Type="date" Nullable="false" />
+          <Property Name="c_sexo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="vc_email" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_id_puesto" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_estado_civil" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_padre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="vc_madre" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ci_Cita_Med_Medico">
+          <End Role="Med_Medico" Type="Self.Med_Medico" Multiplicity="1" />
+          <End Role="Ci_Cita" Type="Self.Ci_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Medico">
+              <PropertyRef Name="vc_id_medico" />
+            </Principal>
+            <Dependent Role="Ci_Cita">
+              <PropertyRef Name="vc_id_medico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ci_Cita_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Ci_Cita" Type="Self.Ci_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Ci_Cita">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diag_Diagnostico_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Diag_Diagnostico" Type="Self.Diag_Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Diag_Diagnostico">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Puesto_Emp_Empresa">
+          <End Role="Emp_Empresa" Type="Self.Emp_Empresa" Multiplicity="1" />
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Empresa">
+              <PropertyRef Name="vc_PK_id_empresa" />
+            </Principal>
+            <Dependent Role="Emp_Puesto">
+              <PropertyRef Name="vc_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ex_Examen_Diagnostico_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Ex_Examen_Diagnostico" Type="Self.Ex_Examen_Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Ex_Examen_Diagnostico">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Exp_Expediente_Emp_Puesto">
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="1" />
+          <End Role="Exp_Expediente" Type="Self.Exp_Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Puesto">
+              <PropertyRef Name="vc_PK_id_puesto" />
+            </Principal>
+            <Dependent Role="Exp_Expediente">
+              <PropertyRef Name="vc_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Exp_Expediente_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Exp_Expediente" Type="Self.Exp_Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Exp_Expediente">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fnc_usuario_Fnc_Funcion">
+          <End Role="Fnc_Funcion" Type="Self.Fnc_Funcion" Multiplicity="1" />
+          <End Role="Fnc_usuario" Type="Self.Fnc_usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fnc_Funcion">
+              <PropertyRef Name="vc_PK_funcion_id" />
+            </Principal>
+            <Dependent Role="Fnc_usuario">
+              <PropertyRef Name="vc_funcion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fnc_usuario_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Fnc_usuario" Type="Self.Fnc_usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Fnc_usuario">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Us_Usuario_Emp_Puesto">
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="1" />
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Puesto">
+              <PropertyRef Name="vc_PK_id_puesto" />
+            </Principal>
+            <Dependent Role="Us_Usuario">
+              <PropertyRef Name="vc_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SysMecModelStoreContainer">
+          <EntitySet Name="Ci_Cita" EntityType="Self.Ci_Cita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diag_Diagnostico" EntityType="Self.Diag_Diagnostico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Empresa" EntityType="Self.Emp_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Puesto" EntityType="Self.Emp_Puesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ex_Examen_Diagnostico" EntityType="Self.Ex_Examen_Diagnostico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exp_Expediente" EntityType="Self.Exp_Expediente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fnc_Funcion" EntityType="Self.Fnc_Funcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Medico" EntityType="Self.Med_Medico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Us_Usuario" EntityType="Self.Us_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enc_Comprobante" EntityType="Self.Enc_Comprobante" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Enc_Comprobante].[i_id_comprobante] AS [i_id_comprobante], 
+    [Enc_Comprobante].[date_comprobante] AS [date_comprobante], 
+    [Enc_Comprobante].[id_usuario] AS [id_usuario]
+    FROM [dbo].[Enc_Comprobante] AS [Enc_Comprobante]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Fnc_usuario" EntityType="Self.Fnc_usuario" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Fnc_usuario].[vc_id_usuario] AS [vc_id_usuario], 
+    [Fnc_usuario].[vc_funcion_id] AS [vc_funcion_id]
+    FROM [dbo].[Fnc_usuario] AS [Fnc_usuario]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Ci_Cita_Med_Medico" Association="Self.FK_Ci_Cita_Med_Medico">
+            <End Role="Med_Medico" EntitySet="Med_Medico" />
+            <End Role="Ci_Cita" EntitySet="Ci_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ci_Cita_Us_Usuario" Association="Self.FK_Ci_Cita_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Ci_Cita" EntitySet="Ci_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diag_Diagnostico_Us_Usuario" Association="Self.FK_Diag_Diagnostico_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Diag_Diagnostico" EntitySet="Diag_Diagnostico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Puesto_Emp_Empresa" Association="Self.FK_Emp_Puesto_Emp_Empresa">
+            <End Role="Emp_Empresa" EntitySet="Emp_Empresa" />
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ex_Examen_Diagnostico_Us_Usuario" Association="Self.FK_Ex_Examen_Diagnostico_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Ex_Examen_Diagnostico" EntitySet="Ex_Examen_Diagnostico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Exp_Expediente_Emp_Puesto" Association="Self.FK_Exp_Expediente_Emp_Puesto">
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+            <End Role="Exp_Expediente" EntitySet="Exp_Expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Exp_Expediente_Us_Usuario" Association="Self.FK_Exp_Expediente_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Exp_Expediente" EntitySet="Exp_Expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fnc_usuario_Fnc_Funcion" Association="Self.FK_Fnc_usuario_Fnc_Funcion">
+            <End Role="Fnc_Funcion" EntitySet="Fnc_Funcion" />
+            <End Role="Fnc_usuario" EntitySet="Fnc_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fnc_usuario_Us_Usuario" Association="Self.FK_Fnc_usuario_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Fnc_usuario" EntitySet="Fnc_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Us_Usuario_Emp_Puesto" Association="Self.FK_Us_Usuario_Emp_Puesto">
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SysMecModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ci_Cita">
+          <Key>
+            <PropertyRef Name="i_PK_id_cita" />
+          </Key>
+          <Property Name="i_PK_id_cita" Type="Int32" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_id_medico" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_hora_inicio" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dt_hora_fin" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Med_Medico" Relationship="Self.FK_Ci_Cita_Med_Medico" FromRole="Ci_Cita" ToRole="Med_Medico" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.FK_Ci_Cita_Us_Usuario" FromRole="Ci_Cita" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Diag_Diagnostico">
+          <Key>
+            <PropertyRef Name="i_PK_diagnostico" />
+          </Key>
+          <Property Name="i_PK_diagnostico" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_diagnostico" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vc_diagnostico" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.FK_Diag_Diagnostico_Us_Usuario" FromRole="Diag_Diagnostico" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Emp_Empresa">
+          <Key>
+            <PropertyRef Name="vc_PK_id_empresa" />
+          </Key>
+          <Property Name="vc_PK_id_empresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_nombre_empresa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="i_telefono" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Emp_Puesto" Relationship="Self.FK_Emp_Puesto_Emp_Empresa" FromRole="Emp_Empresa" ToRole="Emp_Puesto" />
+        </EntityType>
+        <EntityType Name="Emp_Puesto">
+          <Key>
+            <PropertyRef Name="vc_PK_id_puesto" />
+          </Key>
+          <Property Name="vc_PK_id_puesto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_nombre_puesto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_id_empresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Emp_Empresa" Relationship="Self.FK_Emp_Puesto_Emp_Empresa" FromRole="Emp_Puesto" ToRole="Emp_Empresa" />
+          <NavigationProperty Name="Exp_Expediente" Relationship="Self.FK_Exp_Expediente_Emp_Puesto" FromRole="Emp_Puesto" ToRole="Exp_Expediente" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.FK_Us_Usuario_Emp_Puesto" FromRole="Emp_Puesto" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Ex_Examen_Diagnostico">
+          <Key>
+            <PropertyRef Name="id_PK_examen_medico" />
+          </Key>
+          <Property Name="id_PK_examen_medico" Type="Int32" Nullable="false" />
+          <Property Name="vc_diagnostico" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.FK_Ex_Examen_Diagnostico_Us_Usuario" FromRole="Ex_Examen_Diagnostico" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Exp_Expediente">
+          <Key>
+            <PropertyRef Name="i_PK_expediente" />
+          </Key>
+          <Property Name="i_PK_expediente" Type="Int32" Nullable="false" />
+          <Property Name="vc_id_puesto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ch_pract_deporte" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vc_deporte" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ch_fuma" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vc_cantidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="dt_inicio_fumado" Type="DateTime" Precision="0" />
+          <Property Name="ch_licor" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vc_frecuencia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="i_cantidad" Type="Int32" />
+          <Property Name="ch_hijos" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="i_cant_hijos" Type="Int32" />
+          <Property Name="vc_clinica_abscrita" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Emp_Puesto" Relationship="Self.FK_Exp_Expediente_Emp_Puesto" FromRole="Exp_Expediente" ToRole="Emp_Puesto" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.FK_Exp_Expediente_Us_Usuario" FromRole="Exp_Expediente" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Fnc_Funcion">
+          <Key>
+            <PropertyRef Name="vc_PK_funcion_id" />
+          </Key>
+          <Property Name="vc_PK_funcion_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_nombre_funcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Us_Usuario" Relationship="Self.Fnc_usuario" FromRole="Fnc_Funcion" ToRole="Us_Usuario" />
+        </EntityType>
+        <EntityType Name="Med_Medico">
+          <Key>
+            <PropertyRef Name="vc_id_medico" />
+          </Key>
+          <Property Name="vc_id_medico" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_Nombre_Medico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_Primer_Apellido" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_Segundo_Apellido" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_Especialidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Ci_Cita" Relationship="Self.FK_Ci_Cita_Med_Medico" FromRole="Med_Medico" ToRole="Ci_Cita" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Us_Usuario">
+          <Key>
+            <PropertyRef Name="vc_Pk_id_usuario" />
+          </Key>
+          <Property Name="vc_Pk_id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_clave" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_direccion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="c_sexo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vc_email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_id_puesto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_estado_civil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_padre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_madre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Ci_Cita" Relationship="Self.FK_Ci_Cita_Us_Usuario" FromRole="Us_Usuario" ToRole="Ci_Cita" />
+          <NavigationProperty Name="Diag_Diagnostico" Relationship="Self.FK_Diag_Diagnostico_Us_Usuario" FromRole="Us_Usuario" ToRole="Diag_Diagnostico" />
+          <NavigationProperty Name="Emp_Puesto" Relationship="Self.FK_Us_Usuario_Emp_Puesto" FromRole="Us_Usuario" ToRole="Emp_Puesto" />
+          <NavigationProperty Name="Ex_Examen_Diagnostico" Relationship="Self.FK_Ex_Examen_Diagnostico_Us_Usuario" FromRole="Us_Usuario" ToRole="Ex_Examen_Diagnostico" />
+          <NavigationProperty Name="Exp_Expediente" Relationship="Self.FK_Exp_Expediente_Us_Usuario" FromRole="Us_Usuario" ToRole="Exp_Expediente" />
+          <NavigationProperty Name="Fnc_Funcion" Relationship="Self.Fnc_usuario" FromRole="Us_Usuario" ToRole="Fnc_Funcion" />
+        </EntityType>
+        <EntityType Name="Enc_Comprobante">
+          <Key>
+            <PropertyRef Name="i_id_comprobante" />
+            <PropertyRef Name="date_comprobante" />
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="i_id_comprobante" Type="Int32" Nullable="false" />
+          <Property Name="date_comprobante" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ci_Cita_Med_Medico">
+          <End Role="Med_Medico" Type="Self.Med_Medico" Multiplicity="1" />
+          <End Role="Ci_Cita" Type="Self.Ci_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Medico">
+              <PropertyRef Name="vc_id_medico" />
+            </Principal>
+            <Dependent Role="Ci_Cita">
+              <PropertyRef Name="vc_id_medico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ci_Cita_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Ci_Cita" Type="Self.Ci_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Ci_Cita">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diag_Diagnostico_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Diag_Diagnostico" Type="Self.Diag_Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Diag_Diagnostico">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Puesto_Emp_Empresa">
+          <End Role="Emp_Empresa" Type="Self.Emp_Empresa" Multiplicity="1" />
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Empresa">
+              <PropertyRef Name="vc_PK_id_empresa" />
+            </Principal>
+            <Dependent Role="Emp_Puesto">
+              <PropertyRef Name="vc_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Exp_Expediente_Emp_Puesto">
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="1" />
+          <End Role="Exp_Expediente" Type="Self.Exp_Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Puesto">
+              <PropertyRef Name="vc_PK_id_puesto" />
+            </Principal>
+            <Dependent Role="Exp_Expediente">
+              <PropertyRef Name="vc_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Us_Usuario_Emp_Puesto">
+          <End Role="Emp_Puesto" Type="Self.Emp_Puesto" Multiplicity="1" />
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Puesto">
+              <PropertyRef Name="vc_PK_id_puesto" />
+            </Principal>
+            <Dependent Role="Us_Usuario">
+              <PropertyRef Name="vc_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ex_Examen_Diagnostico_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Ex_Examen_Diagnostico" Type="Self.Ex_Examen_Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Ex_Examen_Diagnostico">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Exp_Expediente_Us_Usuario">
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="1" />
+          <End Role="Exp_Expediente" Type="Self.Exp_Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Us_Usuario">
+              <PropertyRef Name="vc_Pk_id_usuario" />
+            </Principal>
+            <Dependent Role="Exp_Expediente">
+              <PropertyRef Name="vc_id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fnc_usuario">
+          <End Role="Fnc_Funcion" Type="Self.Fnc_Funcion" Multiplicity="*" />
+          <End Role="Us_Usuario" Type="Self.Us_Usuario" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ci_Cita" EntityType="Self.Ci_Cita" />
+          <EntitySet Name="Diag_Diagnostico" EntityType="Self.Diag_Diagnostico" />
+          <EntitySet Name="Emp_Empresa" EntityType="Self.Emp_Empresa" />
+          <EntitySet Name="Emp_Puesto" EntityType="Self.Emp_Puesto" />
+          <EntitySet Name="Ex_Examen_Diagnostico" EntityType="Self.Ex_Examen_Diagnostico" />
+          <EntitySet Name="Exp_Expediente" EntityType="Self.Exp_Expediente" />
+          <EntitySet Name="Fnc_Funcion" EntityType="Self.Fnc_Funcion" />
+          <EntitySet Name="Med_Medico" EntityType="Self.Med_Medico" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Us_Usuario" EntityType="Self.Us_Usuario" />
+          <EntitySet Name="Enc_Comprobante" EntityType="Self.Enc_Comprobante" />
+          <AssociationSet Name="FK_Ci_Cita_Med_Medico" Association="Self.FK_Ci_Cita_Med_Medico">
+            <End Role="Med_Medico" EntitySet="Med_Medico" />
+            <End Role="Ci_Cita" EntitySet="Ci_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ci_Cita_Us_Usuario" Association="Self.FK_Ci_Cita_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Ci_Cita" EntitySet="Ci_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diag_Diagnostico_Us_Usuario" Association="Self.FK_Diag_Diagnostico_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Diag_Diagnostico" EntitySet="Diag_Diagnostico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Puesto_Emp_Empresa" Association="Self.FK_Emp_Puesto_Emp_Empresa">
+            <End Role="Emp_Empresa" EntitySet="Emp_Empresa" />
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Exp_Expediente_Emp_Puesto" Association="Self.FK_Exp_Expediente_Emp_Puesto">
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+            <End Role="Exp_Expediente" EntitySet="Exp_Expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Us_Usuario_Emp_Puesto" Association="Self.FK_Us_Usuario_Emp_Puesto">
+            <End Role="Emp_Puesto" EntitySet="Emp_Puesto" />
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ex_Examen_Diagnostico_Us_Usuario" Association="Self.FK_Ex_Examen_Diagnostico_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Ex_Examen_Diagnostico" EntitySet="Ex_Examen_Diagnostico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Exp_Expediente_Us_Usuario" Association="Self.FK_Exp_Expediente_Us_Usuario">
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+            <End Role="Exp_Expediente" EntitySet="Exp_Expediente" />
+          </AssociationSet>
+          <AssociationSet Name="Fnc_usuario" Association="Self.Fnc_usuario">
+            <End Role="Fnc_Funcion" EntitySet="Fnc_Funcion" />
+            <End Role="Us_Usuario" EntitySet="Us_Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SysMecModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Ci_Cita">
+            <EntityTypeMapping TypeName="SysMecModel.Ci_Cita">
+              <MappingFragment StoreEntitySet="Ci_Cita">
+                <ScalarProperty Name="i_PK_id_cita" ColumnName="i_PK_id_cita" />
+                <ScalarProperty Name="vc_id_usuario" ColumnName="vc_id_usuario" />
+                <ScalarProperty Name="vc_id_medico" ColumnName="vc_id_medico" />
+                <ScalarProperty Name="dt_hora_inicio" ColumnName="dt_hora_inicio" />
+                <ScalarProperty Name="dt_hora_fin" ColumnName="dt_hora_fin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diag_Diagnostico">
+            <EntityTypeMapping TypeName="SysMecModel.Diag_Diagnostico">
+              <MappingFragment StoreEntitySet="Diag_Diagnostico">
+                <ScalarProperty Name="i_PK_diagnostico" ColumnName="i_PK_diagnostico" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="date_diagnostico" ColumnName="date_diagnostico" />
+                <ScalarProperty Name="vc_diagnostico" ColumnName="vc_diagnostico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Empresa">
+            <EntityTypeMapping TypeName="SysMecModel.Emp_Empresa">
+              <MappingFragment StoreEntitySet="Emp_Empresa">
+                <ScalarProperty Name="vc_PK_id_empresa" ColumnName="vc_PK_id_empresa" />
+                <ScalarProperty Name="vc_nombre_empresa" ColumnName="vc_nombre_empresa" />
+                <ScalarProperty Name="i_telefono" ColumnName="i_telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Puesto">
+            <EntityTypeMapping TypeName="SysMecModel.Emp_Puesto">
+              <MappingFragment StoreEntitySet="Emp_Puesto">
+                <ScalarProperty Name="vc_PK_id_puesto" ColumnName="vc_PK_id_puesto" />
+                <ScalarProperty Name="vc_nombre_puesto" ColumnName="vc_nombre_puesto" />
+                <ScalarProperty Name="vc_id_empresa" ColumnName="vc_id_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ex_Examen_Diagnostico">
+            <EntityTypeMapping TypeName="SysMecModel.Ex_Examen_Diagnostico">
+              <MappingFragment StoreEntitySet="Ex_Examen_Diagnostico">
+                <ScalarProperty Name="id_PK_examen_medico" ColumnName="id_PK_examen_medico" />
+                <ScalarProperty Name="vc_diagnostico" ColumnName="vc_diagnostico" />
+                <ScalarProperty Name="vc_id_usuario" ColumnName="vc_id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exp_Expediente">
+            <EntityTypeMapping TypeName="SysMecModel.Exp_Expediente">
+              <MappingFragment StoreEntitySet="Exp_Expediente">
+                <ScalarProperty Name="i_PK_expediente" ColumnName="i_PK_expediente" />
+                <ScalarProperty Name="vc_id_puesto" ColumnName="vc_id_puesto" />
+                <ScalarProperty Name="vc_id_usuario" ColumnName="vc_id_usuario" />
+                <ScalarProperty Name="dt_fecha" ColumnName="dt_fecha" />
+                <ScalarProperty Name="ch_pract_deporte" ColumnName="ch_pract_deporte" />
+                <ScalarProperty Name="vc_deporte" ColumnName="vc_deporte" />
+                <ScalarProperty Name="ch_fuma" ColumnName="ch_fuma" />
+                <ScalarProperty Name="vc_cantidad" ColumnName="vc_cantidad" />
+                <ScalarProperty Name="dt_inicio_fumado" ColumnName="dt_inicio_fumado" />
+                <ScalarProperty Name="ch_licor" ColumnName="ch_licor" />
+                <ScalarProperty Name="vc_frecuencia" ColumnName="vc_frecuencia" />
+                <ScalarProperty Name="i_cantidad" ColumnName="i_cantidad" />
+                <ScalarProperty Name="ch_hijos" ColumnName="ch_hijos" />
+                <ScalarProperty Name="i_cant_hijos" ColumnName="i_cant_hijos" />
+                <ScalarProperty Name="vc_clinica_abscrita" ColumnName="vc_clinica_abscrita" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fnc_Funcion">
+            <EntityTypeMapping TypeName="SysMecModel.Fnc_Funcion">
+              <MappingFragment StoreEntitySet="Fnc_Funcion">
+                <ScalarProperty Name="vc_PK_funcion_id" ColumnName="vc_PK_funcion_id" />
+                <ScalarProperty Name="vc_nombre_funcion" ColumnName="vc_nombre_funcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Medico">
+            <EntityTypeMapping TypeName="SysMecModel.Med_Medico">
+              <MappingFragment StoreEntitySet="Med_Medico">
+                <ScalarProperty Name="vc_id_medico" ColumnName="vc_id_medico" />
+                <ScalarProperty Name="vc_Nombre_Medico" ColumnName="vc_Nombre_Medico" />
+                <ScalarProperty Name="vc_Primer_Apellido" ColumnName="vc_Primer_Apellido" />
+                <ScalarProperty Name="vc_Segundo_Apellido" ColumnName="vc_Segundo_Apellido" />
+                <ScalarProperty Name="vc_Especialidad" ColumnName="vc_Especialidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SysMecModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Us_Usuario">
+            <EntityTypeMapping TypeName="SysMecModel.Us_Usuario">
+              <MappingFragment StoreEntitySet="Us_Usuario">
+                <ScalarProperty Name="vc_Pk_id_usuario" ColumnName="vc_Pk_id_usuario" />
+                <ScalarProperty Name="vc_clave" ColumnName="vc_clave" />
+                <ScalarProperty Name="vc_nombre" ColumnName="vc_nombre" />
+                <ScalarProperty Name="vc_apellido" ColumnName="vc_apellido" />
+                <ScalarProperty Name="vc_direccion" ColumnName="vc_direccion" />
+                <ScalarProperty Name="vc_telefono" ColumnName="vc_telefono" />
+                <ScalarProperty Name="dt_nacimiento" ColumnName="dt_nacimiento" />
+                <ScalarProperty Name="c_sexo" ColumnName="c_sexo" />
+                <ScalarProperty Name="vc_email" ColumnName="vc_email" />
+                <ScalarProperty Name="vc_id_puesto" ColumnName="vc_id_puesto" />
+                <ScalarProperty Name="vc_estado_civil" ColumnName="vc_estado_civil" />
+                <ScalarProperty Name="vc_padre" ColumnName="vc_padre" />
+                <ScalarProperty Name="vc_madre" ColumnName="vc_madre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enc_Comprobante">
+            <EntityTypeMapping TypeName="SysMecModel.Enc_Comprobante">
+              <MappingFragment StoreEntitySet="Enc_Comprobante">
+                <ScalarProperty Name="i_id_comprobante" ColumnName="i_id_comprobante" />
+                <ScalarProperty Name="date_comprobante" ColumnName="date_comprobante" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Fnc_usuario" TypeName="SysMecModel.Fnc_usuario" StoreEntitySet="Fnc_usuario">
+            <EndProperty Name="Fnc_Funcion">
+              <ScalarProperty Name="vc_PK_funcion_id" ColumnName="vc_funcion_id" />
+            </EndProperty>
+            <EndProperty Name="Us_Usuario">
+              <ScalarProperty Name="vc_Pk_id_usuario" ColumnName="vc_id_usuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
