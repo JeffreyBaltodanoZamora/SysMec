@@ -80,6 +80,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -88,6 +92,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -201,8 +213,12 @@
       <DependentUpon>ModelSysMec.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CatalogosController.cs" />
+    <Compile Include="Controllers\Emp_EmpresaController.cs" />
+    <Compile Include="Controllers\Emp_PuestoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Med_MedicoController.cs" />
     <Compile Include="Controllers\Us_UsuarioController.cs" />
     <Compile Include="Diag_Diagnostico.cs">
       <DependentUpon>ModelSysMec.tt</DependentUpon>
@@ -247,7 +263,7 @@
       <DependentUpon>ModelSysMec.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Ci_CitaController.cs" />
+    <Compile Include="Controllers\Ci_CitaController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -346,6 +362,22 @@
     <Content Include="Views\Us_Usuario\Details.cshtml" />
     <Content Include="Views\Us_Usuario\Edit.cshtml" />
     <Content Include="Views\Us_Usuario\Index.cshtml" />
+    <Content Include="Views\Med_Medico\Create.cshtml" />
+    <Content Include="Views\Med_Medico\Delete.cshtml" />
+    <Content Include="Views\Med_Medico\Details.cshtml" />
+    <Content Include="Views\Med_Medico\Edit.cshtml" />
+    <Content Include="Views\Med_Medico\Index.cshtml" />
+    <Content Include="Views\Emp_Puesto\Create.cshtml" />
+    <Content Include="Views\Emp_Puesto\Delete.cshtml" />
+    <Content Include="Views\Emp_Puesto\Details.cshtml" />
+    <Content Include="Views\Emp_Puesto\Edit.cshtml" />
+    <Content Include="Views\Emp_Puesto\Index.cshtml" />
+    <Content Include="Views\Emp_Empresa\Create.cshtml" />
+    <Content Include="Views\Emp_Empresa\Delete.cshtml" />
+    <Content Include="Views\Emp_Empresa\Details.cshtml" />
+    <Content Include="Views\Emp_Empresa\Edit.cshtml" />
+    <Content Include="Views\Emp_Empresa\Index.cshtml" />
+    <Content Include="Views\Catalogos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

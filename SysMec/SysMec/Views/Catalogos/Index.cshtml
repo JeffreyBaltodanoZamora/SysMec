@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Catalogos</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Gestionar expediente</h2>
+        <p>@Html.ActionLink("Gestion de expediente", "Index", "")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gestionar cita</h2>
+        <p>@Html.ActionLink("Gestion de citas", "Index", "Ci_Cita")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gestionar medicos</h2>
+        <p>@Html.ActionLink("Gestion de medicos", "Index", "Med_Medico")</p>
+    </div>
+</div>
+

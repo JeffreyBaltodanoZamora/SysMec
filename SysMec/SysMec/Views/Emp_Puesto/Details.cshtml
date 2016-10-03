@@ -1,0 +1,34 @@
+﻿@model SysMec.Emp_Puesto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Emp_Puesto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_nombre_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_nombre_puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Empresa.vc_nombre_empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Empresa.vc_nombre_empresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.vc_PK_id_puesto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
