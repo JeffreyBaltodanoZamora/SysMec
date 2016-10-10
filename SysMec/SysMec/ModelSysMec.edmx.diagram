@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="SysMecModel.Diag_Diagnostico" Width="1.5" PointX="10.5" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SysMecModel.Emp_Empresa" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SysMecModel.Emp_Puesto" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SysMecModel.Ex_Examen_Diagnostico" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SysMecModel.Ex_Examen_Diagnostico" Width="1.5" PointX="11.75" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SysMecModel.Exp_Expediente" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SysMecModel.Fnc_Funcion" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="SysMecModel.Med_Medico" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />

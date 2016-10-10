@@ -2,32 +2,49 @@
 
 @{
     ViewBag.Title = "Index";
+    var id = @Request.Params["id_Cita"];
+    int id_cita = Convert.ToInt32(id);
 }
 
-<h2>Index</h2>
+<h2>Gestión de citas médicas</h2>
 
 <p>
     @Html.ActionLink("Crear nueva cita", "Create")
 </p>
+
+<form action="~/Views/Ci_Cita/Busqueda" method="get">
+    <label>Ingrese el identificador de la cita a buscar</label>
+    <input type="number" id="id_Cita" />
+    <input type="submit" />
+</form>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.dt_hora_inicio)
+            Indentificador de la cita
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_hora_fin)
+            Fecha y hora de inicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_Medico)
+            Fecha y hora finalización
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Us_Usuario.vc_clave)
+            Médico
+        </th>
+        <th>
+           Usuario
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    if (id_cita == item.i_PK_id_cita)
+    {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.i_PK_id_cita)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.dt_hora_inicio)
         </td>
@@ -41,11 +58,12 @@
             @Html.DisplayFor(modelItem => item.Us_Usuario.vc_clave)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.i_PK_id_cita }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.i_PK_id_cita }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_PK_id_cita })
+            @Html.ActionLink("Editar", "Edit", new { id = item.i_PK_id_cita }) |
+            @Html.ActionLink("Detalles", "Busqueda", new { id = item.i_PK_id_cita }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.i_PK_id_cita })
         </td>
     </tr>
+    }
 }
 
 </table>
