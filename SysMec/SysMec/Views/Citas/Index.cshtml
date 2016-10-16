@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nueva cita médica", "Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.i_pk_estado)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_cita }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_pk_cita }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_cita })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_pk_cita }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_pk_cita }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_pk_cita })
         </td>
     </tr>
 }
