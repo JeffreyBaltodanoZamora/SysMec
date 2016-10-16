@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FBD98F72-93DF-4E57-AABF-F404F22F6060}</ProjectGuid>
+    <ProjectGuid>{80149446-A227-436F-B552-65E3E4820156}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -80,26 +80,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -209,71 +195,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Ci_Cita.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CatalogosController.cs" />
-    <Compile Include="Controllers\Emp_EmpresaController.cs" />
-    <Compile Include="Controllers\Emp_PuestoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Med_MedicoController.cs" />
-    <Compile Include="Controllers\Us_UsuarioController.cs" />
-    <Compile Include="Diag_Diagnostico.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Emp_Empresa.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Emp_Puesto.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Enc_Comprobante.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Exp_Expediente.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ex_Examen_Diagnostico.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Fnc_Funcion.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Med_Medico.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelSysMec.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSysMec.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelSysMec.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelSysMec.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSysMec.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Controllers\Ci_CitaController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Us_Usuario.cs">
-      <DependentUpon>ModelSysMec.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -282,29 +214,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ModelSysMec.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelSysMec.edmx</DependentUpon>
-      <LastGenOutput>ModelSysMec.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelSysMec.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelSysMec.edmx</DependentUpon>
-      <LastGenOutput>ModelSysMec.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="ModelSysMec.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelSysMec.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModelSysMec.edmx.diagram">
-      <DependentUpon>ModelSysMec.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -352,32 +267,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Ci_Cita\Create.cshtml" />
-    <Content Include="Views\Ci_Cita\Delete.cshtml" />
-    <Content Include="Views\Ci_Cita\Details.cshtml" />
-    <Content Include="Views\Ci_Cita\Edit.cshtml" />
-    <Content Include="Views\Ci_Cita\Index.cshtml" />
-    <Content Include="Views\Us_Usuario\Create.cshtml" />
-    <Content Include="Views\Us_Usuario\Delete.cshtml" />
-    <Content Include="Views\Us_Usuario\Details.cshtml" />
-    <Content Include="Views\Us_Usuario\Edit.cshtml" />
-    <Content Include="Views\Us_Usuario\Index.cshtml" />
-    <Content Include="Views\Med_Medico\Create.cshtml" />
-    <Content Include="Views\Med_Medico\Delete.cshtml" />
-    <Content Include="Views\Med_Medico\Details.cshtml" />
-    <Content Include="Views\Med_Medico\Edit.cshtml" />
-    <Content Include="Views\Med_Medico\Index.cshtml" />
-    <Content Include="Views\Emp_Puesto\Create.cshtml" />
-    <Content Include="Views\Emp_Puesto\Delete.cshtml" />
-    <Content Include="Views\Emp_Puesto\Details.cshtml" />
-    <Content Include="Views\Emp_Puesto\Edit.cshtml" />
-    <Content Include="Views\Emp_Puesto\Index.cshtml" />
-    <Content Include="Views\Emp_Empresa\Create.cshtml" />
-    <Content Include="Views\Emp_Empresa\Delete.cshtml" />
-    <Content Include="Views\Emp_Empresa\Details.cshtml" />
-    <Content Include="Views\Emp_Empresa\Edit.cshtml" />
-    <Content Include="Views\Emp_Empresa\Index.cshtml" />
-    <Content Include="Views\Catalogos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -389,9 +278,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -409,9 +295,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55784</DevelopmentServerPort>
+          <DevelopmentServerPort>50548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55784/</IISUrl>
+          <IISUrl>http://localhost:50548/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
