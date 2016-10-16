@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9b6cf8599966429581b5dce30ea21bb2" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_SysMecModel.antecd_quirur_traumati" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Cita" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Estado" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Exp_Medico" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Gineco_Obstreticos" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Personales_Patologico" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Us_UsuarioExterno" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Ant_pers_patologicos" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Heredo_familiar" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

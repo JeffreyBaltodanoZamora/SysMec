@@ -53,7 +53,7 @@ audio:not([controls]) {
 
 html {
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
+  -we-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
@@ -4239,6 +4239,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav {
+  text-decoration-color: 
   margin: 7.5px -15px;
 }
 

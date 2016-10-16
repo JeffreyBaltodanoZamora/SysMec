@@ -1,0 +1,108 @@
+﻿body {
+    margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	SCROLLBAR-BASE-COLOR: #b1b1b1;
+	background-color:#1f3149;
+}
+
+.bordespagina{
+	background-image: url(imgMAGv3/templateMAG_V3_01.jpg); 
+	background-repeat: repeat-x
+}
+
+.barramenuhorizotal{
+	background-image:url(imgMAGv3/templateMAG_V3_05.jpg);
+	background-repeat:repeat-x;
+
+}
+
+.barrabotton{
+	background-image:url(imgMAGv3/templateMAG_V3_14.jpg);
+	background-repeat:repeat-x;
+
+}
+
+.sectorcontenido{
+	background-color:#e6e8eb;
+	background-image:url(imgMAGv3/templateMAG_V3_f_09.jpg);
+	background-repeat:repeat-x;
+	vertical-align:top;
+	padding-left: 40px;
+	padding-top: 40px;
+}
+
+.barramenuvertical{
+	background-image:url(imgMAGv3/templateMAG_V3_12.jpg);
+	background-repeat:repeat-y;
+
+}
+
+.TablaEstilo1{
+	 width: 100%;
+	 border: none;
+}
+
+.tabla_Encabezado {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #283a51;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #ec7723;
+	background-image: url(imgMAGv3/imgCejilla.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 39px;
+	padding-left: 40px;
+	white-space: nowrap;
+}
+.tabla_Titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #283a51;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #ec7723;
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 39px;
+	padding-left: 40px;
+	white-space: nowrap;
+}
+
+.botonesDX{
+	width:120px;
+}
+
+.CajaDialogo
+{
+    background-color: #FFF;
+	border-width: 1px;
+    border-style: outset;
+    border-color: Blue;
+    padding: 0px;
+
+}
+
+.modalbackground
+{
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.Validaciones
+{ 
+	font-size:10px; 
+	color:#FF0000;
+}
+

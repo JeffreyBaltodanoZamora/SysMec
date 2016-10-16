@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_SysMecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_SysMec.dbo.Ant_pers_patologicos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ant_pers_patologicos">
+          <Key>
+            <PropertyRef Name="i_pk_antecents_patologicos" />
+            <PropertyRef Name="vc_piel" />
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_antecents_patologicos" Type="int" Nullable="false" />
+          <Property Name="vc_piel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_aparato_digestivo" Type="varchar" MaxLength="50" />
+          <Property Name="vc_aparato_gene_urinario" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sist_nervioso" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sist_musc_esquele" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistem_endocri" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistm_cardio" Type="varchar" MaxLength="50" />
+          <Property Name="vc_alergias" Type="varchar" MaxLength="50" />
+          <Property Name="vc_Problems_psicolo" Type="varchar" MaxLength="50" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="antecd_quirur_traumati">
+          <Key>
+            <PropertyRef Name="i_pk_quirurgicos_traumati" />
+          </Key>
+          <Property Name="i_pk_quirurgicos_traumati" Type="int" Nullable="false" />
+          <Property Name="vc_fracturas" Type="varchar" MaxLength="50" />
+          <Property Name="vc_donde" Type="varchar" MaxLength="50" />
+          <Property Name="dt_fractura" Type="datetime" />
+          <Property Name="vc_cirugias" Type="varchar" MaxLength="50" />
+          <Property Name="vc_cirugias_donde" Type="varchar" MaxLength="50" />
+          <Property Name="dt_cirugia" Type="datetime" />
+          <Property Name="vc_acci_no_laborales" Type="varchar" MaxLength="50" />
+          <Property Name="vc_acci_laborales" Type="varchar" MaxLength="50" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="i_pk_cita" />
+          </Key>
+          <Property Name="i_pk_cita" Type="int" Nullable="false" />
+          <Property Name="i_fk_usuario" Type="int" Nullable="false" />
+          <Property Name="i_fk_medico" Type="int" Nullable="false" />
+          <Property Name="dt_hora_inicio" Type="datetime" Nullable="false" />
+          <Property Name="dt_hora_fin" Type="datetime" Nullable="false" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+          <Property Name="vc_descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_modulo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exp_Medico">
+          <Key>
+            <PropertyRef Name="i_PK_ExpMedico" />
+          </Key>
+          <Property Name="i_PK_ExpMedico" Type="int" Nullable="false" />
+          <Property Name="i_FK_id_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dt_expMedico" Type="datetime" Nullable="false" />
+          <Property Name="i_fk_estado" Type="int" Nullable="false" />
+          <Property Name="i_FK_antecents_patologicos" Type="int" Nullable="false" />
+          <Property Name="i_fk_gineco_obstetricos" Type="int" />
+          <Property Name="i_fk_heredo_famili" Type="int" Nullable="false" />
+          <Property Name="i_fk_quirurgicos_traumati" Type="int" Nullable="false" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gineco_Obstreticos">
+          <Key>
+            <PropertyRef Name="i_pk_gineco_obstetricos" />
+          </Key>
+          <Property Name="i_pk_gineco_obstetricos" Type="int" Nullable="false" />
+          <Property Name="vc_menarca" Type="varchar" MaxLength="50" />
+          <Property Name="vc_fur" Type="varchar" MaxLength="50" />
+          <Property Name="vc_relaciones_sexuales" Type="varchar" MaxLength="2" />
+          <Property Name="vc_planificar" Type="varchar" MaxLength="2" />
+          <Property Name="vc_ritmo" Type="varchar" MaxLength="2" />
+          <Property Name="vc_metodo" Type="varchar" MaxLength="50" />
+          <Property Name="vc_duracion" Type="varchar" MaxLength="50" />
+          <Property Name="vc_partos_eutocicos" Type="varchar" MaxLength="2" />
+          <Property Name="vc_forceps" Type="varchar" MaxLength="2" />
+          <Property Name="vc_cesareas" Type="varchar" MaxLength="2" />
+          <Property Name="vc_flujos" Type="varchar" MaxLength="2" />
+          <Property Name="vc_sangrados_anormales" Type="varchar" MaxLength="50" />
+          <Property Name="vc_pap" Type="varchar" MaxLength="2" />
+          <Property Name="dt_pap" Type="datetime" />
+          <Property Name="vc_resultado" Type="varchar" MaxLength="50" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_SysMec.dbo.Heredo_familiar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Heredo_familiar">
+          <Key>
+            <PropertyRef Name="i_pk_heredo_famili" />
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_heredo_famili" Type="int" Nullable="false" />
+          <Property Name="vc_piel" Type="varchar" MaxLength="50" />
+          <Property Name="vc_aparato_respiratorio" Type="varchar" MaxLength="50" />
+          <Property Name="vc_aparato_digestivo" Type="varchar" MaxLength="50" />
+          <Property Name="vc_aparato_geneto_urinario" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistema_nervioso" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistema_musco_esque" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistema_endocrino" Type="varchar" MaxLength="50" />
+          <Property Name="vc_sistema_cardio" Type="varchar" MaxLength="50" />
+          <Property Name="vc_alergias" Type="varchar" MaxLength="50" />
+          <Property Name="vc_cancer" Type="varchar" MaxLength="50" />
+          <Property Name="vc_problemas_psicosomaticos" Type="varchar" MaxLength="50" />
+          <Property Name="vc_padecimiento_actual" Type="varchar" MaxLength="50" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personales_Patologico">
+          <Key>
+            <PropertyRef Name="i_pk_antecents_patologicos" />
+          </Key>
+          <Property Name="i_pk_antecents_patologicos" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_piel" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="vc_aparato_resp" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_aparato_digestivo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_aparato_geneto_U" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_sistema_nervioso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_sistema_musc_esquele" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_sistema_endocrinolo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_sistema_cariodv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_alergias" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_proble_psicologicos" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Us_UsuarioExterno">
+          <Key>
+            <PropertyRef Name="i_PK_id_usuario" />
+          </Key>
+          <Property Name="i_PK_id_usuario" Type="int" Nullable="false" />
+          <Property Name="vc_nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_apellido2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_telefono" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dt_nacimiento" Type="datetime" Nullable="false" />
+          <Property Name="vc_sexo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vc_puesto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="i_pk_estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BD_SysMecModelStoreContainer">
+          <EntitySet Name="antecd_quirur_traumati" EntityType="Self.antecd_quirur_traumati" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cita" EntityType="Self.Cita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exp_Medico" EntityType="Self.Exp_Medico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gineco_Obstreticos" EntityType="Self.Gineco_Obstreticos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personales_Patologico" EntityType="Self.Personales_Patologico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Us_UsuarioExterno" EntityType="Self.Us_UsuarioExterno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ant_pers_patologicos" EntityType="Self.Ant_pers_patologicos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ant_pers_patologicos].[i_pk_antecents_patologicos] AS [i_pk_antecents_patologicos], 
+    [Ant_pers_patologicos].[vc_piel] AS [vc_piel], 
+    [Ant_pers_patologicos].[vc_aparato_digestivo] AS [vc_aparato_digestivo], 
+    [Ant_pers_patologicos].[vc_aparato_gene_urinario] AS [vc_aparato_gene_urinario], 
+    [Ant_pers_patologicos].[vc_sist_nervioso] AS [vc_sist_nervioso], 
+    [Ant_pers_patologicos].[vc_sist_musc_esquele] AS [vc_sist_musc_esquele], 
+    [Ant_pers_patologicos].[vc_sistem_endocri] AS [vc_sistem_endocri], 
+    [Ant_pers_patologicos].[vc_sistm_cardio] AS [vc_sistm_cardio], 
+    [Ant_pers_patologicos].[vc_alergias] AS [vc_alergias], 
+    [Ant_pers_patologicos].[vc_Problems_psicolo] AS [vc_Problems_psicolo], 
+    [Ant_pers_patologicos].[i_pk_estado] AS [i_pk_estado]
+    FROM [dbo].[Ant_pers_patologicos] AS [Ant_pers_patologicos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Heredo_familiar" EntityType="Self.Heredo_familiar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Heredo_familiar].[i_pk_heredo_famili] AS [i_pk_heredo_famili], 
+    [Heredo_familiar].[vc_piel] AS [vc_piel], 
+    [Heredo_familiar].[vc_aparato_respiratorio] AS [vc_aparato_respiratorio], 
+    [Heredo_familiar].[vc_aparato_digestivo] AS [vc_aparato_digestivo], 
+    [Heredo_familiar].[vc_aparato_geneto_urinario] AS [vc_aparato_geneto_urinario], 
+    [Heredo_familiar].[vc_sistema_nervioso] AS [vc_sistema_nervioso], 
+    [Heredo_familiar].[vc_sistema_musco_esque] AS [vc_sistema_musco_esque], 
+    [Heredo_familiar].[vc_sistema_endocrino] AS [vc_sistema_endocrino], 
+    [Heredo_familiar].[vc_sistema_cardio] AS [vc_sistema_cardio], 
+    [Heredo_familiar].[vc_alergias] AS [vc_alergias], 
+    [Heredo_familiar].[vc_cancer] AS [vc_cancer], 
+    [Heredo_familiar].[vc_problemas_psicosomaticos] AS [vc_problemas_psicosomaticos], 
+    [Heredo_familiar].[vc_padecimiento_actual] AS [vc_padecimiento_actual], 
+    [Heredo_familiar].[i_pk_estado] AS [i_pk_estado]
+    FROM [dbo].[Heredo_familiar] AS [Heredo_familiar]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_SysMecModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="antecd_quirur_traumati">
+          <Key>
+            <PropertyRef Name="i_pk_quirurgicos_traumati" />
+          </Key>
+          <Property Name="i_pk_quirurgicos_traumati" Type="Int32" Nullable="false" />
+          <Property Name="vc_fracturas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_donde" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dt_fractura" Type="DateTime" Precision="3" />
+          <Property Name="vc_cirugias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_cirugias_donde" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dt_cirugia" Type="DateTime" Precision="3" />
+          <Property Name="vc_acci_no_laborales" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_acci_laborales" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="i_pk_cita" />
+          </Key>
+          <Property Name="i_pk_cita" Type="Int32" Nullable="false" />
+          <Property Name="i_fk_usuario" Type="Int32" Nullable="false" />
+          <Property Name="i_fk_medico" Type="Int32" Nullable="false" />
+          <Property Name="dt_hora_inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dt_hora_fin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+          <Property Name="vc_descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_modulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exp_Medico">
+          <Key>
+            <PropertyRef Name="i_PK_ExpMedico" />
+          </Key>
+          <Property Name="i_PK_ExpMedico" Type="Int32" Nullable="false" />
+          <Property Name="i_FK_id_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_expMedico" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="i_fk_estado" Type="Int32" Nullable="false" />
+          <Property Name="i_FK_antecents_patologicos" Type="Int32" Nullable="false" />
+          <Property Name="i_fk_gineco_obstetricos" Type="Int32" />
+          <Property Name="i_fk_heredo_famili" Type="Int32" Nullable="false" />
+          <Property Name="i_fk_quirurgicos_traumati" Type="Int32" Nullable="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gineco_Obstreticos">
+          <Key>
+            <PropertyRef Name="i_pk_gineco_obstetricos" />
+          </Key>
+          <Property Name="i_pk_gineco_obstetricos" Type="Int32" Nullable="false" />
+          <Property Name="vc_menarca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_fur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_relaciones_sexuales" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_planificar" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_ritmo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_metodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_duracion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_partos_eutocicos" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_forceps" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_cesareas" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_flujos" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sangrados_anormales" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_pap" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="dt_pap" Type="DateTime" Precision="3" />
+          <Property Name="vc_resultado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personales_Patologico">
+          <Key>
+            <PropertyRef Name="i_pk_antecents_patologicos" />
+          </Key>
+          <Property Name="i_pk_antecents_patologicos" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="vc_piel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_aparato_resp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_aparato_digestivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_aparato_geneto_U" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_sistema_nervioso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_sistema_musc_esquele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_sistema_endocrinolo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_sistema_cariodv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_alergias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_proble_psicologicos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Us_UsuarioExterno">
+          <Key>
+            <PropertyRef Name="i_PK_id_usuario" />
+          </Key>
+          <Property Name="i_PK_id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="vc_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_nacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vc_sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ant_pers_patologicos">
+          <Key>
+            <PropertyRef Name="i_pk_antecents_patologicos" />
+            <PropertyRef Name="vc_piel" />
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_antecents_patologicos" Type="Int32" Nullable="false" />
+          <Property Name="vc_piel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vc_aparato_digestivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_aparato_gene_urinario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sist_nervioso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sist_musc_esquele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistem_endocri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistm_cardio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_alergias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_Problems_psicolo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Heredo_familiar">
+          <Key>
+            <PropertyRef Name="i_pk_heredo_famili" />
+            <PropertyRef Name="i_pk_estado" />
+          </Key>
+          <Property Name="i_pk_heredo_famili" Type="Int32" Nullable="false" />
+          <Property Name="vc_piel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_aparato_respiratorio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_aparato_digestivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_aparato_geneto_urinario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistema_nervioso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistema_musco_esque" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistema_endocrino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_sistema_cardio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_alergias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_cancer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_problemas_psicosomaticos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vc_padecimiento_actual" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="i_pk_estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="antecd_quirur_traumati" EntityType="Self.antecd_quirur_traumati" />
+          <EntitySet Name="Cita" EntityType="Self.Cita" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" />
+          <EntitySet Name="Exp_Medico" EntityType="Self.Exp_Medico" />
+          <EntitySet Name="Gineco_Obstreticos" EntityType="Self.Gineco_Obstreticos" />
+          <EntitySet Name="Personales_Patologico" EntityType="Self.Personales_Patologico" />
+          <EntitySet Name="Us_UsuarioExterno" EntityType="Self.Us_UsuarioExterno" />
+          <EntitySet Name="Ant_pers_patologicos" EntityType="Self.Ant_pers_patologicos" />
+          <EntitySet Name="Heredo_familiar" EntityType="Self.Heredo_familiar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_SysMecModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="antecd_quirur_traumati">
+            <EntityTypeMapping TypeName="BD_SysMecModel.antecd_quirur_traumati">
+              <MappingFragment StoreEntitySet="antecd_quirur_traumati">
+                <ScalarProperty Name="i_pk_quirurgicos_traumati" ColumnName="i_pk_quirurgicos_traumati" />
+                <ScalarProperty Name="vc_fracturas" ColumnName="vc_fracturas" />
+                <ScalarProperty Name="vc_donde" ColumnName="vc_donde" />
+                <ScalarProperty Name="dt_fractura" ColumnName="dt_fractura" />
+                <ScalarProperty Name="vc_cirugias" ColumnName="vc_cirugias" />
+                <ScalarProperty Name="vc_cirugias_donde" ColumnName="vc_cirugias_donde" />
+                <ScalarProperty Name="dt_cirugia" ColumnName="dt_cirugia" />
+                <ScalarProperty Name="vc_acci_no_laborales" ColumnName="vc_acci_no_laborales" />
+                <ScalarProperty Name="vc_acci_laborales" ColumnName="vc_acci_laborales" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cita">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Cita">
+              <MappingFragment StoreEntitySet="Cita">
+                <ScalarProperty Name="i_pk_cita" ColumnName="i_pk_cita" />
+                <ScalarProperty Name="i_fk_usuario" ColumnName="i_fk_usuario" />
+                <ScalarProperty Name="i_fk_medico" ColumnName="i_fk_medico" />
+                <ScalarProperty Name="dt_hora_inicio" ColumnName="dt_hora_inicio" />
+                <ScalarProperty Name="dt_hora_fin" ColumnName="dt_hora_fin" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estado">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+                <ScalarProperty Name="vc_descripcion" ColumnName="vc_descripcion" />
+                <ScalarProperty Name="vc_modulo" ColumnName="vc_modulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exp_Medico">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Exp_Medico">
+              <MappingFragment StoreEntitySet="Exp_Medico">
+                <ScalarProperty Name="i_PK_ExpMedico" ColumnName="i_PK_ExpMedico" />
+                <ScalarProperty Name="i_FK_id_usuario" ColumnName="i_FK_id_usuario" />
+                <ScalarProperty Name="dt_expMedico" ColumnName="dt_expMedico" />
+                <ScalarProperty Name="i_fk_estado" ColumnName="i_fk_estado" />
+                <ScalarProperty Name="i_FK_antecents_patologicos" ColumnName="i_FK_antecents_patologicos" />
+                <ScalarProperty Name="i_fk_gineco_obstetricos" ColumnName="i_fk_gineco_obstetricos" />
+                <ScalarProperty Name="i_fk_heredo_famili" ColumnName="i_fk_heredo_famili" />
+                <ScalarProperty Name="i_fk_quirurgicos_traumati" ColumnName="i_fk_quirurgicos_traumati" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gineco_Obstreticos">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Gineco_Obstreticos">
+              <MappingFragment StoreEntitySet="Gineco_Obstreticos">
+                <ScalarProperty Name="i_pk_gineco_obstetricos" ColumnName="i_pk_gineco_obstetricos" />
+                <ScalarProperty Name="vc_menarca" ColumnName="vc_menarca" />
+                <ScalarProperty Name="vc_fur" ColumnName="vc_fur" />
+                <ScalarProperty Name="vc_relaciones_sexuales" ColumnName="vc_relaciones_sexuales" />
+                <ScalarProperty Name="vc_planificar" ColumnName="vc_planificar" />
+                <ScalarProperty Name="vc_ritmo" ColumnName="vc_ritmo" />
+                <ScalarProperty Name="vc_metodo" ColumnName="vc_metodo" />
+                <ScalarProperty Name="vc_duracion" ColumnName="vc_duracion" />
+                <ScalarProperty Name="vc_partos_eutocicos" ColumnName="vc_partos_eutocicos" />
+                <ScalarProperty Name="vc_forceps" ColumnName="vc_forceps" />
+                <ScalarProperty Name="vc_cesareas" ColumnName="vc_cesareas" />
+                <ScalarProperty Name="vc_flujos" ColumnName="vc_flujos" />
+                <ScalarProperty Name="vc_sangrados_anormales" ColumnName="vc_sangrados_anormales" />
+                <ScalarProperty Name="vc_pap" ColumnName="vc_pap" />
+                <ScalarProperty Name="dt_pap" ColumnName="dt_pap" />
+                <ScalarProperty Name="vc_resultado" ColumnName="vc_resultado" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personales_Patologico">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Personales_Patologico">
+              <MappingFragment StoreEntitySet="Personales_Patologico">
+                <ScalarProperty Name="i_pk_antecents_patologicos" ColumnName="i_pk_antecents_patologicos" />
+                <ScalarProperty Name="vc_piel" ColumnName="vc_piel" />
+                <ScalarProperty Name="vc_aparato_resp" ColumnName="vc_aparato_resp" />
+                <ScalarProperty Name="vc_aparato_digestivo" ColumnName="vc_aparato_digestivo" />
+                <ScalarProperty Name="vc_aparato_geneto_U" ColumnName="vc_aparato_geneto_U" />
+                <ScalarProperty Name="vc_sistema_nervioso" ColumnName="vc_sistema_nervioso" />
+                <ScalarProperty Name="vc_sistema_musc_esquele" ColumnName="vc_sistema_musc_esquele" />
+                <ScalarProperty Name="vc_sistema_endocrinolo" ColumnName="vc_sistema_endocrinolo" />
+                <ScalarProperty Name="vc_sistema_cariodv" ColumnName="vc_sistema_cariodv" />
+                <ScalarProperty Name="vc_alergias" ColumnName="vc_alergias" />
+                <ScalarProperty Name="vc_proble_psicologicos" ColumnName="vc_proble_psicologicos" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Us_UsuarioExterno">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Us_UsuarioExterno">
+              <MappingFragment StoreEntitySet="Us_UsuarioExterno">
+                <ScalarProperty Name="i_PK_id_usuario" ColumnName="i_PK_id_usuario" />
+                <ScalarProperty Name="vc_nombre" ColumnName="vc_nombre" />
+                <ScalarProperty Name="vc_apellido1" ColumnName="vc_apellido1" />
+                <ScalarProperty Name="vc_apellido2" ColumnName="vc_apellido2" />
+                <ScalarProperty Name="vc_direccion" ColumnName="vc_direccion" />
+                <ScalarProperty Name="vc_telefono" ColumnName="vc_telefono" />
+                <ScalarProperty Name="dt_nacimiento" ColumnName="dt_nacimiento" />
+                <ScalarProperty Name="vc_sexo" ColumnName="vc_sexo" />
+                <ScalarProperty Name="vc_email" ColumnName="vc_email" />
+                <ScalarProperty Name="vc_puesto" ColumnName="vc_puesto" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ant_pers_patologicos">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Ant_pers_patologicos">
+              <MappingFragment StoreEntitySet="Ant_pers_patologicos">
+                <ScalarProperty Name="i_pk_antecents_patologicos" ColumnName="i_pk_antecents_patologicos" />
+                <ScalarProperty Name="vc_piel" ColumnName="vc_piel" />
+                <ScalarProperty Name="vc_aparato_digestivo" ColumnName="vc_aparato_digestivo" />
+                <ScalarProperty Name="vc_aparato_gene_urinario" ColumnName="vc_aparato_gene_urinario" />
+                <ScalarProperty Name="vc_sist_nervioso" ColumnName="vc_sist_nervioso" />
+                <ScalarProperty Name="vc_sist_musc_esquele" ColumnName="vc_sist_musc_esquele" />
+                <ScalarProperty Name="vc_sistem_endocri" ColumnName="vc_sistem_endocri" />
+                <ScalarProperty Name="vc_sistm_cardio" ColumnName="vc_sistm_cardio" />
+                <ScalarProperty Name="vc_alergias" ColumnName="vc_alergias" />
+                <ScalarProperty Name="vc_Problems_psicolo" ColumnName="vc_Problems_psicolo" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Heredo_familiar">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Heredo_familiar">
+              <MappingFragment StoreEntitySet="Heredo_familiar">
+                <ScalarProperty Name="i_pk_heredo_famili" ColumnName="i_pk_heredo_famili" />
+                <ScalarProperty Name="vc_piel" ColumnName="vc_piel" />
+                <ScalarProperty Name="vc_aparato_respiratorio" ColumnName="vc_aparato_respiratorio" />
+                <ScalarProperty Name="vc_aparato_digestivo" ColumnName="vc_aparato_digestivo" />
+                <ScalarProperty Name="vc_aparato_geneto_urinario" ColumnName="vc_aparato_geneto_urinario" />
+                <ScalarProperty Name="vc_sistema_nervioso" ColumnName="vc_sistema_nervioso" />
+                <ScalarProperty Name="vc_sistema_musco_esque" ColumnName="vc_sistema_musco_esque" />
+                <ScalarProperty Name="vc_sistema_endocrino" ColumnName="vc_sistema_endocrino" />
+                <ScalarProperty Name="vc_sistema_cardio" ColumnName="vc_sistema_cardio" />
+                <ScalarProperty Name="vc_alergias" ColumnName="vc_alergias" />
+                <ScalarProperty Name="vc_cancer" ColumnName="vc_cancer" />
+                <ScalarProperty Name="vc_problemas_psicosomaticos" ColumnName="vc_problemas_psicosomaticos" />
+                <ScalarProperty Name="vc_padecimiento_actual" ColumnName="vc_padecimiento_actual" />
+                <ScalarProperty Name="i_pk_estado" ColumnName="i_pk_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
