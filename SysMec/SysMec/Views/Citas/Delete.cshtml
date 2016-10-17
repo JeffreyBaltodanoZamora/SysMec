@@ -6,7 +6,7 @@
 
 <h2>Eliminar cita médica</h2>
 
-<h3>¿Está segudo de eliminar esta cita médica?</h3>
+<h3>¿Está seguro de eliminar esta cita médica?</h3>
 <div>
     <h4>Cita</h4>
     <hr />
@@ -44,11 +44,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.i_pk_estado)
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.i_pk_estado)
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
         </dd>
 
     </dl>
@@ -57,7 +57,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar cita" class="btn btn-default" /> |
             @Html.ActionLink("Regresar", "Index")
         </div>
     }

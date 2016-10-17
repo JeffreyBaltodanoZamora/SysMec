@@ -1,0 +1,74 @@
+﻿@model SysMec.Med_Medico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Horario de atención médica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Nombre_medico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Nombre_medico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_primer_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_primer_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_segundo_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_segundo_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Especialidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Especialidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_turno_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_turno_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_turno_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_turno_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_pk_id_medico }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

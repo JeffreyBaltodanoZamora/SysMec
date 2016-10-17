@@ -1,0 +1,98 @@
+﻿@model SysMec.Us_UsuarioExterno
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Detalles usuario externo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_apellido1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_apellido1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_apellido2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_apellido2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_PK_id_usuario }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

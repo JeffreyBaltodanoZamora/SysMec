@@ -12,8 +12,14 @@ namespace SysMec
     using System;
     using System.Collections.Generic;
     
-    public partial class Ant_pers_patologicos
+    public partial class CM_CAT_ANTECEDENTES_PER_PATOLOGICOS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CM_CAT_ANTECEDENTES_PER_PATOLOGICOS()
+        {
+            this.Exp_Medico = new HashSet<Exp_Medico>();
+        }
+    
         public int i_pk_antecents_patologicos { get; set; }
         public string vc_piel { get; set; }
         public string vc_aparato_digestivo { get; set; }
@@ -24,6 +30,10 @@ namespace SysMec
         public string vc_sistm_cardio { get; set; }
         public string vc_alergias { get; set; }
         public string vc_Problems_psicolo { get; set; }
-        public int i_pk_estado { get; set; }
+        public int i_fk_estado { get; set; }
+    
+        public virtual Estado Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico { get; set; }
     }
 }

@@ -14,8 +14,41 @@ namespace SysMec
     
     public partial class Estado
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Estado()
+        {
+            this.Cita = new HashSet<Cita>();
+            this.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS = new HashSet<CM_CAT_ANTECEDENTES_PER_PATOLOGICOS>();
+            this.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS = new HashSet<CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS>();
+            this.Exp_Medico = new HashSet<Exp_Medico>();
+            this.Gineco_Obstreticos = new HashSet<Gineco_Obstreticos>();
+            this.Heredo_familiar = new HashSet<Heredo_familiar>();
+            this.Med_Medico = new HashSet<Med_Medico>();
+            this.Personales_Patologico = new HashSet<Personales_Patologico>();
+            this.Us_UsuarioExterno = new HashSet<Us_UsuarioExterno>();
+        }
+    
         public int i_pk_estado { get; set; }
         public string vc_descripcion { get; set; }
         public string vc_modulo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cita> Cita { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CM_CAT_ANTECEDENTES_PER_PATOLOGICOS> CM_CAT_ANTECEDENTES_PER_PATOLOGICOS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS> CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gineco_Obstreticos> Gineco_Obstreticos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Heredo_familiar> Heredo_familiar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Med_Medico> Med_Medico { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Personales_Patologico> Personales_Patologico { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Us_UsuarioExterno> Us_UsuarioExterno { get; set; }
     }
 }

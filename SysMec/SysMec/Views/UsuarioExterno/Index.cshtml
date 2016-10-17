@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SysMec.Us_UsuarioExterno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gestión usuario convenio</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo usuario convenios", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_apellido2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_puesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_apellido2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_puesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_PK_id_usuario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_PK_id_usuario }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_PK_id_usuario })
+        </td>
+    </tr>
+}
+
+</table>

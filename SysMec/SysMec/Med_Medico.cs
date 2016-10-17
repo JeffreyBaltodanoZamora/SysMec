@@ -12,24 +12,21 @@ namespace SysMec
     using System;
     using System.Collections.Generic;
     
-    public partial class Us_UsuarioExterno
+    public partial class Med_Medico
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Us_UsuarioExterno()
+        public Med_Medico()
         {
             this.Exp_Medico = new HashSet<Exp_Medico>();
         }
     
-        public int i_PK_id_usuario { get; set; }
-        public string vc_nombre { get; set; }
-        public string vc_apellido1 { get; set; }
-        public string vc_apellido2 { get; set; }
-        public string vc_direccion { get; set; }
-        public string vc_telefono { get; set; }
-        public System.DateTime dt_nacimiento { get; set; }
-        public string vc_sexo { get; set; }
-        public string vc_email { get; set; }
-        public string vc_puesto { get; set; }
+        public int i_pk_id_medico { get; set; }
+        public string vc_Nombre_medico { get; set; }
+        public string vc_primer_apellido { get; set; }
+        public string vc_segundo_apellido { get; set; }
+        public string vc_Especialidad { get; set; }
+        public System.DateTime dt_turno_inicio { get; set; }
+        public System.DateTime dt_turno_fin { get; set; }
         public int i_fk_estado { get; set; }
     
         public virtual Estado Estado { get; set; }

@@ -14,6 +14,13 @@ namespace SysMec
     
     public partial class Heredo_familiar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Heredo_familiar()
+        {
+            this.Exp_Medico = new HashSet<Exp_Medico>();
+            this.Exp_Medico1 = new HashSet<Exp_Medico>();
+        }
+    
         public int i_pk_heredo_famili { get; set; }
         public string vc_piel { get; set; }
         public string vc_aparato_respiratorio { get; set; }
@@ -27,6 +34,12 @@ namespace SysMec
         public string vc_cancer { get; set; }
         public string vc_problemas_psicosomaticos { get; set; }
         public string vc_padecimiento_actual { get; set; }
-        public int i_pk_estado { get; set; }
+        public int i_fk_estado { get; set; }
+    
+        public virtual Estado Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico1 { get; set; }
     }
 }

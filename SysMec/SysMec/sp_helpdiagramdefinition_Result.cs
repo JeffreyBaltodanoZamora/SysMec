@@ -10,17 +10,10 @@
 namespace SysMec
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Cita
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int i_pk_cita { get; set; }
-        public int i_fk_usuario { get; set; }
-        public int i_fk_medico { get; set; }
-        public System.DateTime dt_hora_inicio { get; set; }
-        public System.DateTime dt_hora_fin { get; set; }
-        public int i_fk_estado { get; set; }
-    
-        public virtual Estado Estado { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

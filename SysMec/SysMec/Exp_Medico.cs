@@ -15,13 +15,23 @@ namespace SysMec
     public partial class Exp_Medico
     {
         public int i_PK_ExpMedico { get; set; }
-        public string i_FK_id_usuario { get; set; }
+        public int i_FK_id_usuario { get; set; }
+        public int i_fk_id_medico { get; set; }
         public System.DateTime dt_expMedico { get; set; }
         public int i_fk_estado { get; set; }
-        public int i_FK_antecents_patologicos { get; set; }
+        public int i_fk_antecents_patologicos { get; set; }
         public Nullable<int> i_fk_gineco_obstetricos { get; set; }
         public int i_fk_heredo_famili { get; set; }
         public int i_fk_quirurgicos_traumati { get; set; }
-        public int i_pk_estado { get; set; }
+        public int i_fk_antecents_patologicos_personales { get; set; }
+    
+        public virtual CM_CAT_ANTECEDENTES_PER_PATOLOGICOS CM_CAT_ANTECEDENTES_PER_PATOLOGICOS { get; set; }
+        public virtual CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS { get; set; }
+        public virtual Estado Estado { get; set; }
+        public virtual Heredo_familiar Heredo_familiar { get; set; }
+        public virtual Heredo_familiar Heredo_familiar1 { get; set; }
+        public virtual Med_Medico Med_Medico { get; set; }
+        public virtual Personales_Patologico Personales_Patologico { get; set; }
+        public virtual Us_UsuarioExterno Us_UsuarioExterno { get; set; }
     }
 }

@@ -14,7 +14,13 @@ namespace SysMec
     
     public partial class Personales_Patologico
     {
-        public string i_pk_antecents_patologicos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Personales_Patologico()
+        {
+            this.Exp_Medico = new HashSet<Exp_Medico>();
+        }
+    
+        public int i_pk_antecents_patologicos { get; set; }
         public string vc_piel { get; set; }
         public string vc_aparato_resp { get; set; }
         public string vc_aparato_digestivo { get; set; }
@@ -25,6 +31,10 @@ namespace SysMec
         public string vc_sistema_cariodv { get; set; }
         public string vc_alergias { get; set; }
         public string vc_proble_psicologicos { get; set; }
-        public int i_pk_estado { get; set; }
+        public int i_fk_estado { get; set; }
+    
+        public virtual Estado Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico { get; set; }
     }
 }

@@ -1,0 +1,79 @@
+﻿@model SysMec.Med_Medico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar horario de atención médica</h2>
+
+<h3>¿Está seguro de eliminar este horario de atención?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Nombre_medico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Nombre_medico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_primer_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_primer_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_segundo_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_segundo_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Especialidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Especialidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_turno_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_turno_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_turno_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_turno_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar horario de atención" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

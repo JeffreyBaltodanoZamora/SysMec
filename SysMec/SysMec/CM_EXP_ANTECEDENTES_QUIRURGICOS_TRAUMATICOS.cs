@@ -12,8 +12,14 @@ namespace SysMec
     using System;
     using System.Collections.Generic;
     
-    public partial class antecd_quirur_traumati
+    public partial class CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS()
+        {
+            this.Exp_Medico = new HashSet<Exp_Medico>();
+        }
+    
         public int i_pk_quirurgicos_traumati { get; set; }
         public string vc_fracturas { get; set; }
         public string vc_donde { get; set; }
@@ -23,6 +29,10 @@ namespace SysMec
         public Nullable<System.DateTime> dt_cirugia { get; set; }
         public string vc_acci_no_laborales { get; set; }
         public string vc_acci_laborales { get; set; }
-        public int i_pk_estado { get; set; }
+        public int i_fk_estado { get; set; }
+    
+        public virtual Estado Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exp_Medico> Exp_Medico { get; set; }
     }
 }

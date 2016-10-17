@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SysMec.Med_Medico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Horario de atención médica</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo horario de atención médica", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_Nombre_medico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_primer_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_segundo_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_Especialidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_turno_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_turno_fin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_Nombre_medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_primer_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_segundo_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_Especialidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_turno_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_turno_fin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_pk_id_medico }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_pk_id_medico }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_pk_id_medico })
+        </td>
+    </tr>
+}
+
+</table>
