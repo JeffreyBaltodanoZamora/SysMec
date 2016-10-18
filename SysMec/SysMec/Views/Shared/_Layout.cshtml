@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Sistema citas médicas</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/estilosMAGv3.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -27,6 +28,9 @@
                     <li>@Html.ActionLink("Catálogos", "Index", "Catalogos")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                   <li><img src="~/Content/imagenes/MAG-LogoPTN349.fw.png" class="img-responsive img-logoLayout" /></li>
+                </ul>
             </div>
         </div>
     </div>

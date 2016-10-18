@@ -276,6 +276,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilosMAGv3.css" />
+    <Content Include="Content\imagenes\img_gestion_de_cita_medica.png" />
+    <Content Include="Content\imagenes\img_gestion_de_expediente_medico.png" />
+    <Content Include="Content\imagenes\img_gestion_de_usuarios.png" />
+    <Content Include="Content\imagenes\img_horario_atencion_medica.jpg" />
+    <Content Include="Content\imagenes\MAG-LogoPTN349.fw.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

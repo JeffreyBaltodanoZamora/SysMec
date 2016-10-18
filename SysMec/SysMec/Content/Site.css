@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+.img-catalogos{
+  width: 200px; height: 200px;
+}
+.img-logoLayout{
+  width: 60px; height: 65px;
+}
