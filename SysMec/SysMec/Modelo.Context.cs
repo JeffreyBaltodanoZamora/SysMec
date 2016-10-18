@@ -38,6 +38,7 @@ namespace SysMec
         public virtual DbSet<Personales_Patologico> Personales_Patologico { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Us_UsuarioExterno> Us_UsuarioExterno { get; set; }
+        public virtual DbSet<Diagnostico> Diagnostico { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

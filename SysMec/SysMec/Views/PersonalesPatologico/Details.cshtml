@@ -1,0 +1,106 @@
+﻿@model SysMec.Personales_Patologico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Personales_Patologico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_resp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_resp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_digestivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_geneto_U)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_geneto_U)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_nervioso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_nervioso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_musc_esquele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_musc_esquele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_endocrinolo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_endocrinolo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_cariodv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_cariodv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_proble_psicologicos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_proble_psicologicos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_antecents_patologicos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

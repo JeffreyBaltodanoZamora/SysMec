@@ -1,0 +1,98 @@
+﻿@model SysMec.Exp_Medico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exp_Medico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_expMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_expMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.i_fk_gineco_obstetricos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.i_fk_gineco_obstetricos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heredo_familiar.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heredo_familiar.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heredo_familiar1.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heredo_familiar1.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_medico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Med_Medico.vc_Nombre_medico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personales_Patologico.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personales_Patologico.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Us_UsuarioExterno.vc_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Us_UsuarioExterno.vc_nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_PK_ExpMedico }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SysMec.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_aparato_gene_urinario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sist_nervioso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sist_musc_esquele)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistem_endocri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistm_cardio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_alergias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_Problems_psicolo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_aparato_digestivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_aparato_gene_urinario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sist_nervioso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sist_musc_esquele)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistem_endocri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistm_cardio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_alergias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_Problems_psicolo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_antecents_patologicos }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_pk_antecents_patologicos }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_antecents_patologicos })
+        </td>
+    </tr>
+}
+
+</table>

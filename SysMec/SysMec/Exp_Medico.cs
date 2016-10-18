@@ -14,6 +14,12 @@ namespace SysMec
     
     public partial class Exp_Medico
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Exp_Medico()
+        {
+            this.Diagnostico = new HashSet<Diagnostico>();
+        }
+    
         public int i_PK_ExpMedico { get; set; }
         public int i_FK_id_usuario { get; set; }
         public int i_fk_id_medico { get; set; }
@@ -33,5 +39,7 @@ namespace SysMec
         public virtual Med_Medico Med_Medico { get; set; }
         public virtual Personales_Patologico Personales_Patologico { get; set; }
         public virtual Us_UsuarioExterno Us_UsuarioExterno { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Diagnostico> Diagnostico { get; set; }
     }
 }

@@ -1,0 +1,128 @@
+﻿@model SysMec.Heredo_familiar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Heredo_familiar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_respiratorio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_respiratorio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_digestivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_geneto_urinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_geneto_urinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_nervioso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_nervioso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_musco_esque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_musco_esque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_endocrino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_endocrino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistema_cardio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistema_cardio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_cancer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_cancer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_problemas_psicosomaticos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_problemas_psicosomaticos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_padecimiento_actual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_padecimiento_actual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SysMec.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_fracturas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_donde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_fractura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_cirugias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_cirugias_donde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_cirugia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_acci_no_laborales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_acci_laborales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_fracturas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_donde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_fractura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_cirugias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_cirugias_donde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_cirugia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_acci_no_laborales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_acci_laborales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_quirurgicos_traumati }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_pk_quirurgicos_traumati }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_quirurgicos_traumati })
+        </td>
+    </tr>
+}
+
+</table>

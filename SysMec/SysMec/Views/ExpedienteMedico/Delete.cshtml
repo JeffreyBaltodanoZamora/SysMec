@@ -1,0 +1,104 @@
+﻿@model SysMec.Exp_Medico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Exp_Medico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_expMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_expMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.i_fk_gineco_obstetricos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.i_fk_gineco_obstetricos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heredo_familiar.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heredo_familiar.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heredo_familiar1.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heredo_familiar1.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_medico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Med_Medico.vc_Nombre_medico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personales_Patologico.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personales_Patologico.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Us_UsuarioExterno.vc_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Us_UsuarioExterno.vc_nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

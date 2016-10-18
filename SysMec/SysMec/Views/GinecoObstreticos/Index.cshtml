@@ -1,0 +1,123 @@
+﻿@model IEnumerable<SysMec.Gineco_Obstreticos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_menarca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_fur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_relaciones_sexuales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_planificar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_ritmo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_metodo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_duracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_partos_eutocicos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_forceps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_cesareas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_flujos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sangrados_anormales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_pap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_pap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_resultado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_menarca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_fur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_relaciones_sexuales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_planificar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_ritmo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_metodo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_duracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_partos_eutocicos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_forceps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_cesareas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_flujos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sangrados_anormales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_pap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_pap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_resultado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_gineco_obstetricos }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_pk_gineco_obstetricos }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_gineco_obstetricos })
+        </td>
+    </tr>
+}
+
+</table>

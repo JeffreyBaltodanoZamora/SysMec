@@ -47,6 +47,15 @@
           <Property Name="vc_acci_laborales" Type="varchar" MaxLength="20" />
           <Property Name="i_fk_estado" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Diagnostico">
+          <Key>
+            <PropertyRef Name="i_PK_Diagnostico" />
+          </Key>
+          <Property Name="i_PK_Diagnostico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="i_FK_Expediente" Type="int" Nullable="false" />
+          <Property Name="vc_Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="dt_diagnostico" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="Estado">
           <Key>
             <PropertyRef Name="i_pk_estado" />
@@ -200,6 +209,18 @@
             </Principal>
             <Dependent Role="Cita">
               <PropertyRef Name="i_fk_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnostico_expediente">
+          <End Role="Exp_Medico" Type="Self.Exp_Medico" Multiplicity="1" />
+          <End Role="Diagnostico" Type="Self.Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exp_Medico">
+              <PropertyRef Name="i_PK_ExpMedico" />
+            </Principal>
+            <Dependent Role="Diagnostico">
+              <PropertyRef Name="i_FK_Expediente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -394,6 +415,7 @@
           <EntitySet Name="Cita" EntityType="Self.Cita" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CM_CAT_ANTECEDENTES_PER_PATOLOGICOS" EntityType="Self.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS" EntityType="Self.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diagnostico" EntityType="Self.Diagnostico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exp_Medico" EntityType="Self.Exp_Medico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gineco_Obstreticos" EntityType="Self.Gineco_Obstreticos" Schema="dbo" store:Type="Tables" />
@@ -413,6 +435,10 @@
           <AssociationSet Name="FK_Cita_Estado" Association="Self.FK_Cita_Estado">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cita" EntitySet="Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnostico_expediente" Association="Self.FK_Diagnostico_expediente">
+            <End Role="Exp_Medico" EntitySet="Exp_Medico" />
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
           </AssociationSet>
           <AssociationSet Name="FK_Exp_Medico_Ant_pers_patologicos" Association="Self.FK_Exp_Medico_Ant_pers_patologicos">
             <End Role="CM_CAT_ANTECEDENTES_PER_PATOLOGICOS" EntitySet="CM_CAT_ANTECEDENTES_PER_PATOLOGICOS" />
@@ -557,6 +583,7 @@
           <NavigationProperty Name="Med_Medico" Relationship="Self.FK_Exp_Medico_Med_Medico" FromRole="Exp_Medico" ToRole="Med_Medico" />
           <NavigationProperty Name="Personales_Patologico" Relationship="Self.FK_Exp_Medico_Personales_Patologico" FromRole="Exp_Medico" ToRole="Personales_Patologico" />
           <NavigationProperty Name="Us_UsuarioExterno" Relationship="Self.FK_Exp_Medico_Us_UsuarioExterno" FromRole="Exp_Medico" ToRole="Us_UsuarioExterno" />
+          <NavigationProperty Name="Diagnostico" Relationship="BD_SysMecModel.FK_Diagnostico_expediente" FromRole="Exp_Medico" ToRole="Diagnostico" />
         </EntityType>
         <EntityType Name="Gineco_Obstreticos">
           <Key>
@@ -934,35 +961,40 @@
             <End Role="Exp_Medico" EntitySet="Exp_Medico" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="version" Mode="In" Type="Int32" />
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_creatediagram">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="version" Mode="In" Type="Int32" />
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_dropdiagram">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BD_SysMecModel.sp_helpdiagramdefinition_Result)">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BD_SysMecModel.sp_helpdiagrams_Result)">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_renamediagram">
-          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Diagnostico" EntityType="BD_SysMecModel.Diagnostico" />
+          <AssociationSet Name="FK_Diagnostico_expediente" Association="BD_SysMecModel.FK_Diagnostico_expediente">
+            <End Role="Exp_Medico" EntitySet="Exp_Medico" />
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -975,6 +1007,28 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Diagnostico">
+          <Key>
+            <PropertyRef Name="i_PK_Diagnostico" />
+          </Key>
+          <Property Name="i_PK_Diagnostico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="i_FK_Expediente" Type="Int32" Nullable="false" />
+          <Property Name="vc_Descripcion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dt_diagnostico" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Exp_Medico" Relationship="BD_SysMecModel.FK_Diagnostico_expediente" FromRole="Diagnostico" ToRole="Exp_Medico" />
+        </EntityType>
+        <Association Name="FK_Diagnostico_expediente">
+          <End Type="BD_SysMecModel.Exp_Medico" Role="Exp_Medico" Multiplicity="1" />
+          <End Type="BD_SysMecModel.Diagnostico" Role="Diagnostico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exp_Medico">
+              <PropertyRef Name="i_PK_ExpMedico" />
+            </Principal>
+            <Dependent Role="Diagnostico">
+              <PropertyRef Name="i_FK_Expediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1178,6 +1232,16 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BD_SysMecModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BD_SysMecModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Diagnostico">
+            <EntityTypeMapping TypeName="BD_SysMecModel.Diagnostico">
+              <MappingFragment StoreEntitySet="Diagnostico">
+                <ScalarProperty Name="dt_diagnostico" ColumnName="dt_diagnostico" />
+                <ScalarProperty Name="vc_Descripcion" ColumnName="vc_Descripcion" />
+                <ScalarProperty Name="i_FK_Expediente" ColumnName="i_FK_Expediente" />
+                <ScalarProperty Name="i_PK_Diagnostico" ColumnName="i_PK_Diagnostico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

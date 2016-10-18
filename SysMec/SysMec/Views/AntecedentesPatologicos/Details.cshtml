@@ -1,0 +1,98 @@
+﻿@model SysMec.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CM_CAT_ANTECEDENTES_PER_PATOLOGICOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_digestivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_aparato_gene_urinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_aparato_gene_urinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sist_nervioso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sist_nervioso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sist_musc_esquele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sist_musc_esquele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistem_endocri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistem_endocri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sistm_cardio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sistm_cardio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Problems_psicolo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Problems_psicolo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_antecents_patologicos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

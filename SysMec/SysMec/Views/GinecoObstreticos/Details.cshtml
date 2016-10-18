@@ -1,0 +1,146 @@
+﻿@model SysMec.Gineco_Obstreticos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gineco_Obstreticos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_menarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_menarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_fur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_fur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_relaciones_sexuales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_relaciones_sexuales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_planificar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_planificar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_ritmo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_ritmo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_metodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_metodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_partos_eutocicos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_partos_eutocicos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_forceps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_forceps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_cesareas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_cesareas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_flujos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_flujos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_sangrados_anormales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_sangrados_anormales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_pap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_pap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_pap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_pap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_resultado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_resultado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_gineco_obstetricos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

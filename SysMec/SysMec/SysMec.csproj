@@ -207,12 +207,21 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AntecedentesPatologicosController.cs" />
+    <Compile Include="Controllers\AntecedentesQuirurgicosTraumaticosController.cs" />
     <Compile Include="Controllers\CatalogosController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
+    <Compile Include="Controllers\ExpedienteMedicoController.cs" />
+    <Compile Include="Controllers\GinecoObstreticosController.cs" />
+    <Compile Include="Controllers\HeredoFamiliarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Med_MedicoController.cs" />
+    <Compile Include="Controllers\PersonalesPatologicoController.cs" />
     <Compile Include="Controllers\UsuarioExternoController.cs" />
+    <Compile Include="Diagnostico.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Estado.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -361,6 +370,36 @@
     <Content Include="Views\Med_Medico\Details.cshtml" />
     <Content Include="Views\Med_Medico\Edit.cshtml" />
     <Content Include="Views\Med_Medico\Index.cshtml" />
+    <Content Include="Views\AntecedentesPatologicos\Create.cshtml" />
+    <Content Include="Views\AntecedentesPatologicos\Delete.cshtml" />
+    <Content Include="Views\AntecedentesPatologicos\Details.cshtml" />
+    <Content Include="Views\AntecedentesPatologicos\Edit.cshtml" />
+    <Content Include="Views\AntecedentesPatologicos\Index.cshtml" />
+    <Content Include="Views\GinecoObstreticos\Create.cshtml" />
+    <Content Include="Views\GinecoObstreticos\Delete.cshtml" />
+    <Content Include="Views\GinecoObstreticos\Details.cshtml" />
+    <Content Include="Views\GinecoObstreticos\Edit.cshtml" />
+    <Content Include="Views\GinecoObstreticos\Index.cshtml" />
+    <Content Include="Views\HeredoFamiliar\Create.cshtml" />
+    <Content Include="Views\HeredoFamiliar\Delete.cshtml" />
+    <Content Include="Views\HeredoFamiliar\Details.cshtml" />
+    <Content Include="Views\HeredoFamiliar\Edit.cshtml" />
+    <Content Include="Views\HeredoFamiliar\Index.cshtml" />
+    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Create.cshtml" />
+    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Delete.cshtml" />
+    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Details.cshtml" />
+    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Edit.cshtml" />
+    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Index.cshtml" />
+    <Content Include="Views\PersonalesPatologico\Create.cshtml" />
+    <Content Include="Views\PersonalesPatologico\Delete.cshtml" />
+    <Content Include="Views\PersonalesPatologico\Details.cshtml" />
+    <Content Include="Views\PersonalesPatologico\Edit.cshtml" />
+    <Content Include="Views\PersonalesPatologico\Index.cshtml" />
+    <Content Include="Views\ExpedienteMedico\Create.cshtml" />
+    <Content Include="Views\ExpedienteMedico\Delete.cshtml" />
+    <Content Include="Views\ExpedienteMedico\Details.cshtml" />
+    <Content Include="Views\ExpedienteMedico\Edit.cshtml" />
+    <Content Include="Views\ExpedienteMedico\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

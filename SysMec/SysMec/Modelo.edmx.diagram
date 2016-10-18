@@ -32,6 +32,8 @@
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Med_Medico" ManuallyRouted="false" />
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Personales_Patologico" ManuallyRouted="false" />
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Us_UsuarioExterno" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Diagnostico" Width="1.5" PointX="7.5" PointY="20.375" />
+        <AssociationConnector Association="BD_SysMecModel.FK_Diagnostico_expediente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

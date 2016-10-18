@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SysMec.Exp_Medico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear expediente médico", "Create", "HeredoFamiliar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_expMedico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.i_fk_gineco_obstetricos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Heredo_familiar.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Heredo_familiar1.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_medico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personales_Patologico.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Us_UsuarioExterno.vc_nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_expMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.i_fk_gineco_obstetricos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Heredo_familiar.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Heredo_familiar1.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Med_Medico.vc_Nombre_medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personales_Patologico.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Us_UsuarioExterno.vc_nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_PK_ExpMedico }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_PK_ExpMedico }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_PK_ExpMedico })
+        </td>
+    </tr>
+}
+
+</table>

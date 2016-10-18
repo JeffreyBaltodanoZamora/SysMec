@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SysMec.Heredo_familiar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_piel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_aparato_respiratorio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_aparato_geneto_urinario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistema_nervioso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistema_musco_esque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistema_endocrino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_sistema_cardio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_alergias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_cancer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_problemas_psicosomaticos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_padecimiento_actual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_piel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_aparato_respiratorio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_aparato_digestivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_aparato_geneto_urinario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistema_nervioso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistema_musco_esque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistema_endocrino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_sistema_cardio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_alergias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_cancer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_problemas_psicosomaticos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_padecimiento_actual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_heredo_famili }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_pk_heredo_famili }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_heredo_famili })
+        </td>
+    </tr>
+}
+
+</table>
