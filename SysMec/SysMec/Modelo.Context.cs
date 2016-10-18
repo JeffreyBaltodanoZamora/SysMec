@@ -35,7 +35,6 @@ namespace SysMec
         public virtual DbSet<Gineco_Obstreticos> Gineco_Obstreticos { get; set; }
         public virtual DbSet<Heredo_familiar> Heredo_familiar { get; set; }
         public virtual DbSet<Med_Medico> Med_Medico { get; set; }
-        public virtual DbSet<Personales_Patologico> Personales_Patologico { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Us_UsuarioExterno> Us_UsuarioExterno { get; set; }
         public virtual DbSet<Diagnostico> Diagnostico { get; set; }

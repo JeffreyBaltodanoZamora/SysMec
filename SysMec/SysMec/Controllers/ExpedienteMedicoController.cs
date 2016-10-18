@@ -17,7 +17,7 @@ namespace SysMec.Controllers
         // GET: ExpedienteMedico
         public ActionResult Index()
         {
-            var exp_Medico = db.Exp_Medico.Include(e => e.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS).Include(e => e.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS).Include(e => e.Estado).Include(e => e.Heredo_familiar).Include(e => e.Heredo_familiar1).Include(e => e.Med_Medico).Include(e => e.Personales_Patologico).Include(e => e.Us_UsuarioExterno);
+            var exp_Medico = db.Exp_Medico.Include(e => e.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS).Include(e => e.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS).Include(e => e.Estado).Include(e => e.Heredo_familiar).Include(e => e.Heredo_familiar1).Include(e => e.Med_Medico).Include(e => e.Us_UsuarioExterno);
             return View(exp_Medico.ToList());
         }
 
@@ -45,7 +45,6 @@ namespace SysMec.Controllers
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel");
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel");
             ViewBag.i_fk_id_medico = new SelectList(db.Med_Medico, "i_pk_id_medico", "vc_Nombre_medico");
-            ViewBag.i_fk_antecents_patologicos = new SelectList(db.Personales_Patologico, "i_pk_antecents_patologicos", "vc_piel");
             ViewBag.i_FK_id_usuario = new SelectList(db.Us_UsuarioExterno, "i_PK_id_usuario", "vc_nombre");
             return View();
         }
@@ -70,7 +69,6 @@ namespace SysMec.Controllers
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_id_medico = new SelectList(db.Med_Medico, "i_pk_id_medico", "vc_Nombre_medico", exp_Medico.i_fk_id_medico);
-            ViewBag.i_fk_antecents_patologicos = new SelectList(db.Personales_Patologico, "i_pk_antecents_patologicos", "vc_piel", exp_Medico.i_fk_antecents_patologicos);
             ViewBag.i_FK_id_usuario = new SelectList(db.Us_UsuarioExterno, "i_PK_id_usuario", "vc_nombre", exp_Medico.i_FK_id_usuario);
             return View(exp_Medico);
         }
@@ -93,7 +91,6 @@ namespace SysMec.Controllers
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_id_medico = new SelectList(db.Med_Medico, "i_pk_id_medico", "vc_Nombre_medico", exp_Medico.i_fk_id_medico);
-            ViewBag.i_fk_antecents_patologicos = new SelectList(db.Personales_Patologico, "i_pk_antecents_patologicos", "vc_piel", exp_Medico.i_fk_antecents_patologicos);
             ViewBag.i_FK_id_usuario = new SelectList(db.Us_UsuarioExterno, "i_PK_id_usuario", "vc_nombre", exp_Medico.i_FK_id_usuario);
             return View(exp_Medico);
         }
@@ -117,7 +114,6 @@ namespace SysMec.Controllers
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_heredo_famili = new SelectList(db.Heredo_familiar, "i_pk_heredo_famili", "vc_piel", exp_Medico.i_fk_heredo_famili);
             ViewBag.i_fk_id_medico = new SelectList(db.Med_Medico, "i_pk_id_medico", "vc_Nombre_medico", exp_Medico.i_fk_id_medico);
-            ViewBag.i_fk_antecents_patologicos = new SelectList(db.Personales_Patologico, "i_pk_antecents_patologicos", "vc_piel", exp_Medico.i_fk_antecents_patologicos);
             ViewBag.i_FK_id_usuario = new SelectList(db.Us_UsuarioExterno, "i_PK_id_usuario", "vc_nombre", exp_Medico.i_FK_id_usuario);
             return View(exp_Medico);
         }

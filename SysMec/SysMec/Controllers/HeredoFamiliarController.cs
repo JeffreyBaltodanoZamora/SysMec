@@ -54,7 +54,7 @@ namespace SysMec.Controllers
             {
                 db.Heredo_familiar.Add(heredo_familiar);
                 db.SaveChanges();
-                return RedirectToAction("Create","PersonalesPatologico");
+                return RedirectToAction("Create","AntecedentesPatologicos");
             }
 
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", heredo_familiar.i_fk_estado);

@@ -24,7 +24,6 @@ namespace SysMec
             this.Gineco_Obstreticos = new HashSet<Gineco_Obstreticos>();
             this.Heredo_familiar = new HashSet<Heredo_familiar>();
             this.Med_Medico = new HashSet<Med_Medico>();
-            this.Personales_Patologico = new HashSet<Personales_Patologico>();
             this.Us_UsuarioExterno = new HashSet<Us_UsuarioExterno>();
         }
     
@@ -46,8 +45,6 @@ namespace SysMec
         public virtual ICollection<Heredo_familiar> Heredo_familiar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Med_Medico> Med_Medico { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personales_Patologico> Personales_Patologico { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Us_UsuarioExterno> Us_UsuarioExterno { get; set; }
     }

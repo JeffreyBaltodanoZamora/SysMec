@@ -25,7 +25,6 @@ namespace SysMec
         public int i_fk_id_medico { get; set; }
         public System.DateTime dt_expMedico { get; set; }
         public int i_fk_estado { get; set; }
-        public int i_fk_antecents_patologicos { get; set; }
         public Nullable<int> i_fk_gineco_obstetricos { get; set; }
         public int i_fk_heredo_famili { get; set; }
         public int i_fk_quirurgicos_traumati { get; set; }
@@ -37,7 +36,6 @@ namespace SysMec
         public virtual Heredo_familiar Heredo_familiar { get; set; }
         public virtual Heredo_familiar Heredo_familiar1 { get; set; }
         public virtual Med_Medico Med_Medico { get; set; }
-        public virtual Personales_Patologico Personales_Patologico { get; set; }
         public virtual Us_UsuarioExterno Us_UsuarioExterno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diagnostico> Diagnostico { get; set; }
