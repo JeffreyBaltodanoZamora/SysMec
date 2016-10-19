@@ -28,6 +28,7 @@ namespace SysMec
         public System.DateTime dt_turno_inicio { get; set; }
         public System.DateTime dt_turno_fin { get; set; }
         public int i_fk_estado { get; set; }
+        public int i_pk_turno_id { get; set; }
     
         public virtual Estado Estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
