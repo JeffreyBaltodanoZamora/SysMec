@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="i_pk_cita" />
           </Key>
-          <Property Name="i_pk_cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="i_pk_cita" Type="int" Nullable="false" />
           <Property Name="i_fk_usuario" Type="int" Nullable="false" />
           <Property Name="i_fk_medico" Type="int" Nullable="false" />
           <Property Name="dt_hora_inicio" Type="datetime" Nullable="false" />
@@ -73,6 +73,7 @@
           <Property Name="i_fk_id_medico" Type="int" Nullable="false" />
           <Property Name="dt_expMedico" Type="datetime" Nullable="false" />
           <Property Name="i_fk_estado" Type="int" Nullable="false" />
+          <Property Name="i_fk_antecents_patologicos" Type="int" Nullable="false" />
           <Property Name="i_fk_gineco_obstetricos" Type="int" />
           <Property Name="i_fk_heredo_famili" Type="int" Nullable="false" />
           <Property Name="i_fk_quirurgicos_traumati" Type="int" Nullable="false" />
@@ -124,6 +125,7 @@
             <PropertyRef Name="i_pk_id_medico" />
           </Key>
           <Property Name="i_pk_id_medico" Type="int" Nullable="false" />
+          <Property Name="i_pk_turno_id" Type="int" Nullable="false" />
           <Property Name="vc_Nombre_medico" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="vc_primer_apellido" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="vc_segundo_apellido" Type="varchar" MaxLength="10" Nullable="false" />
@@ -530,6 +532,7 @@
           <NavigationProperty Name="Med_Medico" Relationship="Self.FK_Exp_Medico_Med_Medico" FromRole="Exp_Medico" ToRole="Med_Medico" />
           <NavigationProperty Name="Us_UsuarioExterno" Relationship="Self.FK_Exp_Medico_Us_UsuarioExterno" FromRole="Exp_Medico" ToRole="Us_UsuarioExterno" />
           <NavigationProperty Name="Diagnostico" Relationship="BD_SysMecModel.FK_Diagnostico_expediente" FromRole="Exp_Medico" ToRole="Diagnostico" />
+          <Property Name="i_fk_antecents_patologicos" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Gineco_Obstreticos">
           <Key>
@@ -590,6 +593,7 @@
           <Property Name="i_fk_estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Med_Medico_Estado" FromRole="Med_Medico" ToRole="Estado" />
           <NavigationProperty Name="Exp_Medico" Relationship="Self.FK_Exp_Medico_Med_Medico" FromRole="Med_Medico" ToRole="Exp_Medico" />
+          <Property Name="i_pk_turno_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -986,6 +990,7 @@
           <EntitySetMapping Name="Exp_Medico">
             <EntityTypeMapping TypeName="BD_SysMecModel.Exp_Medico">
               <MappingFragment StoreEntitySet="Exp_Medico">
+                <ScalarProperty Name="i_fk_antecents_patologicos" ColumnName="i_fk_antecents_patologicos" />
                 <ScalarProperty Name="i_PK_ExpMedico" ColumnName="i_PK_ExpMedico" />
                 <ScalarProperty Name="i_FK_id_usuario" ColumnName="i_FK_id_usuario" />
                 <ScalarProperty Name="i_fk_id_medico" ColumnName="i_fk_id_medico" />
@@ -1044,6 +1049,7 @@
           <EntitySetMapping Name="Med_Medico">
             <EntityTypeMapping TypeName="BD_SysMecModel.Med_Medico">
               <MappingFragment StoreEntitySet="Med_Medico">
+                <ScalarProperty Name="i_pk_turno_id" ColumnName="i_pk_turno_id" />
                 <ScalarProperty Name="i_pk_id_medico" ColumnName="i_pk_id_medico" />
                 <ScalarProperty Name="vc_Nombre_medico" ColumnName="vc_Nombre_medico" />
                 <ScalarProperty Name="vc_primer_apellido" ColumnName="vc_primer_apellido" />
