@@ -8,6 +8,13 @@
 
 <p>
     @Html.ActionLink("Crear expediente médico", "Create", "HeredoFamiliar")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Busqueda por numero de expediente: @Html.TextBox("id_expediente")
+        <input type="submit" value="Buscar" class="btn-primary" />
+    </p>
+    }
 </p>
 <table class="table">
     <tr>

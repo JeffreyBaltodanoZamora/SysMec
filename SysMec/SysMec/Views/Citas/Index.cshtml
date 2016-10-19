@@ -8,6 +8,13 @@
 
 <p>
     @Html.ActionLink("Crear nueva cita médica", "Create")
+    @using (Html.BeginForm())
+    {
+        <p>
+            Busqueda de cita medica por cedula de usuario: @Html.TextBox("cedula")
+            <input type="submit" value="Buscar" class="btn-primary"/>
+        </p>
+    }
 </p>
 <table class="table">
     <tr>

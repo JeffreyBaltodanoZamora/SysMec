@@ -15,7 +15,23 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: UsuarioExterno
-        public ActionResult Index()
+        public ActionResult Index(String cedula)
+        {
+            int cedulaNum = -1;
+            var usuario_encontrado = from s in db.Us_UsuarioExterno where s.i_PK_id_usuario == cedulaNum select s;
+            if (!String.IsNullOrEmpty(cedula))
+            {
+                try { 
+                cedulaNum = Convert.ToInt32(cedula);
+                usuario_encontrado = usuario_encontrado.Where(j => j.i_PK_id_usuario == cedulaNum);
+                }
+                catch (Exception) { }
+            }
+            return View(usuario_encontrado);
+        }
+
+        [HttpPost]
+        public ActionResult mostrarTodos()
         {
             var us_UsuarioExterno = db.Us_UsuarioExterno.Include(u => u.Estado);
             return View(us_UsuarioExterno.ToList());

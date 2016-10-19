@@ -15,10 +15,19 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: Citas
-        public ActionResult Index()
+        public ActionResult Index(string cedula)
         {
-            var cita = db.Cita.Include(c => c.Estado);
-            return View(cita.ToList());
+            int cedulaNum = -1;
+            var usuario_encontrado = from s in db.Cita where s.i_fk_usuario == cedulaNum select s;
+            if (!String.IsNullOrEmpty(cedula))
+            {
+                try { 
+                cedulaNum = Convert.ToInt32(cedula);
+                usuario_encontrado = usuario_encontrado.Where(j => j.i_fk_usuario == cedulaNum);
+                }
+                catch (Exception) { }
+            }
+            return View(usuario_encontrado);
         }
 
         // GET: Citas/Details/5
@@ -60,6 +69,8 @@ namespace SysMec.Controllers
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", cita.i_fk_estado);
             return View(cita);
         }
+
+       
 
         // GET: Citas/Edit/5
         public ActionResult Edit(int? id)

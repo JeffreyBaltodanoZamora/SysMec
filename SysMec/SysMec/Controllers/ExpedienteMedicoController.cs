@@ -15,10 +15,20 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: ExpedienteMedico
-        public ActionResult Index()
+        public ActionResult Index(string id_expediente)
         {
-            var exp_Medico = db.Exp_Medico.Include(e => e.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS).Include(e => e.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS).Include(e => e.Estado).Include(e => e.Heredo_familiar).Include(e => e.Heredo_familiar1).Include(e => e.Med_Medico).Include(e => e.Us_UsuarioExterno);
-            return View(exp_Medico.ToList());
+            int id_expedienteNum = -1;
+            var usuario_encontrado = from s in db.Exp_Medico where s.i_PK_ExpMedico == id_expedienteNum select s;
+            if (!String.IsNullOrEmpty(id_expediente))
+            {
+                try
+                {
+                    id_expedienteNum = Convert.ToInt32(id_expediente);
+                    usuario_encontrado = usuario_encontrado.Where(j => j.i_PK_ExpMedico == id_expedienteNum);
+                }
+                catch (Exception) { }
+            }
+            return View(usuario_encontrado);
         }
 
         // GET: ExpedienteMedico/Details/5
