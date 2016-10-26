@@ -4,6 +4,8 @@
     ViewBag.Title = "Index";
 }
 
+<br /><br />
+
 <h5>Gestión de cita médica</h5>
 
 <p>
@@ -25,13 +27,13 @@
             Cédula de Médico
         </th>
         <th>
-            Fecha y hora de inicio de la cita médica
+            Fecha y hora de cita médica
         </th>
-        <th>
+        @*<th>
             Fecha y hora de finalización de la cita médica
-        </th>
+        </th>*@
         <th>
-           Descripción
+           Estado
         </th>
         <th></th>
     </tr>
@@ -47,9 +49,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.dt_hora_inicio)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.dt_hora_fin)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
         </td>

@@ -149,7 +149,19 @@ namespace SysMec.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Exp_Medico exp_Medico = db.Exp_Medico.Find(id);
-            db.Exp_Medico.Remove(exp_Medico);
+
+            var r = from b in db.Exp_Medico
+                    where b.i_PK_ExpMedico == id
+                    select b;
+
+            foreach (var t in r)
+            {
+                if (t.i_fk_estado == 3)//valida si esta activado; 3 es la llave primaria de la tabla estado, representa "Activado"
+                    t.i_fk_estado = 2;
+                else if(t.i_fk_estado == 2)//valida si esta desactivado; 2 es la llave primaria de la tabla estado, representa "Desactivado"
+                    t.i_fk_estado = 3;
+            }
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }

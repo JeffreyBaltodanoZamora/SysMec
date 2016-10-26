@@ -23,45 +23,36 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.i_fk_gineco_obstetricos)
+            @Html.ActionLink("Mostrar detalles", "Details", "GinecoObstreticos", new { id = Model.i_PK_ExpMedico }, null)
         </dd>
 
         <dt>
-           Piel
+           Antecedentes personales patológicos
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+            @Html.ActionLink("Mostrar detalles", "Details", "AntecedentesPatologicos", new { id = Model.i_PK_ExpMedico }, null)
         </dd>
 
         <dt>
-            Fracturas
+            Antecedentes quirurgicos y traumaticos
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+          @Html.ActionLink("Mostrar detalles", "Details", "AntecedentesQuirurgicosTraumaticos", new { id = Model.i_PK_ExpMedico }, null)
+
         </dd>
 
         <dt>
-            Descripción
+            Heredo familiar
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+           @Html.ActionLink("Mostrar detalles", "Details", "HeredoFamiliar", new { id = Model.i_PK_ExpMedico }, null)
         </dd>
 
         <dt>
-            Piel
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Heredo_familiar.vc_piel)
-        </dd>
-
-        
-
-        <dt>
-            Nombre de Médico
+            Nombre de médico
         </dt>
 
         <dd>
@@ -76,9 +67,16 @@
             @Html.DisplayFor(model => model.Us_UsuarioExterno.vc_nombre)
         </dd>
 
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.vc_descripcion)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.i_PK_ExpMedico }) |
+    @Html.ActionLink("Editar", "Edit", "HeredoFamiliar", new { id = Model.i_PK_ExpMedico }, null)  |
     @Html.ActionLink("Regresar", "Index")
 </p>

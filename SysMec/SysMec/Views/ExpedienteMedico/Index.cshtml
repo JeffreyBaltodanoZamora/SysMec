@@ -4,8 +4,7 @@
     ViewBag.Title = "Expediente Médico";
 }
 
-<h5>Index Expediente Médico</h5>
-
+<br /><br /><br />
 <p>
     @Html.ActionLink("Crear expediente médico", "Create", "HeredoFamiliar")
     @using (Html.BeginForm())
@@ -19,67 +18,40 @@
 <table class="table">
     <tr>
         <th>
-            Fecha de Expediente Médico
+            Número de expediente Médico
         </th>
         <th>
-            Gineco_obstetricos
+            Fecha de expediente Médico
         </th>
         <th>
-            Piel
-        </th>
-        
-        <th>
-            Fracturas
+           Nombre de usuario
         </th>
         <th>
-            Descripción
+            Estado
         </th>
-        <th>
-            Piel
-        </th>
-       
-        <th>
-            Nombre de Médico
-        </th>
-        <th>
-           Nombre Usuario
-        </th>
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.i_PK_ExpMedico)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.dt_expMedico)
         </td>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.i_fk_gineco_obstetricos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+            @Html.DisplayFor(modelItem => item.Us_UsuarioExterno.vc_nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Heredo_familiar.vc_piel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Heredo_familiar1.vc_piel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Med_Medico.vc_Nombre_medico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Us_UsuarioExterno.vc_nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.i_PK_ExpMedico }, null) |
+            @Html.ActionLink("Editar", "Edit", "HeredoFamiliar", new { id = item.i_PK_ExpMedico }, null) |
             @Html.ActionLink("Detalles", "Details", new { id=item.i_PK_ExpMedico }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_PK_ExpMedico })
+            @Html.ActionLink("Activar / Desactivar", "Delete", new { id=item.i_PK_ExpMedico })
         </td>
     </tr>
 }
