@@ -8,6 +8,26 @@
 
 <h5>Gestión de cita médica</h5>
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar</title>
+    <link type="text/css" rel="stylesheet" href="~/Views/Citas/calendario.css">
+    <script type="text/javascript" src="~/Views/Citas/calendario.js"></script>
+</head>
+<body>
+    <div id="calendar-container">
+        <div id="calendar-header">
+            <span id="calendar-month-year"></span>
+        </div>
+        <div id="calendar-dates">
+        </div>
+    </div>
+</body>
+</html>
+
+
 <p>
     @Html.ActionLink("Crear nueva cita médica", "Create")
     @using (Html.BeginForm())
