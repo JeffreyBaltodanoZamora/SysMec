@@ -1,17 +1,17 @@
 ﻿@model SysMec.Exp_Medico
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Expediente Médico";
 }
 
-<h2>Details</h2>
+<h5>Detalles Expediente Médico</h5>
 
 <div>
-    <h4>Exp_Medico</h4>
+  
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.dt_expMedico)
+            Fecha de Expediente Médico
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.i_fk_gineco_obstetricos)
+            Gineco_obstetricos
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+           Piel
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+            Fracturas
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -51,23 +51,17 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Heredo_familiar.vc_piel)
+            Piel
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Heredo_familiar.vc_piel)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Heredo_familiar1.vc_piel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Heredo_familiar1.vc_piel)
-        </dd>
+        
 
         <dt>
-            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_medico)
+            Nombre de Médico
         </dt>
 
         <dd>
@@ -75,7 +69,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Us_UsuarioExterno.vc_nombre)
+            Nombre de Usuario
         </dt>
 
         <dd>
@@ -85,6 +79,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_PK_ExpMedico }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_PK_ExpMedico }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>
