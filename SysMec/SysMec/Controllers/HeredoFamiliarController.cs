@@ -88,7 +88,8 @@ namespace SysMec.Controllers
             {
                 db.Entry(heredo_familiar).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var item = heredo_familiar.i_pk_heredo_famili;
+                return RedirectToAction("Edit", "AntecedentesPatologicos", new { id = item });
             }
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", heredo_familiar.i_fk_estado);
             return View(heredo_familiar);

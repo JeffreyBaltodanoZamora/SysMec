@@ -88,7 +88,8 @@ namespace SysMec.Controllers
             {
                 db.Entry(cM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var item = cM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.i_pk_quirurgicos_traumati;
+                return RedirectToAction("Edit", "GinecoObstreticos", new { id = item });
             }
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", cM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.i_fk_estado);
             return View(cM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS);

@@ -88,7 +88,8 @@ namespace SysMec.Controllers
             {
                 db.Entry(cM_CAT_ANTECEDENTES_PER_PATOLOGICOS).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var item = cM_CAT_ANTECEDENTES_PER_PATOLOGICOS.i_pk_antecents_patologicos;
+                return RedirectToAction("Edit", "AntecedentesQuirurgicosTraumaticos", new { id = item });
             }
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", cM_CAT_ANTECEDENTES_PER_PATOLOGICOS.i_fk_estado);
             return View(cM_CAT_ANTECEDENTES_PER_PATOLOGICOS);
