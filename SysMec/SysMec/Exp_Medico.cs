@@ -29,7 +29,6 @@ namespace SysMec
         public int i_fk_heredo_famili { get; set; }
         public int i_fk_quirurgicos_traumati { get; set; }
         public int i_fk_antecents_patologicos_personales { get; set; }
-        public int i_fk_antecents_patologicos { get; set; }
     
         public virtual CM_CAT_ANTECEDENTES_PER_PATOLOGICOS CM_CAT_ANTECEDENTES_PER_PATOLOGICOS { get; set; }
         public virtual CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS { get; set; }

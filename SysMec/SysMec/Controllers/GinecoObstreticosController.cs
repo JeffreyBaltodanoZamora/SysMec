@@ -88,7 +88,8 @@ namespace SysMec.Controllers
             {
                 db.Entry(gineco_Obstreticos).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var item = gineco_Obstreticos.i_pk_gineco_obstetricos;
+                return RedirectToAction("Edit", "ExpedienteMedico", new { id = item });
             }
             ViewBag.i_fk_estado = new SelectList(db.Estado, "i_pk_estado", "vc_descripcion", gineco_Obstreticos.i_fk_estado);
             return View(gineco_Obstreticos);
