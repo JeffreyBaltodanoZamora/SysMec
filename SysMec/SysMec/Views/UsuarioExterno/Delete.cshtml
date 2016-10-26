@@ -1,18 +1,18 @@
 ﻿@model SysMec.Us_UsuarioExterno
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar usuario de convenios";
 }
 
-<h2>Eliminar</h2>
+<h2>Eliminar usuario de convenios</h2>
 
-<h3>¿Está seguro de eliminar este usuario de convenio?</h3>
+<h5>¿Está seguro de eliminar esto?</h5>
 <div>
-    <h4>Us_UsuarioExterno</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_nombre)
+            Nombre
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_apellido1)
+            Primer Apellido
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_apellido2)
+            Segundo Apellido
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_direccion)
+            Dirección
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_telefono)
+            Teléfono
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_nacimiento)
+            Fecha de Nacimiento
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sexo)
+            Sexo
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_email)
+            Correo Elctrónico
         </dt>
 
         <dd>
@@ -76,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_puesto)
+            Puesto
         </dt>
 
         <dd>
@@ -84,7 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -97,7 +97,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar usuario" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
             @Html.ActionLink("Regresar", "Index")
         </div>
     }

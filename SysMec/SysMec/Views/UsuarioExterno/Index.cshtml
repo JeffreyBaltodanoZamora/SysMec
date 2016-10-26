@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SysMec.Us_UsuarioExterno>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "usuario de convenios";
 }
 
 <h2>Gestión usuario convenio</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo usuario convenios", "Create")
+    @Html.ActionLink("Crear nuevo usuario de convenios", "Create")
     @using (Html.BeginForm())
     {
     <p>
@@ -18,34 +18,35 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_nombre)
+           Nombre
+           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_apellido1)
+            Primer Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_apellido2)
+            Segundo Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_direccion)
+            Dirección
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_telefono)
+           Teléfono
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_nacimiento)
+            Fecha de Nacimiento
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sexo)
+            Sexo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_email)
+            Correo Elctrónico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_puesto)
+           Puesto
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </th>
         <th></th>
     </tr>

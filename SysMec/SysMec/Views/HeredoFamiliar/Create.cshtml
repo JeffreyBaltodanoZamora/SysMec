@@ -1,17 +1,17 @@
 ﻿@model SysMec.Heredo_familiar
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Antecedentes Heredo-Familiares";
 }
 
-<h2>Crear Formulario de Antecedentes Heredo-Familiares</h2>
+<h5>Crear Formulario de Antecedentes Heredo-Familiares</h5>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Heredo_familiar</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -135,5 +135,5 @@
 }
 
 <div>
-    @Html.ActionLink("Volver al Index de expediente médico", "Index")
+   
 </div>

@@ -1,45 +1,49 @@
 ﻿@model IEnumerable<SysMec.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = " Antecendentes patológicos";
 }
 
-<h2>Index</h2>
+<h5>Antecendentes patológicos</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo  antecendente patológico", "Create")
+</p>
+<p>
+    Busqueda de Antecendentes patológicos identificacion de formulario: @Html.TextBox("cedula")
+    <input type="submit" value="Buscar" class="btn-primary" />
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_piel)
+            Piel
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+            Aparato Digestivo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_aparato_gene_urinario)
+            Aparato Geneto-Urinario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sist_nervioso)
+            Sistema Nervioso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sist_musc_esquele)
+            Sistema Musco-Esquelético
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistem_endocri)
+            Sistema Endocrinológico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistm_cardio)
+            Sistema Cardiovascular
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_alergias)
+            Alergia a
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Problems_psicolo)
+            Problemas Psicológicos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+           Descripción
         </th>
         <th></th>
     </tr>
@@ -77,9 +81,9 @@
             @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_antecents_patologicos }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_pk_antecents_patologicos }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_antecents_patologicos })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_pk_antecents_patologicos }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_pk_antecents_patologicos }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_pk_antecents_patologicos })
         </td>
     </tr>
 }

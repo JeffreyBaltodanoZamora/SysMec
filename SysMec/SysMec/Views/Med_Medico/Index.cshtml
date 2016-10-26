@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Horario de atención médica</h2>
+<h5>Horario de atención médica</h5>
 
 <p>
     @Html.ActionLink("Crear nuevo horario de atención médica", "Create")
@@ -12,25 +12,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Nombre_medico)
+            Nombre Médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_primer_apellido)
+            Primer Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_segundo_apellido)
+            Segundo Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Especialidad)
+           Especialidad
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_turno_inicio)
+            Turno de Inicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_turno_fin)
+            Turno de fin
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </th>
         <th></th>
     </tr>

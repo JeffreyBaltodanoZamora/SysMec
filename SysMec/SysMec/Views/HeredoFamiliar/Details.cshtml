@@ -1,17 +1,17 @@
 ﻿@model SysMec.Heredo_familiar
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Heredo-Familiares";
 }
 
-<h2>Details</h2>
+<h5>Detalles Heredo-Familiares</h5>
 
 <div>
-    <h4>Heredo_familiar</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_piel)
+            Piel
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_aparato_respiratorio)
+            Aparato Respiratorio
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+            Aparato Digestivo
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_aparato_geneto_urinario)
+            Aparato Geneto-Urinario
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistema_nervioso)
+            Sistema Nervioso
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistema_musco_esque)
+            Sistema Musco-Esquelético
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistema_endocrino)
+            Sistema Endocrinológico
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistema_cardio)
+            Sistema Cardiovascular
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_alergias)
+            Alergias a 
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_cancer)
+            Cáncer 
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_problemas_psicosomaticos)
+            Problemas Psicosomáticos
         </dt>
 
         <dd>
@@ -99,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_padecimiento_actual)
+            Padecimiento Actual
         </dt>
 
         <dd>
@@ -107,7 +107,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -117,6 +117,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_heredo_famili }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_pk_heredo_famili }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

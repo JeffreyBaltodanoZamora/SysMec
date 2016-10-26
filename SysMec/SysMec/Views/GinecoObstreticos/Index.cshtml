@@ -1,63 +1,68 @@
 ﻿@model IEnumerable<SysMec.Gineco_Obstreticos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index Formulario de gineco-Obstréticos";
 }
 
-<h2>Index</h2>
+<h5>Formulario de gineco-Obstréticos</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo Formulario de gineco-Obstréticos", "Create")
+</p>
+
+<p>
+    Busqueda de gineco-Obstreticos por identificacion de formulario: @Html.TextBox("identificacion")
+    <input type="submit" value="Buscar" class="btn-primary" />
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_menarca)
+           Menarca
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_fur)
+            FUR
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_relaciones_sexuales)
+           Relaciones Sexuales
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_planificar)
+            Planifica
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ritmo)
+           Ritmo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_metodo)
+            Método
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_duracion)
+            Duración
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_partos_eutocicos)
+           Partos Eutócicos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_forceps)
+            Forceps
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_cesareas)
+            Cesáreas
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_flujos)
+            Flujos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sangrados_anormales)
+           Sangrado Anormal
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_pap)
+            Pap
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_pap)
+            Fecha del últimp Pap
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_resultado)
+            Resultado
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </th>
         <th></th>
     </tr>
@@ -113,9 +118,9 @@
             @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_gineco_obstetricos }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_pk_gineco_obstetricos }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_gineco_obstetricos })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_pk_gineco_obstetricos }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_pk_gineco_obstetricos }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_pk_gineco_obstetricos })
         </td>
     </tr>
 }

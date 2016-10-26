@@ -1,54 +1,54 @@
 ﻿@model IEnumerable<SysMec.Heredo_familiar>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Antecedentes Heredo-Familiares";
 }
 
-<h2>Index</h2>
+<h5>Antecedentes Heredo-Familiares</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo Formulario de Antecedentes Heredo-Familiares", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_piel)
+           Piel
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_aparato_respiratorio)
+            Aparato Respiratorio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+            Aparato Digestivo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_aparato_geneto_urinario)
+            Aparato Geneto-Urinario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistema_nervioso)
+            Sistema Nervioso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistema_musco_esque)
+            Sistema Musco-Esquelético
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistema_endocrino)
+            Sistema Endocrinológico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_sistema_cardio)
+            Sistema Cardiovascular
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_alergias)
+            Alergias a 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_cancer)
+            Cáncer 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_problemas_psicosomaticos)
+            Problemas Psicosomáticos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_padecimiento_actual)
+            Padecimiento Actual
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+           Descripción
         </th>
         <th></th>
     </tr>
@@ -95,9 +95,9 @@
             @Html.DisplayFor(modelItem => item.Estado.vc_descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_pk_heredo_famili }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_pk_heredo_famili }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_pk_heredo_famili })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_pk_heredo_famili }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_pk_heredo_famili }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_pk_heredo_famili })
         </td>
     </tr>
 }

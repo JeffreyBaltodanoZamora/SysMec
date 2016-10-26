@@ -1,17 +1,17 @@
 ﻿@model SysMec.Gineco_Obstreticos
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles gineco-Obstréticos";
 }
 
-<h2>Details</h2>
+<h5>Detalles gineco-Obstréticos</h5>
 
 <div>
-    <h4>Gineco_Obstreticos</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_menarca)
+            Menarca
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_fur)
+           Fur
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_relaciones_sexuales)
+            Relaciones Sexuales
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_planificar)
+           Planifica
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ritmo)
+            Ritmo
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_metodo)
+            Método
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_duracion)
+            Duración
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_partos_eutocicos)
+            Partos Eutócicos
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_forceps)
+            Forceps
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_cesareas)
+            Cesáreas
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_flujos)
+           Flujos
         </dt>
 
         <dd>
@@ -99,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sangrados_anormales)
+            Sangrado Anormal
         </dt>
 
         <dd>
@@ -107,7 +107,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_pap)
+         Pap
         </dt>
 
         <dd>
@@ -115,7 +115,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_pap)
+            Fecha del últimp Pap
         </dt>
 
         <dd>
@@ -123,7 +123,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_resultado)
+          Resultado
         </dt>
 
         <dd>
@@ -131,7 +131,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -141,6 +141,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_gineco_obstetricos }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_pk_gineco_obstetricos }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

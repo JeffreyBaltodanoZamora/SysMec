@@ -1,17 +1,17 @@
 ﻿@model SysMec.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Antecedentes Quirúrgicos y traumáticos";
 }
 
-<h2>Details</h2>
+<h5>Detalles Antecedentes Quirúrgicos y traumáticos</h5>
 
 <div>
-    <h4>CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_fracturas)
+            Fracturas
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_donde)
+            ¿Donde?
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_fractura)
+            Fecha de Fractura
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_cirugias)
+            Cirugías
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_cirugias_donde)
+            ¿Donde?
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_cirugia)
+            Fecha de Cirugía
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_acci_no_laborales)
+            Accidentes NO Laborales
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_acci_laborales)
+            Accidentes  Laboraleses)
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -85,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_quirurgicos_traumati }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_pk_quirurgicos_traumati }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

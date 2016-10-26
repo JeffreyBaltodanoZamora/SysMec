@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="636c2fad4de149ed8ffb6e4ab777d8d6" Name="Diagram1" ZoomLevel="93">
+      <Diagram DiagramId="636c2fad4de149ed8ffb6e4ab777d8d6" Name="Diagram1" ZoomLevel="87">
         <EntityTypeShape EntityType="BD_SysMecModel.Cita" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.Estado" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_SysMecModel.Exp_Medico" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Exp_Medico" Width="3.25" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.Gineco_Obstreticos" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.Heredo_familiar" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_SysMecModel.Med_Medico" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
@@ -29,7 +29,7 @@
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Heredo_familiar1" ManuallyRouted="false" />
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Med_Medico" ManuallyRouted="false" />
         <AssociationConnector Association="BD_SysMecModel.FK_Exp_Medico_Us_UsuarioExterno" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BD_SysMecModel.Diagnostico" Width="1.5" PointX="7.5" PointY="20.375" />
+        <EntityTypeShape EntityType="BD_SysMecModel.Diagnostico" Width="1.5" PointX="10" PointY="20.25" />
         <AssociationConnector Association="BD_SysMecModel.FK_Diagnostico_expediente" />
       </Diagram>
     </edmx:Diagrams>

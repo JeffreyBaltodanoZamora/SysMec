@@ -1,17 +1,17 @@
 ﻿@model SysMec.Cita
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles cita médica";
 }
 
-<h2>Detalles</h2>
+<h5>Detalles  cita médica</h5>
 
 <div>
-    <h4>Cita</h4>
+ 
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.i_fk_usuario)
+            Cédula de Usuario
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.i_fk_medico)
+            Cédula de Médico
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_hora_inicio)
+            Fecha y hora de inicio de la cita médica
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_hora_fin)
+            Fecha y hora de finalización de la cita médica
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>

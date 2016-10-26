@@ -1,23 +1,23 @@
 ﻿@model SysMec.Med_Medico
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar horario de atención";
 }
 
-<h2>Edit</h2>
+<h5>Editar horario de atención</h5>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Editar horario de atención del médico</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.i_pk_id_medico)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Nombre_medico, htmlAttributes: new { @class = "control-label col-md-2" })
+          @Html.LabelFor(model => model.vc_Nombre_medico, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Nombre_medico, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Nombre_medico, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_primer_apellido, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_primer_apellido, "Primer apellido", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_primer_apellido, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_primer_apellido, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_segundo_apellido, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_segundo_apellido, "Segundo apellido", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_segundo_apellido, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_segundo_apellido, "", new { @class = "text-danger" })
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Especialidad, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_Especialidad, "Especialidad", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Especialidad, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Especialidad, "", new { @class = "text-danger" })
@@ -49,23 +49,25 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dt_turno_inicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.dt_turno_inicio, "Horario de inicio de atención médica", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dt_turno_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.dt_turno_inicio, "{0:yyyy-MM-dd HH:mm:ss}", new { type = "datetime-local" })
+               
                 @Html.ValidationMessageFor(model => model.dt_turno_inicio, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dt_turno_fin, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dt_turno_fin, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.dt_turno_fin, "", new { @class = "text-danger" })
-            </div>
+           @Html.LabelFor(model => model.dt_turno_fin, "Horario de finalización de atención médica", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.dt_turno_fin, "{0:yyyy-MM-dd HH:mm:ss}", new { type = "datetime-local" })
+          
+            @Html.ValidationMessageFor(model => model.dt_turno_fin, "", new { @class = "text-danger" })
+        </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.i_fk_estado, "i_fk_estado", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.i_fk_estado, "Estado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("i_fk_estado", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.i_fk_estado, "", new { @class = "text-danger" })
@@ -74,7 +76,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar cambios" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>

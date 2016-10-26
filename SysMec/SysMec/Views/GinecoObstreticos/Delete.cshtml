@@ -1,18 +1,18 @@
 ﻿@model SysMec.Gineco_Obstreticos
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar gineco-Obstréticos";
 }
 
-<h2>Delete</h2>
+<h5>Eliminar gineco-Obstréticos</h5>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Seguro que desea Eliminar esto?</h3>
 <div>
-    <h4>Gineco_Obstreticos</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_menarca)
+            Menarca
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_fur)
+            Fur
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_relaciones_sexuales)
+            Relaciones Sexuales
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_planificar)
+            Planifica
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ritmo)
+            Ritmo
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_metodo)
+            Método
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_duracion)
+            Duración
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_partos_eutocicos)
+            Partos Eutócicos
         </dt>
 
         <dd>
@@ -76,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_forceps)
+            Forceps
         </dt>
 
         <dd>
@@ -84,7 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_cesareas)
+            Cesáreas
         </dt>
 
         <dd>
@@ -92,7 +92,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_flujos)
+            Flujos
         </dt>
 
         <dd>
@@ -100,7 +100,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sangrados_anormales)
+            Sangrado Anormal
         </dt>
 
         <dd>
@@ -108,7 +108,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_pap)
+            Pap
         </dt>
 
         <dd>
@@ -116,7 +116,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_pap)
+            Fecha del últimp Pap
         </dt>
 
         <dd>
@@ -124,7 +124,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_resultado)
+            Resultado
         </dt>
 
         <dd>
@@ -132,7 +132,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -145,8 +145,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

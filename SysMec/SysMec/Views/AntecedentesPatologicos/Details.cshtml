@@ -1,17 +1,17 @@
 ﻿@model SysMec.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Antecendentes patológicos";
 }
 
-<h2>Details</h2>
+<h5>Detalles Antecendentes patológicos</h5>
 
 <div>
-    <h4>CM_CAT_ANTECEDENTES_PER_PATOLOGICOS</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_piel)
+            Piel
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_aparato_digestivo)
+            Aparato Digestivo
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_aparato_gene_urinario)
+            Aparato Geneto-Urinario
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sist_nervioso)
+            Sistema Nervioso
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sist_musc_esquele)
+            Sistema Musco-Esquelético
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistem_endocri)
+            Sistema Endocrinológico
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_sistm_cardio)
+            Sistema Cardiovascular
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_alergias)
+            Alergia a
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Problems_psicolo)
+            Problemas Psicológicos
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+            Descripción
         </dt>
 
         <dd>
@@ -93,6 +93,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_pk_antecents_patologicos }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_pk_antecents_patologicos }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

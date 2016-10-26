@@ -4,14 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Gestión de cita médica</h2>
+<h5>Gestión de cita médica</h5>
 
 <p>
     @Html.ActionLink("Crear nueva cita médica", "Create")
     @using (Html.BeginForm())
     {
         <p>
-            Busqueda de cita medica por cedula de usuario: @Html.TextBox("cedula")
+            Búsqueda de cita médica por cédula de usuario: @Html.TextBox("cedula")
             <input type="submit" value="Buscar" class="btn-primary"/>
         </p>
     }
@@ -19,19 +19,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.i_fk_usuario)
+            Cédula de Usuario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.i_fk_medico)
+            Cédula de Médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_hora_inicio)
+            Fecha y hora de inicio de la cita médica
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_hora_fin)
+            Fecha y hora de finalización de la cita médica
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
+           Descripción
         </th>
         <th></th>
     </tr>

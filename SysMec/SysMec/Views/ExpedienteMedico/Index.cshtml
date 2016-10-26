@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<SysMec.Exp_Medico>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Expediente Médico";
 }
 
-<h2>Index</h2>
+<h5>Index Expediente Médico</h5>
 
 <p>
     @Html.ActionLink("Crear expediente médico", "Create", "HeredoFamiliar")
     @using (Html.BeginForm())
     {
     <p>
-        Busqueda por numero de expediente: @Html.TextBox("id_expediente")
+        Búsqueda por número de expediente: @Html.TextBox("id_expediente")
         <input type="submit" value="Buscar" class="btn-primary" />
     </p>
     }
@@ -19,31 +19,27 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.dt_expMedico)
+            Fecha de Expediente Médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.i_fk_gineco_obstetricos)
+            Gineco_obstetricos
+        </th>
+        
+        <th>
+            Fracturas
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.vc_piel)
+            Descrpción
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.vc_fracturas)
+            Piel
+        </th>
+       
+        <th>
+            Nombre de Médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.vc_descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Heredo_familiar.vc_piel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Heredo_familiar1.vc_piel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Med_Medico.vc_Nombre_medico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Us_UsuarioExterno.vc_nombre)
+           Nombre Usuario
         </th>
         <th></th>
     </tr>
