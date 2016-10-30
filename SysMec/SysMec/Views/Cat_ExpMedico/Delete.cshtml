@@ -1,0 +1,56 @@
+﻿@model SysMec.Cat_ExpMedico
+
+@{
+    ViewBag.Title = "Eliminar Expediente Médico";
+}
+
+<h2>Eliminar Expediente Médico</h2>
+
+<h3>Seguro de eliminar esto?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Fecha de Expediente Médico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_ExpMedico)Médico
+        </dd>
+
+        <dt>
+            Cédula de funcionario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionarios.vc_Cedula)
+        </dd>
+
+        <dt>
+            Cédula de usuario externo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_Estado)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Cambiar estado" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

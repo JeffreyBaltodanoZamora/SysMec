@@ -1,0 +1,90 @@
+﻿@model SysMec.Cat_ExpMedico
+
+@{
+    ViewBag.Title = "Crear expediente médico";
+}
+
+<h2>Crear Nuevo expediente médico</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Expediente médico</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_FK_idFuncionario, "Identificación del funcionario", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_FK_idFuncionario", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_FK_idFuncionario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_FK_idUsuExterno, "Identificación del usuario externo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_FK_idUsuExterno", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_FK_idUsuExterno, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.d_ExpMedico, "Fecha del expediente", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.d_ExpMedico, "{0:yyyy-MM-dd HH:mm:ss}", new { type = "datetime-local" })
+                @Html.EditorFor(model => model.d_ExpMedico, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.d_ExpMedico, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_fk_GineObstetricos, "Ginecologia obstetricos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_fk_GineObstetricos", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_fk_GineObstetricos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_fk_HereFamiliar, "Heredo familiar", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_fk_HereFamiliar", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_fk_HereFamiliar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_fk_QuirTrauma, "Traumas Quirúrgicos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_fk_QuirTrauma", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_fk_QuirTrauma, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.i_fk_AntPatoPersonales, "Antecendetes patológicos Personales", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("i_fk_AntPatoPersonales", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.i_fk_AntPatoPersonales, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.b_Estado, "Estado del Expediente", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.b_Estado)
+                    @Html.ValidationMessageFor(model => model.b_Estado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

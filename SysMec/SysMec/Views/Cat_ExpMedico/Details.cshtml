@@ -1,0 +1,82 @@
+﻿@model SysMec.Cat_ExpMedico
+
+@{
+    ViewBag.Title = "Detalles Expediente Médico";
+}
+
+<h5>Detalles Expediente Médico</h5>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Fecha de Expediente Médico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_ExpMedico)
+        </dd>
+
+        <dt>
+            Gineco_obstetricos
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Mostrar detalles", "Details", "Exp_GinecoObstreticos", new { id = Model.i_PK_ExpMedico }, null)
+        </dd>
+
+        <dt>
+            Antecedentes personales patológicos
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Mostrar detalles", "Details", "Exp_AntPersoPatolog", new { id = Model.i_PK_ExpMedico }, null)
+        </dd>
+
+        <dt>
+            Antecedentes quirurgicos y traumaticos
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Mostrar detalles", "Details", "Exp_AnteQuirurTrauma", new { id = Model.i_PK_ExpMedico }, null)
+
+        </dd>
+
+        <dt>
+            Heredo familiar
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Mostrar detalles", "Details", "Exp_HeredoFamiliar", new { id = Model.i_PK_ExpMedico }, null)
+        </dd>
+
+        <dt>
+            Cédula de funcionario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionarios.vc_Cedula)
+        </dd>
+
+        <dt>
+            Cédula de usuario externo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_Estado)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", "Exp_HeredoFamiliar", new { id = Model.i_PK_ExpMedico }, null)  |
+    @Html.ActionLink("Regresar", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model SysMec.Cat_HorarioServicio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cat_HorarioServicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.t_HoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.t_HoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.t_HoraFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.t_HoraFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_DiaServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_DiaServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_idHoraServicio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

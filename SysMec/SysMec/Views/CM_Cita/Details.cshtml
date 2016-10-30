@@ -1,0 +1,90 @@
+﻿@model SysMec.CM_Cita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CM_Cita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.d_fechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_fechaCita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_HoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_HoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_HoraFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_HoraFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Obervacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Obervacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.b_PrimeraVez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_PrimeraVez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cat_EstadoCita.vc_DescEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cat_EstadoCita.vc_DescEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcionarios.vc_Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionarios.vc_Cedula)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_idCita }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

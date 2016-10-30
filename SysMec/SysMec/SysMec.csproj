@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A59A9AB6-C3BD-44E3-AAE2-4105EBC7E1F8}</ProjectGuid>
+    <ProjectGuid>{C2986043-873F-4EA4-836F-AF0BE4AE0A30}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -197,47 +197,83 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Cita.cs">
+    <Compile Include="AreaTrabajo.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="CM_CAT_ANTECEDENTES_PER_PATOLOGICOS.cs">
+    <Compile Include="Cargo.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="CM_EXP_ANTECEDENTES_QUIRURGICOS_TRAUMATICOS.cs">
+    <Compile Include="CategoriaNombramiento.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaPresupuesto.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cat_Especialidad.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cat_EstadoCita.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cat_ExcepHorario.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cat_ExpMedico.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cat_HorarioServicio.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_Cita.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_Medico.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_UsuarioExterno.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AntecedentesPatologicosController.cs" />
-    <Compile Include="Controllers\AntecedentesQuirurgicosTraumaticosController.cs" />
     <Compile Include="Controllers\CatalogosController.cs" />
-    <Compile Include="Controllers\CitasController.cs" />
-    <Compile Include="Controllers\ExpedienteMedicoController.cs" />
-    <Compile Include="Controllers\GinecoObstreticosController.cs" />
-    <Compile Include="Controllers\HeredoFamiliarController.cs" />
+    <Compile Include="Controllers\Cat_ExpMedicoController.cs" />
+    <Compile Include="Controllers\Cat_HorarioServicioController.cs" />
+    <Compile Include="Controllers\CM_CitaController.cs" />
+    <Compile Include="Controllers\CM_UsuarioExternoController.cs" />
+    <Compile Include="Controllers\Exp_AnteQuirurTraumaController.cs" />
+    <Compile Include="Controllers\Exp_AntPersoPatologController.cs" />
+    <Compile Include="Controllers\Exp_GinecoObstreticosController.cs" />
+    <Compile Include="Controllers\Exp_HeredoFamiliarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Med_MedicoController.cs" />
-    <Compile Include="Controllers\UsuarioExternoController.cs" />
-    <Compile Include="Diagnostico.cs">
+    <Compile Include="Distrito.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Estado.cs">
+    <Compile Include="EstadoCivil.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Exp_Medico.cs">
+    <Compile Include="Exp_AnteQuirurTrauma.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gineco_Obstreticos.cs">
+    <Compile Include="Exp_AntPersoPatolog.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exp_Diagnostico.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exp_GinecoObstreticos.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exp_HeredoFamiliar.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionarios.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Genero.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Heredo_familiar.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Med_Medico.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo.Context.cs">
       <AutoGen>True</AutoGen>
@@ -258,17 +294,17 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
+    <Compile Include="Puesto.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="SubEspecialidad.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Us_UsuarioExterno.cs">
+    <Compile Include="TipoFuncionario.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -321,8 +357,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Citas\calendario.css" />
-    <Content Include="Views\Citas\calendario.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -357,47 +391,47 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Citas\Create.cshtml" />
-    <Content Include="Views\Citas\Delete.cshtml" />
-    <Content Include="Views\Citas\Details.cshtml" />
-    <Content Include="Views\Citas\Edit.cshtml" />
-    <Content Include="Views\Citas\Index.cshtml" />
     <Content Include="Views\Catalogos\Index.cshtml" />
-    <Content Include="Views\UsuarioExterno\Create.cshtml" />
-    <Content Include="Views\UsuarioExterno\Delete.cshtml" />
-    <Content Include="Views\UsuarioExterno\Details.cshtml" />
-    <Content Include="Views\UsuarioExterno\Edit.cshtml" />
-    <Content Include="Views\UsuarioExterno\Index.cshtml" />
-    <Content Include="Views\Med_Medico\Create.cshtml" />
-    <Content Include="Views\Med_Medico\Delete.cshtml" />
-    <Content Include="Views\Med_Medico\Details.cshtml" />
-    <Content Include="Views\Med_Medico\Edit.cshtml" />
-    <Content Include="Views\Med_Medico\Index.cshtml" />
-    <Content Include="Views\AntecedentesPatologicos\Create.cshtml" />
-    <Content Include="Views\AntecedentesPatologicos\Delete.cshtml" />
-    <Content Include="Views\AntecedentesPatologicos\Details.cshtml" />
-    <Content Include="Views\AntecedentesPatologicos\Edit.cshtml" />
-    <Content Include="Views\AntecedentesPatologicos\Index.cshtml" />
-    <Content Include="Views\GinecoObstreticos\Create.cshtml" />
-    <Content Include="Views\GinecoObstreticos\Delete.cshtml" />
-    <Content Include="Views\GinecoObstreticos\Details.cshtml" />
-    <Content Include="Views\GinecoObstreticos\Edit.cshtml" />
-    <Content Include="Views\GinecoObstreticos\Index.cshtml" />
-    <Content Include="Views\HeredoFamiliar\Create.cshtml" />
-    <Content Include="Views\HeredoFamiliar\Delete.cshtml" />
-    <Content Include="Views\HeredoFamiliar\Details.cshtml" />
-    <Content Include="Views\HeredoFamiliar\Edit.cshtml" />
-    <Content Include="Views\HeredoFamiliar\Index.cshtml" />
-    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Create.cshtml" />
-    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Delete.cshtml" />
-    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Details.cshtml" />
-    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Edit.cshtml" />
-    <Content Include="Views\AntecedentesQuirurgicosTraumaticos\Index.cshtml" />
-    <Content Include="Views\ExpedienteMedico\Create.cshtml" />
-    <Content Include="Views\ExpedienteMedico\Delete.cshtml" />
-    <Content Include="Views\ExpedienteMedico\Details.cshtml" />
-    <Content Include="Views\ExpedienteMedico\Edit.cshtml" />
-    <Content Include="Views\ExpedienteMedico\Index.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Create.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Delete.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Details.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Edit.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Index.cshtml" />
+    <Content Include="Views\Exp_AnteQuirurTrauma\Create.cshtml" />
+    <Content Include="Views\Exp_AnteQuirurTrauma\Delete.cshtml" />
+    <Content Include="Views\Exp_AnteQuirurTrauma\Details.cshtml" />
+    <Content Include="Views\Exp_AnteQuirurTrauma\Edit.cshtml" />
+    <Content Include="Views\Exp_AnteQuirurTrauma\Index.cshtml" />
+    <Content Include="Views\CM_Cita\Create.cshtml" />
+    <Content Include="Views\CM_Cita\Delete.cshtml" />
+    <Content Include="Views\CM_Cita\Details.cshtml" />
+    <Content Include="Views\CM_Cita\Edit.cshtml" />
+    <Content Include="Views\CM_Cita\Index.cshtml" />
+    <Content Include="Views\Cat_ExpMedico\Create.cshtml" />
+    <Content Include="Views\Cat_ExpMedico\Delete.cshtml" />
+    <Content Include="Views\Cat_ExpMedico\Details.cshtml" />
+    <Content Include="Views\Cat_ExpMedico\Edit.cshtml" />
+    <Content Include="Views\Cat_ExpMedico\Index.cshtml" />
+    <Content Include="Views\Exp_GinecoObstreticos\Create.cshtml" />
+    <Content Include="Views\Exp_GinecoObstreticos\Delete.cshtml" />
+    <Content Include="Views\Exp_GinecoObstreticos\Details.cshtml" />
+    <Content Include="Views\Exp_GinecoObstreticos\Edit.cshtml" />
+    <Content Include="Views\Exp_GinecoObstreticos\Index.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Create.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Delete.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Details.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Edit.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Index.cshtml" />
+    <Content Include="Views\CM_UsuarioExterno\Create.cshtml" />
+    <Content Include="Views\CM_UsuarioExterno\Delete.cshtml" />
+    <Content Include="Views\CM_UsuarioExterno\Details.cshtml" />
+    <Content Include="Views\CM_UsuarioExterno\Edit.cshtml" />
+    <Content Include="Views\CM_UsuarioExterno\Index.cshtml" />
+    <Content Include="Views\Cat_HorarioServicio\Create.cshtml" />
+    <Content Include="Views\Cat_HorarioServicio\Delete.cshtml" />
+    <Content Include="Views\Cat_HorarioServicio\Details.cshtml" />
+    <Content Include="Views\Cat_HorarioServicio\Edit.cshtml" />
+    <Content Include="Views\Cat_HorarioServicio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -429,9 +463,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51143</DevelopmentServerPort>
+          <DevelopmentServerPort>53694</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51143/</IISUrl>
+          <IISUrl>http://localhost:53694/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

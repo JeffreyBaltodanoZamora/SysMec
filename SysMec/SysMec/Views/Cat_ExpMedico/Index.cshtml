@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SysMec.Cat_ExpMedico>
+
+@{
+    ViewBag.Title = "Expediente Médico";
+}
+
+<br /><br /><br />
+<p>
+    @Html.ActionLink("Crear expediente médico", "Create", "Exp_HeredoFamiliar")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Búsqueda por número de expediente: @Html.TextBox("id_expediente")
+        <input type="submit" value="Buscar" class="btn-primary" />
+    </p>
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Fecha de expediente Médico
+            </th>
+            <th>
+                Nombre de usuario
+            </th>
+            <th>
+                Estado
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.d_ExpMedico)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CM_UsuarioExterno.vc_Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.b_Estado)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", "Exp_HeredoFamiliar", new { id = item.i_PK_ExpMedico }, null) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.i_PK_ExpMedico }) |
+                    @Html.ActionLink("Activar / Desactivar", "Delete", new { id = item.i_PK_ExpMedico })
+                </td>
+            </tr>
+        }
+
+    </table>

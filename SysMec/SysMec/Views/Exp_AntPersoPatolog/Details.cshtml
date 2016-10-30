@@ -1,0 +1,90 @@
+﻿@model SysMec.Exp_AntPersoPatolog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exp_AntPersoPatolog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Piel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Piel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_ApaDigestivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_ApaDigestivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_ApaGeneUrinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_ApaGeneUrinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_SisNervioso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_SisNervioso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_SisMuscEsquele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_SisMuscEsquele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_SisEndocri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_SisEndocri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_SisCardio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_SisCardio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_ProblemPsicolo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_ProblemPsicolo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_AntPatologicos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

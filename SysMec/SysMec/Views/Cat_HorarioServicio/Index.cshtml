@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SysMec.Cat_HorarioServicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.t_HoraInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_HoraFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_DiaServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_HoraInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_HoraFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_DiaServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_Medico.i_Pk_idMedico)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idHoraServicio }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idHoraServicio }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idHoraServicio })
+        </td>
+    </tr>
+}
+
+</table>

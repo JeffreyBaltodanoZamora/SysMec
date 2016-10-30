@@ -1,0 +1,96 @@
+﻿@model SysMec.CM_Cita
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CM_Cita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.d_fechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_fechaCita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_HoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_HoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_HoraFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_HoraFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_Obervacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_Obervacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.b_PrimeraVez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_PrimeraVez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cat_EstadoCita.vc_DescEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cat_EstadoCita.vc_DescEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_Medico.i_Pk_idMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcionarios.vc_Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionarios.vc_Cedula)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

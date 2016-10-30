@@ -1,0 +1,82 @@
+﻿@model SysMec.Exp_AnteQuirurTrauma
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exp_AnteQuirurTrauma</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.b_Fracturas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_Fracturas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.d_Fractura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_Fractura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_FracDonde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_FracDonde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.b_Cirugias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.b_Cirugias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.d_Cirugia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d_Cirugia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_CiruDonde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_CiruDonde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_AcciNoLaborales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_AcciNoLaborales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vc_AcciLaborales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vc_AcciLaborales)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_QuirurTrauma }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

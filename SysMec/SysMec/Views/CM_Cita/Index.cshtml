@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SysMec.CM_Cita>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.d_fechaCita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_HoraInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_HoraFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vc_Obervacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_PrimeraVez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_EstadoCita.vc_DescEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_UsuarioExterno.vc_Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Funcionarios.vc_Cedula)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.d_fechaCita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_HoraInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_HoraFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vc_Obervacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_PrimeraVez)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_EstadoCita.vc_DescEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_Medico.i_Pk_idMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_UsuarioExterno.vc_Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcionarios.vc_Cedula)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idCita }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idCita }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idCita })
+        </td>
+    </tr>
+}
+
+</table>
