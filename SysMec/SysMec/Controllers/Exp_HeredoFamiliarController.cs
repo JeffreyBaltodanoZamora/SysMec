@@ -52,7 +52,7 @@ namespace SysMec.Controllers
             {
                 db.Exp_HeredoFamiliar.Add(exp_HeredoFamiliar);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Exp_AntPersoPatolog");
             }
 
             return View(exp_HeredoFamiliar);

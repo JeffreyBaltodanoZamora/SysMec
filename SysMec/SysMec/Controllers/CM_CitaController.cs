@@ -15,10 +15,26 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: CM_Cita
-        public ActionResult Index()
+        public ActionResult Index(string cedula)
         {
-            var cM_Cita = db.CM_Cita.Include(c => c.Cat_EstadoCita).Include(c => c.CM_Medico).Include(c => c.CM_UsuarioExterno).Include(c => c.Funcionarios);
-            return View(cM_Cita.ToList());
+
+            //la busqueda debe ser por cedula y buscar tanto en funcionarios como en usuario externo
+            int cedulaNum = -1;
+            var usuario_encontrado = from s in db.CM_Cita where s.i_Fk_Funcionario == cedulaNum select s;
+            if (!String.IsNullOrEmpty(cedula))
+            {
+                try
+                {
+                    cedulaNum = Convert.ToInt32(cedula);
+                    usuario_encontrado = usuario_encontrado.Where(j => j.i_Fk_Funcionario == cedulaNum);
+                    if(usuario_encontrado.Count() > 0)
+                    {
+                        usuario_encontrado = usuario_encontrado.Where(m => m.i_FK_idUsuExterno == cedulaNum);
+                    }
+                }
+                catch (Exception) { }
+            }
+            return View(usuario_encontrado);
         }
 
         // GET: CM_Cita/Details/5

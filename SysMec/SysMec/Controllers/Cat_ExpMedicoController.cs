@@ -15,10 +15,36 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: Cat_ExpMedico
-        public ActionResult Index()
+        public ActionResult Index(string id_expediente)
         {
-            var cat_ExpMedico = db.Cat_ExpMedico.Include(c => c.CM_UsuarioExterno).Include(c => c.Exp_AnteQuirurTrauma).Include(c => c.Exp_AntPersoPatolog).Include(c => c.Exp_GinecoObstreticos).Include(c => c.Exp_HeredoFamiliar).Include(c => c.Funcionarios);
-            return View(cat_ExpMedico.ToList());
+            //la busqueda debe ser por la cedula del usuario y debe buscar en funcionarios y usuario externo
+            int id_expedienteNum = -1;
+            var busqueda = from s in db.Cat_ExpMedico where s.i_PK_ExpMedico == id_expedienteNum select s;
+            if (!String.IsNullOrEmpty(id_expediente))
+            {
+                try
+                {
+                    var usuarioExterno = from s in db.CM_UsuarioExterno where s.vc_Cedula == id_expediente select s.i_Pk_idUsuExterno;
+                    
+                    if (usuarioExterno != null)
+                    {
+                        int Pk_usuarioExterno = Convert.ToInt32(usuarioExterno);
+                        busqueda = from ex in db.Cat_ExpMedico where ex.i_FK_idUsuExterno == Pk_usuarioExterno select ex;
+                    }
+                    else
+                    {
+                        var usuarioFuncionario = from m in db.Funcionarios where m.vc_Cedula == id_expediente select m.i_Pk_Funcionario;
+                        if (usuarioFuncionario != null)
+                        {
+                            int Pk_usuarioFuncionario = Convert.ToInt32(usuarioFuncionario);
+                            busqueda = from ex in db.Cat_ExpMedico where ex.i_FK_idFuncionario == Pk_usuarioFuncionario select ex;
+
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+            return View(busqueda);
         }
 
         // GET: Cat_ExpMedico/Details/5

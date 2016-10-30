@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.d_fechaCita, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.d_fechaCita, "{0:yyyy-MM-dd}", new { type = "datetime-local" })
+                @Html.TextBoxFor(model => model.d_fechaCita, new { type = "date" })
                 @Html.ValidationMessageFor(model => model.d_fechaCita, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,18 +50,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.dt_HoraInicio, "Hora de inicio de la cita médica", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.dt_HoraInicio, "{0:HH:mm:ss}", new { type = "datetime-local" })
+                @Html.TextBoxFor(model => model.dt_HoraInicio, "{0:hh:mm}", new { type = "time" })
                 @Html.ValidationMessageFor(model => model.dt_HoraInicio, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dt_HoraFin, "Fecha y hora de finalización de la cita médica", htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.dt_HoraFin, "Hora de finalización de la cita médica", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.dt_HoraFin, "{0:HH:mm:ss}", new { type = "datetime-local" })
+                @Html.TextBoxFor(model => model.dt_HoraFin, "{0:hh:mm}", new { type = "datetime-local" })
                 @Html.ValidationMessageFor(model => model.dt_HoraFin, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.i_Fk_idEstCita, "i_Fk_idEstCita", htmlAttributes: new { @class = "control-label col-md-2" })

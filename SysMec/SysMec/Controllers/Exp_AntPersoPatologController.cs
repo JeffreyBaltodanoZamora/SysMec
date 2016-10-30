@@ -52,7 +52,7 @@ namespace SysMec.Controllers
             {
                 db.Exp_AntPersoPatolog.Add(exp_AntPersoPatolog);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Exp_AnteQuirurTrauma");
             }
 
             return View(exp_AntPersoPatolog);
