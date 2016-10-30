@@ -143,16 +143,22 @@ namespace SysMec.Controllers
         // GET: Cat_ExpMedico/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            Cat_ExpMedico exp_Medico = db.Cat_ExpMedico.Find(id);
+
+            var r = from b in db.Cat_ExpMedico
+                    where b.i_PK_ExpMedico == id
+                    select b;
+
+            foreach (var t in r)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (t.b_Estado == true)//valida si esta desactivado; 2 es la llave primaria de la tabla estado, representa "Desactivado"
+                    t.b_Estado = false; // 3 representa "desactivado"
+                else
+                    t.b_Estado = true;
             }
-            Cat_ExpMedico cat_ExpMedico = db.Cat_ExpMedico.Find(id);
-            if (cat_ExpMedico == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cat_ExpMedico);
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: Cat_ExpMedico/Delete/5
