@@ -8,14 +8,14 @@
 
 <p>
     @Html.ActionLink("Crear Nuevo Usuario Externo ", "Create")
-</p>
-@using (Html.BeginForm())
-{
+    @using (Html.BeginForm())
+    {
     <p>
-        Búsqueda por Cédula de usuario: @Html.TextBox("vc_Cedula")
+        Busqueda de usuario por cedula: @Html.TextBox("cedula")
         <input type="submit" value="Buscar" class="btn-primary" />
     </p>
-}
+    }
+
 <table class="table">
     <tr>
         <th>
@@ -50,6 +50,7 @@
 
 @foreach (var item in Model) {
     <tr>
+       
         <td>
             @Html.DisplayFor(modelItem => item.vc_Cedula)
         </td>
@@ -77,10 +78,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.vc_Empresa)
         </td>
+
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idUsuExterno }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_idUsuExterno }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_idUsuExterno })
+            @Html.ActionLink("Editar", "Edit", new { id = item.i_Pk_idUsuExterno }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.i_Pk_idUsuExterno }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.i_Pk_idUsuExterno })
         </td>
     </tr>
 }

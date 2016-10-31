@@ -15,10 +15,31 @@ namespace SysMec.Controllers
         private Entities db = new Entities();
 
         // GET: CM_UsuarioExterno
-        public ActionResult Index()
+        public ActionResult Index(String cedula)
         {
-            return View(db.CM_UsuarioExterno.ToList());
+            String cedulaNum =" ";
+            var usuario_encontrado = from s in db.CM_UsuarioExterno where s.vc_Cedula == cedulaNum select s;
+            if (!String.IsNullOrEmpty(cedula))
+            {
+                try
+                {
+                    
+                    usuario_encontrado = usuario_encontrado.Where(j => j.vc_Cedula == cedulaNum);
+                }
+                catch (Exception) { }
+            }
+            return View(usuario_encontrado);
+            
         }
+
+        [HttpPost]
+        public ActionResult mostrarTodos()
+        {
+            var us_UsuarioExterno = db.CM_UsuarioExterno.Include(u => u.vc_Cedula);
+            return View(us_UsuarioExterno.ToList());
+        }
+
+
 
         // GET: CM_UsuarioExterno/Details/5
         public ActionResult Details(int? id)
@@ -115,6 +136,7 @@ namespace SysMec.Controllers
             return RedirectToAction("Index");
         }
 
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)

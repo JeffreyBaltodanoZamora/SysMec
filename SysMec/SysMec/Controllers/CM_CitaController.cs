@@ -27,10 +27,7 @@ namespace SysMec.Controllers
                 {
                     cedulaNum = Convert.ToInt32(cedula);
                     usuario_encontrado = usuario_encontrado.Where(j => j.i_Fk_Funcionario == cedulaNum);
-                    if(usuario_encontrado.Count() > 0)
-                    {
-                        usuario_encontrado = usuario_encontrado.Where(m => m.i_FK_idUsuExterno == cedulaNum);
-                    }
+                   
                 }
                 catch (Exception) { }
             }
