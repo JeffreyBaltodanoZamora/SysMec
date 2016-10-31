@@ -1,42 +1,48 @@
 ﻿@model IEnumerable<SysMec.CM_Cita>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cita Médica";
 }
 
-<h2>Index</h2>
-
+<h5>Cita Médica</h5>
+@using (Html.BeginForm())
+{
+    <p>
+        Búsqueda por número de cita: @Html.TextBox("i_Pk_idCita")
+        <input type="submit" value="Buscar" class="btn-primary" />
+    </p>
+}
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Cita Médica", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.d_fechaCita)
+            Fecha de Cita
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_HoraInicio)
+           Hora de Inicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dt_HoraFin)
+           Hora de Fin
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Obervacion)
+           Observación
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_PrimeraVez)
+            Primera Vez
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cat_EstadoCita.vc_DescEstado)
+            Descripción de Estado
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+           Identificación de Médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CM_UsuarioExterno.vc_Cedula)
+            Identificación de Usuario Externo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Funcionarios.vc_Cedula)
+            Identificación de Funcionario
         </th>
         <th></th>
     </tr>
@@ -71,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.Funcionarios.vc_Cedula)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idCita }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idCita }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idCita })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idCita }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_idCita }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_idCita })
         </td>
     </tr>
 }

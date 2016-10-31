@@ -1,17 +1,17 @@
 ﻿@model SysMec.CM_UsuarioExterno
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Usuario Externo";
 }
 
-<h2>Details</h2>
+<h5>Detalles Usuario Externo</h5>
 
 <div>
-    <h4>CM_UsuarioExterno</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Cedula)
+            Cédula
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Nombre)
+            Nombre
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_PriApellido)
+            Primer Apellido
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SegApellido)
+            Segundo Apellido
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Telefono)
+            Teléfono
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Movil)
+            Móvil
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Sexo)
+           Sexo
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Email)
+            Correo Electrónico
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Empresa)
+            Empresa
         </dt>
 
         <dd>
@@ -85,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_idUsuExterno }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_Pk_idUsuExterno }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

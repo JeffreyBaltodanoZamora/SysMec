@@ -1,39 +1,39 @@
 ﻿@model IEnumerable<SysMec.Exp_AnteQuirurTrauma>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Antecedentes Quirúrgico y Traumáticos";
 }
 
-<h2>Index</h2>
+<h5>Antecedentes Quirúrgico y Traumáticos</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Antecedente Quirúrgico y Traumático", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.b_Fracturas)
+           Fracturas
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.d_Fractura)
+           Fractura
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_FracDonde)
+            ¿Donde?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Cirugias)
+            Cirugías
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.d_Cirugia)
+            Cirugía
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_CiruDonde)
+            ¿Donde?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_AcciNoLaborales)
+           Accidentes No Laborales
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_AcciLaborales)
+            Accidentes No Laborales
         </th>
         <th></th>
     </tr>
@@ -65,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.vc_AcciLaborales)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_QuirurTrauma }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_QuirurTrauma }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_QuirurTrauma })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_QuirurTrauma }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_QuirurTrauma }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_QuirurTrauma })
         </td>
     </tr>
 }

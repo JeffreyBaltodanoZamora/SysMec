@@ -1,18 +1,18 @@
 ﻿@model SysMec.Exp_GinecoObstreticos
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Antecedentes Gineco-Obstréticos";
 }
 
-<h2>Delete</h2>
+<h5>Eliminar  Antecedentes Gineco-Obstréticos</h5>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Está seguro(a) de eliminar esto?</h3>
 <div>
-    <h4>Exp_GinecoObstreticos</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Menarca)
+            Menarca
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Fur)
+            Fur
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_RelacionesSexuales)
+            Relaciones Sexuales
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Planificar)
+            Planifica :
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Ritmo)
+            Ritmo
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Metodo)
+            Método
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Duracion)
+            Duración
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_PartosEutocicos)
+            Partos Eutócicos
         </dt>
 
         <dd>
@@ -76,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Forceps)
+            Forceps
         </dt>
 
         <dd>
@@ -84,7 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Cesareas)
+            Cesáreas
         </dt>
 
         <dd>
@@ -92,7 +92,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Flujos)
+            Flujos
         </dt>
 
         <dd>
@@ -100,7 +100,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SangradoAnormal)
+            Sangrado Anormal
         </dt>
 
         <dd>
@@ -108,7 +108,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_Pap)
+            Pap
         </dt>
 
         <dd>
@@ -116,7 +116,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.d_pap)
+            Fecha del último Pap
         </dt>
 
         <dd>
@@ -124,7 +124,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_resultado)
+            Resultado
         </dt>
 
         <dd>
@@ -137,8 +137,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

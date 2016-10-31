@@ -1,17 +1,17 @@
 ﻿@model SysMec.CM_Cita
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Cita Médica";
 }
 
-<h2>Details</h2>
+<h5>Detalles Cita Médica</h5>
 
 <div>
-    <h4>CM_Cita</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.d_fechaCita)
+            Fecha de Cita
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_HoraInicio)
+            Hora de Inicio
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dt_HoraFin)
+            Hora de Fin
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Obervacion)
+            Observación
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.b_PrimeraVez)
+            Primera Vez
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cat_EstadoCita.vc_DescEstado)
+            Descripción de Estado
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+            Identificación de Médico
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CM_UsuarioExterno.vc_Cedula)
+            Identificación de Usuario Externo
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Funcionarios.vc_Cedula)
+            Identificación de Funcionario
         </dt>
 
         <dd>
@@ -85,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_idCita }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_Pk_idCita }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

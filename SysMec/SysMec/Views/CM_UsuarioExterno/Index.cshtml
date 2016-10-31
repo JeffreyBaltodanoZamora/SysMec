@@ -1,42 +1,49 @@
 ﻿@model IEnumerable<SysMec.CM_UsuarioExterno>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuario Externo";
 }
 
-<h2>Index</h2>
+<h5>Usuario Externo</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo Usuario Externo ", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Búsqueda por Cédula de usuario: @Html.TextBox("vc_Cedula")
+        <input type="submit" value="Buscar" class="btn-primary" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Cedula)
+            Cédula
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Nombre)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_PriApellido)
+            Primer Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SegApellido)
+           Segundo Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Telefono)
+            Teléfono
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Movil)
+           Móvil
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Sexo)
+           Sexo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Email)
+          Correo Electrónico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Empresa)
+           Empresa
         </th>
         <th></th>
     </tr>
@@ -71,9 +78,9 @@
             @Html.DisplayFor(modelItem => item.vc_Empresa)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idUsuExterno }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idUsuExterno }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idUsuExterno })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idUsuExterno }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_idUsuExterno }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_idUsuExterno })
         </td>
     </tr>
 }

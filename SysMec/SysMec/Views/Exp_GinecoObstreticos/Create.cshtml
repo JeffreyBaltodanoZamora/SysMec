@@ -1,10 +1,10 @@
 ﻿@model SysMec.Exp_GinecoObstreticos
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Crear Antecedentes Gineco-Obstréticos";
 }
 
-<h2>Create</h2>
+<h5>Crear Antecedentes Gineco-Obstréticos</h5>
 
 
 @using (Html.BeginForm()) 
@@ -12,11 +12,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Exp_GinecoObstreticos</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Menarca, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_Menarca, " Menarca", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Menarca, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Menarca, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Fur, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_Fur,"Fur", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Fur, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Fur, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_RelacionesSexuales, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_RelacionesSexuales,"Relaciones Sexuales", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_RelacionesSexuales)
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Planificar, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Planificar, "Planifica :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Planificar)
@@ -52,7 +52,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Ritmo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Ritmo, "Ritmo",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Ritmo)
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Metodo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_Metodo, " Método", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Metodo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Metodo, "", new { @class = "text-danger" })
@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_Duracion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_Duracion, " Duración", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_Duracion, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_Duracion, "", new { @class = "text-danger" })
@@ -78,7 +78,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_PartosEutocicos, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_PartosEutocicos, "Partos Eutócicos", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_PartosEutocicos)
@@ -88,7 +88,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Forceps, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Forceps, "Forceps", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Forceps)
@@ -98,7 +98,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Cesareas, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Cesareas, "Cesáreas", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Cesareas)
@@ -108,7 +108,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Flujos, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Flujos, "Flujos", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Flujos)
@@ -118,7 +118,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_SangradoAnormal, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_SangradoAnormal, "Sangrado Anormal", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_SangradoAnormal, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_SangradoAnormal, "", new { @class = "text-danger" })
@@ -126,7 +126,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.b_Pap, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.b_Pap,"Pap", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.b_Pap)
@@ -136,15 +136,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.d_pap, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.d_pap, "Fecha del último Pap", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.d_pap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.d_pap, new { type = "date" })
                 @Html.ValidationMessageFor(model => model.d_pap, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.vc_resultado, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.vc_resultado, "Resultado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.vc_resultado, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.vc_resultado, "", new { @class = "text-danger" })
@@ -153,14 +153,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index")
 </div>
 
 @section Scripts {

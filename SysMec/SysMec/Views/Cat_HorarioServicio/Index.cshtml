@@ -1,27 +1,27 @@
 ﻿@model IEnumerable<SysMec.Cat_HorarioServicio>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Horario Servicio Médico";
 }
 
-<h2>Index</h2>
+<h5>Horario Servicio Médico</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Horario Servicio Médico", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.t_HoraInicio)
+            Hora de Inicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.t_HoraFinal)
+            Hora Final
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_DiaServicio)
+            Día de Servicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+            Identificación De Médico
         </th>
         <th></th>
     </tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.CM_Medico.i_Pk_idMedico)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idHoraServicio }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idHoraServicio }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idHoraServicio })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idHoraServicio }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_idHoraServicio }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_idHoraServicio })
         </td>
     </tr>
 }

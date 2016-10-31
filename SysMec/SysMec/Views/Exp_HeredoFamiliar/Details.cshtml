@@ -1,17 +1,17 @@
 ﻿@model SysMec.Exp_HeredoFamiliar
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles Antecedentes Heredo-Familiares";
 }
 
-<h2>Details</h2>
+<h5>Detalles Antecedentes Heredo-Familiares</h5>
 
 <div>
-    <h4>Exp_HeredoFamiliar</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Piel)
+           Piel
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ApaRespiratorio)
+            Aparato Respiratorio
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ApaDigestivo)
+            Aparato Digestivo
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ApaGenetoUrinario)
+            Aparato Geneto-Urinario
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SisNervioso)
+            Sistema Nervioso
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SisMuscoEsque)
+            Sistema Musco-Esquelético
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SisEndocrino)
+            Sistema Endocrinológico
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_SisCardio)
+            Sistema Cardiovascular
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Alergias)
+            Alegias a :
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_Cancer)
+            Cáncer
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_ProbPsicosomaticos)
+            Problemas Psicosomáticos
         </dt>
 
         <dd>
@@ -99,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_PadeActual)
+            Padecimiento actual
         </dt>
 
         <dd>
@@ -109,6 +109,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_Pk_HereFamiliar }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.i_Pk_HereFamiliar }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

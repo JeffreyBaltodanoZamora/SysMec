@@ -1,18 +1,18 @@
 ﻿@model SysMec.Cat_HorarioServicio
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Horario Servicio Médico ";
 }
 
-<h2>Delete</h2>
+<h5>Eliminar Horario Servicio Médico</h5>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Está seguro(a) de eliminar esto?</h3>
 <div>
-    <h4>Cat_HorarioServicio</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.t_HoraInicio)
+            Hora de Inicio
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.t_HoraFinal)
+            Hora Final
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.vc_DiaServicio)
+            Día de Servicio
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CM_Medico.i_Pk_idMedico)
+            Identificación De Médico
         </dt>
 
         <dd>
@@ -49,8 +49,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

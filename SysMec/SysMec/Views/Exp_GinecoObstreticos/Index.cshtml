@@ -1,60 +1,60 @@
 ﻿@model IEnumerable<SysMec.Exp_GinecoObstreticos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Antecedentes Gineco-Obstréticos";
 }
 
-<h2>Index</h2>
+<h5>Antecedentes Gineco-Obstréticos</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Antecedente Gineco-Obstrético", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Menarca)
+            Menarca
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Fur)
+           Fur
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_RelacionesSexuales)
+            Relaciones Sexuales
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Planificar)
+           Planifica :
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Ritmo)
+           Ritmo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Metodo)
+            Método
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Duracion)
+           Duración
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_PartosEutocicos)
+            Partos Eutócicos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Forceps)
+            Forceps
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Cesareas)
+            Cesáreas
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Flujos)
+            Flujos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SangradoAnormal)
+            Sangrado Anormal
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.b_Pap)
+           Pap
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.d_pap)
+          Fecha del último Pap
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_resultado)
+           Resultado
         </th>
         <th></th>
     </tr>
@@ -107,9 +107,9 @@
             @Html.DisplayFor(modelItem => item.vc_resultado)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_idGinObste }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_idGinObste }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_idGinObste })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idGinObste }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_idGinObste }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_idGinObste })
         </td>
     </tr>
 }

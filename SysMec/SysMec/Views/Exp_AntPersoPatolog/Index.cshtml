@@ -1,42 +1,42 @@
 ﻿@model IEnumerable<SysMec.Exp_AntPersoPatolog>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Antecedentes Personales Patológicos";
 }
 
-<h2>Index</h2>
+<h2>Antecedentes Personales Patológicos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Antecedentes Personales Patológicos", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Piel)
+            Piel
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ApaDigestivo)
+            Aparato Digestivo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ApaGeneUrinario)
+            Aparato Geneto-Urinario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisNervioso)
+            Sistema Nervioso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisMuscEsquele)
+            Sistema Musco-Esquelético
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisEndocri)
+           Sistema Endocrino
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisCardio)
+            Sistema CardioVascular
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Alergias)
+           Alergias a :
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ProblemPsicolo)
+            Problemas Psicológicos
         </th>
         <th></th>
     </tr>
@@ -71,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.vc_ProblemPsicolo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_AntPatologicos }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_AntPatologicos }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_AntPatologicos })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_AntPatologicos }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_AntPatologicos }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_AntPatologicos })
         </td>
     </tr>
 }

@@ -1,51 +1,51 @@
 ﻿@model IEnumerable<SysMec.Exp_HeredoFamiliar>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Antecedentes Heredo-Familiares";
 }
 
-<h2>Index</h2>
+<h5>Antecedentes Heredo-Familiares</h5>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Antecedentes Heredo-Familiares", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Piel)
+            Piel
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ApaRespiratorio)
+           Aparato Respiratorio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ApaDigestivo)
+            Aparato Digestivo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ApaGenetoUrinario)
+           Aparato Geneto-Urinario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisNervioso)
+            Sistema Nervioso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisMuscoEsque)
+           Sistema Musco-Esquelético
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisEndocrino)
+            Sistema Endocrinológico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_SisCardio)
+           Sistema Cardiovascular
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Alergias)
+           Alegias a :
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_Cancer)
+            Cáncer
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_ProbPsicosomaticos)
+            Problemas Psicosomáticos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.vc_PadeActual)
+           Padecimiento actual
         </th>
         <th></th>
     </tr>
@@ -89,9 +89,9 @@
             @Html.DisplayFor(modelItem => item.vc_PadeActual)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.i_Pk_HereFamiliar }) |
-            @Html.ActionLink("Details", "Details", new { id=item.i_Pk_HereFamiliar }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.i_Pk_HereFamiliar })
+            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_HereFamiliar }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_HereFamiliar }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_HereFamiliar })
         </td>
     </tr>
 }
