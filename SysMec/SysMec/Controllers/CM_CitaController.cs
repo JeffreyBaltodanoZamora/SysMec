@@ -67,6 +67,7 @@ namespace SysMec.Controllers
         {
             ViewBag.i_Fk_idEstCita = new SelectList(db.Cat_EstadoCita, "i_PK_idEstadoCita", "vc_DescEstado");
             ViewBag.i_Fk_idMedico = new SelectList(db.CM_Medico, "i_Pk_idMedico", "i_Pk_idMedico");
+            ViewBag.i_FK_idUsuExterno = new SelectList(db.CM_UsuarioExterno, "i_Pk_idUsuExterno", "vc_Cedula");
             ViewBag.i_Fk_Funcionario = new SelectList(db.Funcionarios, "i_Pk_Funcionario", "vc_Cedula");
             ViewBag.vc_Nombre = new SelectList(db.Funcionarios, "i_Pk_Funcionario", "vc_Nombre");
             ViewBag.vc_PrimerApellido = new SelectList(db.Funcionarios, "i_Pk_Funcionario", "vc_PrimerApellido");
