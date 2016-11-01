@@ -25,9 +25,22 @@ namespace SysMec.Controllers
             {
                 try
                 {
-                    cedulaNum = Convert.ToInt32(cedula);
-                    usuario_encontrado = usuario_encontrado.Where(j => j.i_Fk_Funcionario == cedulaNum);
-                   
+                    var usuarioTemp = from u in db.Funcionarios where u.vc_Cedula == cedula select u;
+
+                    foreach (var s in usuarioTemp)
+                    {
+                        usuario_encontrado = from p in db.CM_Cita where p.i_Fk_Funcionario == s.i_Pk_Funcionario select p;
+                    }
+
+                    if (usuarioTemp.Count() == 0)
+                    {
+                        var usuarioTemp2 = from a in db.CM_UsuarioExterno where a.vc_Cedula == cedula select a;
+
+                        foreach (var s in usuarioTemp2)
+                        {
+                            usuario_encontrado = from p in db.CM_Cita where p.i_FK_idUsuExterno == s.i_Pk_idUsuExterno select p;
+                        }
+                    }
                 }
                 catch (Exception) { }
             }
