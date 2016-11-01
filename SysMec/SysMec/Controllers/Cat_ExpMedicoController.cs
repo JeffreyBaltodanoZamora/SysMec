@@ -67,8 +67,12 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
+                try { 
+                   
                 db.Cat_ExpMedico.Add(cat_ExpMedico);
                 db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Index");
             }
 

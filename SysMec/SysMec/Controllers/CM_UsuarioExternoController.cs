@@ -71,8 +71,12 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CM_UsuarioExterno.Add(cM_UsuarioExterno);
-                db.SaveChanges();
+                try
+                {
+                    db.CM_UsuarioExterno.Add(cM_UsuarioExterno);
+                    db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Index");
             }
 

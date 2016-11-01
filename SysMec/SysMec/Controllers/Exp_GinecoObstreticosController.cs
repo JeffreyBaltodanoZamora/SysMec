@@ -50,8 +50,11 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
+                try { 
                 db.Exp_GinecoObstreticos.Add(exp_GinecoObstreticos);
                 db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Create", "Cat_ExpMedico");
             }
 

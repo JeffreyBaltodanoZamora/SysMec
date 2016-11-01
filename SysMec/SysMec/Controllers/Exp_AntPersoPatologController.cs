@@ -50,9 +50,13 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Exp_AntPersoPatolog.Add(exp_AntPersoPatolog);
-                db.SaveChanges();
-                return RedirectToAction("Create", "Exp_AnteQuirurTrauma");
+                try
+                {
+                    db.Exp_AntPersoPatolog.Add(exp_AntPersoPatolog);
+                    db.SaveChanges();
+                }
+                catch (Exception) { }
+            return RedirectToAction("Create", "Exp_AnteQuirurTrauma");
             }
 
             return View(exp_AntPersoPatolog);

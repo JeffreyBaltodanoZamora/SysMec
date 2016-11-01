@@ -50,8 +50,11 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
+                try { 
                 db.Exp_HeredoFamiliar.Add(exp_HeredoFamiliar);
                 db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Create", "Exp_AntPersoPatolog");
             }
 

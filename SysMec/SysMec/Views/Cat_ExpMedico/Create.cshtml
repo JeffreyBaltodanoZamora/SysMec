@@ -3,8 +3,50 @@
 @{
     ViewBag.Title = "Crear expediente médico";
 }
-
+<br /><br />
 <h2>Crear Nuevo expediente médico</h2>
+
+<!-- Modal Heredo Familiar -->
+<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content">
+
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Heredo Familiar -->
+<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -13,6 +55,13 @@
     <div class="form-horizontal">
         <h4>Expediente médico</h4>
         <hr />
+
+        <!-- Button trigger modal -->
+        <button type="button" id="btnModalHeredoFamiliar" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalHeredoFamiliar">
+            Launch demo modal
+        </button>
+
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.i_FK_idFuncionario, "Identificación del funcionario", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -87,4 +136,9 @@
             </div>
         </div>
     </div>
+}
+
+@section scripts
+{
+<script src="~/Scripts/VentanaModalExpedienteMedico.js"></script>
 }

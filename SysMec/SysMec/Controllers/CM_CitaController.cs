@@ -68,8 +68,11 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CM_Cita.Add(cM_Cita);
-                db.SaveChanges();
+                try { 
+                    db.CM_Cita.Add(cM_Cita);
+                    db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Index");
             }
 
