@@ -200,6 +200,13 @@
     <Compile Include="AreaTrabajo.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cargo.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -309,6 +316,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Calendario.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilosMAGv3.css" />
@@ -356,6 +364,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\VentanaModalExpedienteMedico.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -52,8 +52,11 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
+                try { 
                 db.Cat_HorarioServicio.Add(cat_HorarioServicio);
                 db.SaveChanges();
+                }
+                catch (Exception) { }
                 return RedirectToAction("Index");
             }
 
