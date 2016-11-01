@@ -17,14 +17,15 @@ namespace SysMec.Controllers
         // GET: CM_UsuarioExterno
         public ActionResult Index(String cedula)
         {
-            String cedulaNum =" ";
-            var usuario_encontrado = from s in db.CM_UsuarioExterno where s.vc_Cedula == cedulaNum select s;
+            int cedulaNum = -1;
+            var usuario_encontrado = from s in db.CM_UsuarioExterno where s.i_Pk_idUsuExterno == cedulaNum select s;
+
             if (!String.IsNullOrEmpty(cedula))
             {
                 try
                 {
+                    usuario_encontrado = from p in db.CM_UsuarioExterno where p.vc_Cedula == cedula select p;
                     
-                    usuario_encontrado = usuario_encontrado.Where(j => j.vc_Cedula == cedulaNum);
                 }
                 catch (Exception) { }
             }
