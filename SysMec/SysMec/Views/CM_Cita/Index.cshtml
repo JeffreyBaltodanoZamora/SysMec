@@ -6,6 +6,10 @@
 <br /><br />
 <h5>Cita Médica</h5>
 
+<p>
+    @Html.ActionLink("Crear Cita Médica", "Create")
+</p>
+
 @using (Html.BeginForm())
 {
     <p>
@@ -13,9 +17,7 @@
         <input type="submit" value="Buscar" class="btn-primary" />
     </p>
 }
-<p>
-    @Html.ActionLink("Crear Cita Médica", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
