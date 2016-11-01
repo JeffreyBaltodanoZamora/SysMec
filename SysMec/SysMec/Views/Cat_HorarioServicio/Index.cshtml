@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            Hora de Inicio
+            Hora de inicio
         </th>
         <th>
-            Hora Final
+            Hora final
         </th>
         <th>
-            Día de Servicio
+            Día de servicio
         </th>
         <th>
-            Identificación De Médico
+            Nombre del médico
         </th>
         <th></th>
     </tr>
@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.vc_DiaServicio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CM_Medico.i_Pk_idMedico)
+            @Html.DisplayFor(modelItem => item.CM_Medico.Funcionarios.vc_Nombre)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idHoraServicio }) |

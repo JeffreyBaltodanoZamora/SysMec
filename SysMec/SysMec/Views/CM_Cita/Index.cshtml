@@ -28,7 +28,13 @@
            Hora de Fin
         </th>
         <th>
-           Observación
+            Identificación de Usuario Externo
+        </th>
+        <th>
+            Identificación de Funcionario
+        </th>
+        <th>
+            Nombre del médico
         </th>
         <th>
             Primera Vez
@@ -37,13 +43,7 @@
             Descripción de Estado
         </th>
         <th>
-           Identificación de Médico
-        </th>
-        <th>
-            Identificación de Usuario Externo
-        </th>
-        <th>
-            Identificación de Funcionario
+            Observación
         </th>
         <th></th>
     </tr>
@@ -60,7 +60,13 @@
             @Html.DisplayFor(modelItem => item.dt_HoraFin)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.vc_Obervacion)
+            @Html.DisplayFor(modelItem => item.CM_UsuarioExterno.vc_Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcionarios.vc_Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_Medico.Funcionarios.vc_Nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.b_PrimeraVez)
@@ -69,13 +75,7 @@
             @Html.DisplayFor(modelItem => item.Cat_EstadoCita.vc_DescEstado)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CM_Medico.i_Pk_idMedico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CM_UsuarioExterno.vc_Cedula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Funcionarios.vc_Cedula)
+            @Html.DisplayFor(modelItem => item.vc_Obervacion)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_idCita }) |
