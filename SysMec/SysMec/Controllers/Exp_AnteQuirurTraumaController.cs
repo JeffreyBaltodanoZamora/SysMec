@@ -27,7 +27,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_AnteQuirurTrauma exp_AnteQuirurTrauma = db.Exp_AnteQuirurTrauma.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_AnteQuirurTrauma exp_AnteQuirurTrauma = db.Exp_AnteQuirurTrauma.Find(expediente.i_fk_QuirTrauma);
             if (exp_AnteQuirurTrauma == null)
             {
                 return HttpNotFound();
@@ -56,7 +57,7 @@ namespace SysMec.Controllers
                     db.SaveChanges();
                 }
                 catch (Exception) { }
-            return RedirectToAction("Create", "Exp_GinecoObstreticos");
+            return RedirectToAction("Index", "Cat_ExpMedico");
             }
 
             return View(exp_AnteQuirurTrauma);
@@ -69,7 +70,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_AnteQuirurTrauma exp_AnteQuirurTrauma = db.Exp_AnteQuirurTrauma.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_AnteQuirurTrauma exp_AnteQuirurTrauma = db.Exp_AnteQuirurTrauma.Find(expediente.i_fk_QuirTrauma);
             if (exp_AnteQuirurTrauma == null)
             {
                 return HttpNotFound();
@@ -88,7 +90,7 @@ namespace SysMec.Controllers
             {
                 db.Entry(exp_AnteQuirurTrauma).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Cat_ExpMedico");
             }
             return View(exp_AnteQuirurTrauma);
         }

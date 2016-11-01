@@ -7,7 +7,7 @@
 <br /><br />
 <h5>Expediente Médico</h5>
 <p>
-    @Html.ActionLink("Crear expediente médico", "Create", "Exp_HeredoFamiliar")
+    @Html.ActionLink("Crear expediente médico", "Create", "Cat_ExpMedico")
     @using (Html.BeginForm())
     {
     <p>
@@ -45,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.b_Estado)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", "Exp_HeredoFamiliar", new { id = item.i_PK_ExpMedico }, null) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.i_PK_ExpMedico }, null) |
                     @Html.ActionLink("Detalles", "Details", new { id = item.i_PK_ExpMedico }) |
                     @Html.ActionLink("Activar / Desactivar", "Delete", new { id = item.i_PK_ExpMedico })
                 </td>

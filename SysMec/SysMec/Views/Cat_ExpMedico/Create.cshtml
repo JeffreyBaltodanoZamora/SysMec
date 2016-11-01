@@ -7,7 +7,7 @@
 <h2>Crear Nuevo expediente médico</h2>
 
 <!-- Modal Heredo Familiar -->
-<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+@*<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -25,10 +25,10 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 <!-- Modal Heredo Familiar -->
-<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+@*<div class="modal fade" id="ModalHeredoFamiliar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 @using (Html.BeginForm())
 {
@@ -56,10 +56,10 @@
         <h4>Expediente médico</h4>
         <hr />
 
-        <!-- Button trigger modal -->
+         @*Button trigger modal 
         <button type="button" id="btnModalHeredoFamiliar" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalHeredoFamiliar">
             Launch demo modal
-        </button>
+        </button>*@
 
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -82,13 +82,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.d_ExpMedico, "Fecha del expediente", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.d_ExpMedico, "{0:yyyy-MM-dd HH:mm:ss}", new { type = "datetime-local" })
-                @Html.EditorFor(model => model.d_ExpMedico, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.d_ExpMedico, new { type = "date" })
                 @Html.ValidationMessageFor(model => model.d_ExpMedico, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.i_fk_GineObstetricos, "Ginecologia obstetricos", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("i_fk_GineObstetricos", null, htmlAttributes: new { @class = "form-control" })
@@ -118,7 +117,7 @@
                 @Html.DropDownList("i_fk_AntPatoPersonales", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.i_fk_AntPatoPersonales, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.b_Estado, "Estado del Expediente", htmlAttributes: new { @class = "control-label col-md-2" })

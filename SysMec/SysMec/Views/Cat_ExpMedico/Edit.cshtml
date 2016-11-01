@@ -45,42 +45,38 @@
         <div class="form-group">
             @Html.LabelFor(model => model.i_fk_GineObstetricos, "Gineco_obstetricos", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.i_fk_GineObstetricos, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.i_fk_GineObstetricos, "", new { @class = "text-danger" })
+               @Html.ActionLink("Editar", "Edit", "Exp_GinecoObstreticos", new { id = Model.i_PK_ExpMedico }, null)
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Exp_HeredoFamiliar, "Heredo_familiar", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Exp_HeredoFamiliar", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Exp_HeredoFamiliar, "", new { @class = "text-danger" })
+                @Html.ActionLink("Editar", "Edit", "Exp_HeredoFamiliar", new { id = Model.i_PK_ExpMedico }, null)
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Exp_AnteQuirurTrauma, "Quirurgicos traumaticos", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Exp_AnteQuirurTrauma", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Exp_AnteQuirurTrauma, "", new { @class = "text-danger" })
+                @Html.ActionLink("Editar", "Edit", "Exp_AnteQuirurTrauma", new { id = Model.i_PK_ExpMedico }, null)
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Exp_AntPersoPatolog, "Antecedentes patologicos personales", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Exp_AntPersoPatolog", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Exp_AntPersoPatolog, "", new { @class = "text-danger" })
+                @Html.ActionLink("Editar", "Edit", "Exp_AntPersoPatolog", new { id = Model.i_PK_ExpMedico }, null)
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.b_Estado, "Estado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("b_Estado", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.b_Estado, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

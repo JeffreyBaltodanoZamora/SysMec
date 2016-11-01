@@ -67,10 +67,19 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
-                try { 
-                   
-                db.Cat_ExpMedico.Add(cat_ExpMedico);
-                db.SaveChanges();
+                try {
+                    Exp_GinecoObstreticos gineco = new Exp_GinecoObstreticos();
+                    Exp_AnteQuirurTrauma quiTraum = new Exp_AnteQuirurTrauma();
+                    Exp_HeredoFamiliar hereFam = new Exp_HeredoFamiliar();
+                    Exp_AntPersoPatolog persoPato = new Exp_AntPersoPatolog();
+
+                    cat_ExpMedico.Exp_GinecoObstreticos = gineco;
+                    cat_ExpMedico.Exp_AnteQuirurTrauma = quiTraum;
+                    cat_ExpMedico.Exp_HeredoFamiliar = hereFam;
+                    cat_ExpMedico.Exp_AntPersoPatolog = persoPato;
+                    
+                    db.Cat_ExpMedico.Add(cat_ExpMedico);
+                    db.SaveChanges();
                 }
                 catch (Exception) { }
                 return RedirectToAction("Index");
@@ -139,8 +148,8 @@ namespace SysMec.Controllers
 
             foreach (var t in r)
             {
-                if (t.b_Estado == true)//valida si esta desactivado; 2 es la llave primaria de la tabla estado, representa "Desactivado"
-                    t.b_Estado = false; // 3 representa "desactivado"
+                if (t.b_Estado == true)
+                    t.b_Estado = false; 
                 else
                     t.b_Estado = true;
             }

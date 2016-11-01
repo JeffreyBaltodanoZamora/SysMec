@@ -27,7 +27,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(expediente.i_fk_HereFamiliar);
             if (exp_HeredoFamiliar == null)
             {
                 return HttpNotFound();
@@ -55,7 +56,7 @@ namespace SysMec.Controllers
                 db.SaveChanges();
                 }
                 catch (Exception) { }
-                return RedirectToAction("Create", "Exp_AntPersoPatolog");
+                return RedirectToAction("Index", "Cat_ExpMedico");
             }
 
             return View(exp_HeredoFamiliar);
@@ -68,7 +69,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(expediente.i_fk_HereFamiliar);
             if (exp_HeredoFamiliar == null)
             {
                 return HttpNotFound();
@@ -87,7 +89,7 @@ namespace SysMec.Controllers
             {
                 db.Entry(exp_HeredoFamiliar).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Cat_ExpMedico");
             }
             return View(exp_HeredoFamiliar);
         }

@@ -27,7 +27,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(expediente.i_fk_AntPatoPersonales);
             if (exp_AntPersoPatolog == null)
             {
                 return HttpNotFound();
@@ -56,7 +57,7 @@ namespace SysMec.Controllers
                     db.SaveChanges();
                 }
                 catch (Exception) { }
-            return RedirectToAction("Create", "Exp_AnteQuirurTrauma");
+            return RedirectToAction("Index", "Cat_ExpMedico");
             }
 
             return View(exp_AntPersoPatolog);
@@ -69,7 +70,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(expediente.i_fk_AntPatoPersonales);
             if (exp_AntPersoPatolog == null)
             {
                 return HttpNotFound();
@@ -88,7 +90,7 @@ namespace SysMec.Controllers
             {
                 db.Entry(exp_AntPersoPatolog).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Cat_ExpMedico");
             }
             return View(exp_AntPersoPatolog);
         }
