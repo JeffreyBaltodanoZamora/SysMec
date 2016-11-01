@@ -22,7 +22,10 @@
                 Fecha de expediente Médico
             </th>
             <th>
-                Cedula de usuario
+                Cédula de usuario funcionario
+            </th>
+            <th>
+                Cédula de usuario externo
             </th>
             <th>
                 Estado
@@ -40,6 +43,9 @@
 
                 <td>
                     @Html.DisplayFor(modelItem => item.CM_UsuarioExterno.vc_Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Funcionarios.vc_Cedula)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.b_Estado)
