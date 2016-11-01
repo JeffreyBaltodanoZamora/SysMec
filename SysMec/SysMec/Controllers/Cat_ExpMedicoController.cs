@@ -23,8 +23,22 @@ namespace SysMec.Controllers
             {
                 try
                 {
-                    id_expedienteNum = Convert.ToInt32(id_expediente);
-                    usuario_encontrado = usuario_encontrado.Where(j => j.i_PK_ExpMedico == id_expedienteNum);
+                    var usuarioTemp = from u in db.Funcionarios where u.vc_Cedula == id_expediente select u;
+
+                    foreach (var s in usuarioTemp)
+                    {
+                        usuario_encontrado = from p in db.Cat_ExpMedico where p.i_FK_idFuncionario == s.i_Pk_Funcionario select p;
+                    }
+
+                    if (usuarioTemp.Count() == 0)
+                    {
+                        var usuarioTemp2 = from a in db.CM_UsuarioExterno where a.vc_Cedula == id_expediente select a;
+
+                        foreach (var s in usuarioTemp2)
+                        {
+                            usuario_encontrado = from p in db.Cat_ExpMedico where p.i_FK_idUsuExterno == s.i_Pk_idUsuExterno select p;
+                        }
+                    }
                 }
                 catch (Exception) { }
             }
