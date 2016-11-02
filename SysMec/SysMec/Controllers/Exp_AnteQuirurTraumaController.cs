@@ -90,7 +90,7 @@ namespace SysMec.Controllers
             {
                 db.Entry(exp_AnteQuirurTrauma).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Create", "Cat_ExpMedico");
+                return RedirectToAction("Index", "Cat_ExpMedico");
             }
             return View(exp_AnteQuirurTrauma);
         }
