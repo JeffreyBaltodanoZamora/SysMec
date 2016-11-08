@@ -81,7 +81,8 @@ namespace SysMec.Controllers
         {
             if (ModelState.IsValid)
             {
-                try {
+                try
+                {
                     Exp_GinecoObstreticos gineco = new Exp_GinecoObstreticos();
                     Exp_AnteQuirurTrauma quiTraum = new Exp_AnteQuirurTrauma();
                     Exp_HeredoFamiliar hereFam = new Exp_HeredoFamiliar();
@@ -91,11 +92,41 @@ namespace SysMec.Controllers
                     cat_ExpMedico.Exp_AnteQuirurTrauma = quiTraum;
                     cat_ExpMedico.Exp_HeredoFamiliar = hereFam;
                     cat_ExpMedico.Exp_AntPersoPatolog = persoPato;
-                    
-                    db.Cat_ExpMedico.Add(cat_ExpMedico);
-                    db.SaveChanges();
+
+                    var usuario_encontrado = from s in db.Funcionarios where s.vc_Cedula == cat_ExpMedico.i_FK_idFuncionario.ToString() select s;
+
+                    if (usuario_encontrado.Count() == 0)
+                    {
+                        var usuarioTemp2 = from a in db.CM_UsuarioExterno where a.vc_Cedula == cat_ExpMedico.i_FK_idUsuExterno.ToString() select a;
+                        if (usuarioTemp2.Count() == 0)
+                        {
+                            Response.Write("<script>window.alert('El usuario no se encuentra en el sistema.');</script>");       
+                        }
+                        else
+                        {
+                            foreach (var s in usuarioTemp2)
+                            {
+                                cat_ExpMedico.i_FK_idUsuExterno = s.i_Pk_idUsuExterno;
+                            }
+                            Response.Write("<script>window.alert('Expediente creado correctamente.');</script>");
+                            db.Cat_ExpMedico.Add(cat_ExpMedico);
+                            db.SaveChanges();
+                            return RedirectToAction("Index");
+                        }
+                    }
+                    else
+                    {
+                        foreach (var s in usuario_encontrado)
+                        {
+                            cat_ExpMedico.i_FK_idFuncionario = s.i_Pk_Funcionario;
+                        }
+                        Response.Write("<script>window.alert('Expediente creado correctamente.');</script>");
+                        db.Cat_ExpMedico.Add(cat_ExpMedico);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
                 }
-                catch (Exception) { }
+                catch (Exception) { Response.Write("<script>window.alert('Error al crear expediente.');</script>"); }
                 return RedirectToAction("Index");
             }
 
@@ -163,7 +194,7 @@ namespace SysMec.Controllers
             foreach (var t in r)
             {
                 if (t.b_Estado == true)
-                    t.b_Estado = false; 
+                    t.b_Estado = false;
                 else
                     t.b_Estado = true;
             }
@@ -183,7 +214,7 @@ namespace SysMec.Controllers
             return RedirectToAction("Index");
         }
 
-       
+
 
 
         protected override void Dispose(bool disposing)

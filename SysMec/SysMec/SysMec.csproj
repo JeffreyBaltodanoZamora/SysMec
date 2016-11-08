@@ -301,8 +301,20 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Puesto.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\wf_Ingreso.aspx.cs">
+      <DependentUpon>wf_Ingreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\wf_Ingreso.aspx.designer.cs">
+      <DependentUpon>wf_Ingreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="SubEspecialidad.cs">
@@ -313,6 +325,11 @@
     </Compile>
     <Compile Include="TipoFuncionario.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ws_AutenticacionWeb\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +370,10 @@
     <Content Include="Modelo.edmx.diagram">
       <DependentUpon>Modelo.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -364,8 +385,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\VentanaModalExpedienteMedico.js" />
+    <Content Include="Scripts\VentanaModal.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Web References\ws_AutenticacionWeb\Autenticacion.disco" />
+    <Content Include="Seguridad\wf_Ingreso.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -441,6 +464,11 @@
     <Content Include="Views\Cat_HorarioServicio\Details.cshtml" />
     <Content Include="Views\Cat_HorarioServicio\Edit.cshtml" />
     <Content Include="Views\Cat_HorarioServicio\Index.cshtml" />
+    <None Include="Web References\ws_AutenticacionWeb\Autenticacion.wsdl" />
+    <Content Include="Web References\ws_AutenticacionWeb\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -455,6 +483,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://sistemas.mag.go.cr/ws_autenticacion/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ws_AutenticacionWeb\</RelPath>
+      <UpdateFromURL>http://sistemas.mag.go.cr/ws_autenticacion/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SysMec_ws_AutenticacionWeb_AutenticacionUsuariosMAG</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sistemas.mag.go.cr/ws_Autenticacion" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sistemas.mag.go.cr/ws_Autenticacion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sistemas.mag.go.cr/ws_Autenticacion">
+      <s:element name="LoguerUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreUsrEnc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassUsrEnc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PathSistema" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolConsiderarDominios" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoguerUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoguerUsuarioResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoguerUsuarioVB6">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreUsrEnc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassUsrEnc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PathSistema" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolConsiderarDominios" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoguerUsuarioVB6Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoguerUsuarioVB6Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verificarUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarUsuarioSFE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuarioAd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaveAd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarUsuarioSFEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verificarUsuarioSFEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiarPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiarPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cambiarPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoguerUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:LoguerUsuario" />
+  </wsdl:message>
+  <wsdl:message name="LoguerUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:LoguerUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoguerUsuarioVB6SoapIn">
+    <wsdl:part name="parameters" element="tns:LoguerUsuarioVB6" />
+  </wsdl:message>
+  <wsdl:message name="LoguerUsuarioVB6SoapOut">
+    <wsdl:part name="parameters" element="tns:LoguerUsuarioVB6Response" />
+  </wsdl:message>
+  <wsdl:message name="verificarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:verificarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="verificarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:verificarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="verificarUsuarioSFESoapIn">
+    <wsdl:part name="parameters" element="tns:verificarUsuarioSFE" />
+  </wsdl:message>
+  <wsdl:message name="verificarUsuarioSFESoapOut">
+    <wsdl:part name="parameters" element="tns:verificarUsuarioSFEResponse" />
+  </wsdl:message>
+  <wsdl:message name="cambiarPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:cambiarPassword" />
+  </wsdl:message>
+  <wsdl:message name="cambiarPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:cambiarPasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutenticacionUsuariosMAGSoap">
+    <wsdl:operation name="LoguerUsuario">
+      <wsdl:input message="tns:LoguerUsuarioSoapIn" />
+      <wsdl:output message="tns:LoguerUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoguerUsuarioVB6">
+      <wsdl:input message="tns:LoguerUsuarioVB6SoapIn" />
+      <wsdl:output message="tns:LoguerUsuarioVB6SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuario">
+      <wsdl:input message="tns:verificarUsuarioSoapIn" />
+      <wsdl:output message="tns:verificarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuarioSFE">
+      <wsdl:input message="tns:verificarUsuarioSFESoapIn" />
+      <wsdl:output message="tns:verificarUsuarioSFESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiarPassword">
+      <wsdl:input message="tns:cambiarPasswordSoapIn" />
+      <wsdl:output message="tns:cambiarPasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutenticacionUsuariosMAGSoap" type="tns:AutenticacionUsuariosMAGSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoguerUsuario">
+      <soap:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/LoguerUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoguerUsuarioVB6">
+      <soap:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/LoguerUsuarioVB6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuario">
+      <soap:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/verificarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuarioSFE">
+      <soap:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/verificarUsuarioSFE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiarPassword">
+      <soap:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/cambiarPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutenticacionUsuariosMAGSoap12" type="tns:AutenticacionUsuariosMAGSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoguerUsuario">
+      <soap12:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/LoguerUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoguerUsuarioVB6">
+      <soap12:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/LoguerUsuarioVB6" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuario">
+      <soap12:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/verificarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarUsuarioSFE">
+      <soap12:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/verificarUsuarioSFE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiarPassword">
+      <soap12:operation soapAction="http://sistemas.mag.go.cr/ws_Autenticacion/cambiarPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutenticacionUsuariosMAG">
+    <wsdl:port name="AutenticacionUsuariosMAGSoap" binding="tns:AutenticacionUsuariosMAGSoap">
+      <soap:address location="http://sistemas.mag.go.cr/ws_autenticacion/Autenticacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutenticacionUsuariosMAGSoap12" binding="tns:AutenticacionUsuariosMAGSoap12">
+      <soap12:address location="http://sistemas.mag.go.cr/ws_autenticacion/Autenticacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

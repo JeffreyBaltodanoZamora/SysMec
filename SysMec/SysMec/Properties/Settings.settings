@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SysMec.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SysMec_ws_AutenticacionWeb_AutenticacionUsuariosMAG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sistemas.mag.go.cr/ws_autenticacion/Autenticacion.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
