@@ -27,8 +27,7 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
-            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(expediente.i_fk_AntPatoPersonales);
+            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
             if (exp_AntPersoPatolog == null)
             {
                 return HttpNotFound();
@@ -47,17 +46,13 @@ namespace SysMec.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "i_Pk_AntPatologicos,vc_Piel,vc_ApaDigestivo,vc_ApaGeneUrinario,vc_SisNervioso,vc_SisMuscEsquele,vc_SisEndocri,vc_SisCardio,vc_Alergias,vc_ProblemPsicolo")] Exp_AntPersoPatolog exp_AntPersoPatolog)
+        public ActionResult Create([Bind(Include = "i_Pk_AntPatologicos,vc_Piel,vc_ApaDigestivo,vc_ApaGeneUrinario,vc_SisNervioso,vc_SisMuscEsquele,vc_SisEndocri,vc_SisCardio,vc_Alergias,vc_ProblemPsicolo,vc_otros")] Exp_AntPersoPatolog exp_AntPersoPatolog)
         {
             if (ModelState.IsValid)
             {
-                try
-                {
-                    db.Exp_AntPersoPatolog.Add(exp_AntPersoPatolog);
-                    db.SaveChanges();
-                }
-                catch (Exception) { }
-            return RedirectToAction("Index", "Cat_ExpMedico");
+                db.Exp_AntPersoPatolog.Add(exp_AntPersoPatolog);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Cat_ExpMedico");
             }
 
             return View(exp_AntPersoPatolog);
@@ -70,8 +65,7 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
-            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(expediente.i_fk_AntPatoPersonales);
+            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
             if (exp_AntPersoPatolog == null)
             {
                 return HttpNotFound();
@@ -84,13 +78,13 @@ namespace SysMec.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "i_Pk_AntPatologicos,vc_Piel,vc_ApaDigestivo,vc_ApaGeneUrinario,vc_SisNervioso,vc_SisMuscEsquele,vc_SisEndocri,vc_SisCardio,vc_Alergias,vc_ProblemPsicolo")] Exp_AntPersoPatolog exp_AntPersoPatolog)
+        public ActionResult Edit([Bind(Include = "i_Pk_AntPatologicos,vc_Piel,vc_ApaDigestivo,vc_ApaGeneUrinario,vc_SisNervioso,vc_SisMuscEsquele,vc_SisEndocri,vc_SisCardio,vc_Alergias,vc_ProblemPsicolo,vc_otros")] Exp_AntPersoPatolog exp_AntPersoPatolog)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(exp_AntPersoPatolog).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", "Cat_ExpMedico");
+                return RedirectToAction("Index","Cat_ExpMedico");
             }
             return View(exp_AntPersoPatolog);
         }
@@ -118,7 +112,7 @@ namespace SysMec.Controllers
             Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
             db.Exp_AntPersoPatolog.Remove(exp_AntPersoPatolog);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Cat_ExpMedico");
         }
 
         protected override void Dispose(bool disposing)

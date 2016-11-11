@@ -316,6 +316,12 @@
     <Compile Include="Seguridad\wf_Ingreso.aspx.designer.cs">
       <DependentUpon>wf_Ingreso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="SubEspecialidad.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
@@ -387,6 +393,16 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\VentanaModal.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Exp_AntPersoPatolog\Create.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Delete.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Details.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Edit.cshtml" />
+    <Content Include="Views\Exp_AntPersoPatolog\Index.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Create.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Delete.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Details.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Edit.cshtml" />
+    <Content Include="Views\Exp_HeredoFamiliar\Index.cshtml" />
     <None Include="Web References\ws_AutenticacionWeb\Autenticacion.disco" />
     <Content Include="Seguridad\wf_Ingreso.aspx" />
     <Content Include="Web.config" />
@@ -424,11 +440,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Catalogos\Index.cshtml" />
-    <Content Include="Views\Exp_AntPersoPatolog\Create.cshtml" />
-    <Content Include="Views\Exp_AntPersoPatolog\Delete.cshtml" />
-    <Content Include="Views\Exp_AntPersoPatolog\Details.cshtml" />
-    <Content Include="Views\Exp_AntPersoPatolog\Edit.cshtml" />
-    <Content Include="Views\Exp_AntPersoPatolog\Index.cshtml" />
     <Content Include="Views\Exp_AnteQuirurTrauma\Create.cshtml" />
     <Content Include="Views\Exp_AnteQuirurTrauma\Delete.cshtml" />
     <Content Include="Views\Exp_AnteQuirurTrauma\Details.cshtml" />
@@ -449,11 +460,6 @@
     <Content Include="Views\Exp_GinecoObstreticos\Details.cshtml" />
     <Content Include="Views\Exp_GinecoObstreticos\Edit.cshtml" />
     <Content Include="Views\Exp_GinecoObstreticos\Index.cshtml" />
-    <Content Include="Views\Exp_HeredoFamiliar\Create.cshtml" />
-    <Content Include="Views\Exp_HeredoFamiliar\Delete.cshtml" />
-    <Content Include="Views\Exp_HeredoFamiliar\Details.cshtml" />
-    <Content Include="Views\Exp_HeredoFamiliar\Edit.cshtml" />
-    <Content Include="Views\Exp_HeredoFamiliar\Index.cshtml" />
     <Content Include="Views\CM_UsuarioExterno\Create.cshtml" />
     <Content Include="Views\CM_UsuarioExterno\Delete.cshtml" />
     <Content Include="Views\CM_UsuarioExterno\Details.cshtml" />

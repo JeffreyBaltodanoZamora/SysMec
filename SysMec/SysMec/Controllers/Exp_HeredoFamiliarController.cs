@@ -27,8 +27,7 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
-            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(expediente.i_fk_HereFamiliar);
+            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
             if (exp_HeredoFamiliar == null)
             {
                 return HttpNotFound();
@@ -47,15 +46,12 @@ namespace SysMec.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "i_Pk_HereFamiliar,vc_Piel,vc_ApaRespiratorio,vc_ApaDigestivo,vc_ApaGenetoUrinario,vc_SisNervioso,vc_SisMuscoEsque,vc_SisEndocrino,vc_SisCardio,vc_Alergias,vc_Cancer,vc_ProbPsicosomaticos,vc_PadeActual")] Exp_HeredoFamiliar exp_HeredoFamiliar)
+        public ActionResult Create([Bind(Include = "i_Pk_HereFamiliar,vc_Piel,vc_ApaRespiratorio,vc_ApaDigestivo,vc_ApaGenetoUrinario,vc_SisNervioso,vc_SisMuscoEsque,vc_SisEndocrino,vc_SisCardio,vc_Alergias,vc_Cancer,vc_ProbPsicosomaticos,vc_PadeActual,vc_otros")] Exp_HeredoFamiliar exp_HeredoFamiliar)
         {
             if (ModelState.IsValid)
             {
-                try { 
                 db.Exp_HeredoFamiliar.Add(exp_HeredoFamiliar);
                 db.SaveChanges();
-                }
-                catch (Exception) { }
                 return RedirectToAction("Index", "Cat_ExpMedico");
             }
 
@@ -69,8 +65,7 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
-            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(expediente.i_fk_HereFamiliar);
+            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
             if (exp_HeredoFamiliar == null)
             {
                 return HttpNotFound();
@@ -83,7 +78,7 @@ namespace SysMec.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "i_Pk_HereFamiliar,vc_Piel,vc_ApaRespiratorio,vc_ApaDigestivo,vc_ApaGenetoUrinario,vc_SisNervioso,vc_SisMuscoEsque,vc_SisEndocrino,vc_SisCardio,vc_Alergias,vc_Cancer,vc_ProbPsicosomaticos,vc_PadeActual")] Exp_HeredoFamiliar exp_HeredoFamiliar)
+        public ActionResult Edit([Bind(Include = "i_Pk_HereFamiliar,vc_Piel,vc_ApaRespiratorio,vc_ApaDigestivo,vc_ApaGenetoUrinario,vc_SisNervioso,vc_SisMuscoEsque,vc_SisEndocrino,vc_SisCardio,vc_Alergias,vc_Cancer,vc_ProbPsicosomaticos,vc_PadeActual,vc_otros")] Exp_HeredoFamiliar exp_HeredoFamiliar)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +112,7 @@ namespace SysMec.Controllers
             Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
             db.Exp_HeredoFamiliar.Remove(exp_HeredoFamiliar);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Cat_ExpMedico");
         }
 
         protected override void Dispose(bool disposing)

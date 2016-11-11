@@ -15,28 +15,28 @@
             Piel
         </th>
         <th>
-           Aparato Respiratorio
+            Aparato Respiratorio
         </th>
         <th>
             Aparato Digestivo
         </th>
         <th>
-           Aparato Geneto-Urinario
+            Aparato Geneto-Urinario
         </th>
         <th>
             Sistema Nervioso
         </th>
         <th>
-           Sistema Musco-Esquelético
+            Sistema Musco-Esquelético
         </th>
         <th>
             Sistema Endocrinológico
         </th>
         <th>
-           Sistema Cardiovascular
+            Sistema Cardiovascular
         </th>
         <th>
-           Alegias a :
+            Alegias a :
         </th>
         <th>
             Cáncer
@@ -45,55 +45,62 @@
             Problemas Psicosomáticos
         </th>
         <th>
-           Padecimiento actual
+            Padecimiento actual
+        </th>
+        <th>
+           Otros
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_Piel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_ApaRespiratorio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_ApaDigestivo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_ApaGenetoUrinario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_SisNervioso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_SisMuscoEsque)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_SisEndocrino)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_SisCardio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_Alergias)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_Cancer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_ProbPsicosomaticos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vc_PadeActual)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.i_Pk_HereFamiliar }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.i_Pk_HereFamiliar }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.i_Pk_HereFamiliar })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_Piel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_ApaRespiratorio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_ApaDigestivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_ApaGenetoUrinario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_SisNervioso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_SisMuscoEsque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_SisEndocrino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_SisCardio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_Alergias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_Cancer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_ProbPsicosomaticos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_PadeActual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vc_otros)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.i_Pk_HereFamiliar }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.i_Pk_HereFamiliar }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.i_Pk_HereFamiliar })
+            </td>
+        </tr>
+    }
 
 </table>

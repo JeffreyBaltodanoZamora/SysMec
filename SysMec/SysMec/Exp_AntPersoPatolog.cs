@@ -30,6 +30,7 @@ namespace SysMec
         public string vc_SisCardio { get; set; }
         public string vc_Alergias { get; set; }
         public string vc_ProblemPsicolo { get; set; }
+        public string vc_otros { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cat_ExpMedico> Cat_ExpMedico { get; set; }
