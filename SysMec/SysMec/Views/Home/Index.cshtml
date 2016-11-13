@@ -8,6 +8,24 @@
     <p><!--a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a>--></p>
 </div>
 
+<%@ Page language="c#" AutoEventWireup="true" %>
+<%@ Import Namespace="System.Security.Principal" %>
+<html>
+<body>
+    <form id="Form1" method="post" runat="server">
+        <asp:Label ID="lblName" Runat=server /><br>
+        <asp:Label ID="lblAuthType" Runat=server />
+    </form>
+</body>
+</html>
+<script runat=server>
+    void Page_Load(Object sender, EventArgs e)
+    {
+      lblName.Text = "Hello " + Context.User.Identity.Name + ".";
+      lblAuthType.Text = "You were authenticated using " +   Context.User.Identity.AuthenticationType + ".";
+    }
+</script>
+
 <div class="row">
     <div class="col-md-4">
         <h2></h2>
