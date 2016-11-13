@@ -332,6 +332,13 @@
     <Compile Include="TipoFuncionario.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Logon.aspx.designer.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web References\ws_AutenticacionWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -405,6 +412,7 @@
     <Content Include="Views\Exp_HeredoFamiliar\Index.cshtml" />
     <None Include="Web References\ws_AutenticacionWeb\Autenticacion.disco" />
     <Content Include="Seguridad\wf_Ingreso.aspx" />
+    <Content Include="Views\Home\Logon.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
