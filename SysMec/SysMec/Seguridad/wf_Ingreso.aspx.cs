@@ -16,10 +16,10 @@ namespace SysMec.Seguridad
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Server.Transfer("~/Seguridad/wf_Ingreso.aspx");
+            ValidarUsuario(txtClave.Text,txtClave.Text);
         }
 
-        private bool ValidarUsuario(string strUsuario, string strClave)
+        private void ValidarUsuario(string strUsuario, string strClave)
         {
             String strNombreUsrEnc = strUsuario;
             String strPassUsrEnc = strClave;
@@ -34,7 +34,10 @@ namespace SysMec.Seguridad
                 {
                     //Comentar esta linea para ingresar sin contraseña (en sistema antiguo de mag, no necesariente sirve en SysMec)
                     strUsuario = null;
-                    return false;
+                    txtUsuario.Text = String.Empty;
+                    txtClave.Text = String.Empty;
+                    MsgBox("Datos incorrectos.", this.Page, this);
+                    return;
                 }
                 else
                 {
@@ -43,19 +46,27 @@ namespace SysMec.Seguridad
                     //res[1] Nombre
                     //res[2] Area
                     // 
-                   // return true;
+                    // return true;
+                    MsgBox("Bienvenido(a).", this.Page, this);
                 }
 
                 //buscar el usuario con strusuario en la tabla funcionarios.
             }
             catch (Exception)
             {
-                return false;
+                MsgBox("Verifique los datos ingresados.", this.Page, this);
+                return;
             }
-            return false;
+            return;
 
         }
+
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
     }
-
-
 }

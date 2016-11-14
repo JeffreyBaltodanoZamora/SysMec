@@ -393,6 +393,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\VentanaModal.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Seguridad\wf_Ingreso.aspx" />
     <Content Include="Views\Exp_AntPersoPatolog\Create.cshtml" />
     <Content Include="Views\Exp_AntPersoPatolog\Delete.cshtml" />
     <Content Include="Views\Exp_AntPersoPatolog\Details.cshtml" />
@@ -404,7 +405,6 @@
     <Content Include="Views\Exp_HeredoFamiliar\Edit.cshtml" />
     <Content Include="Views\Exp_HeredoFamiliar\Index.cshtml" />
     <None Include="Web References\ws_AutenticacionWeb\Autenticacion.disco" />
-    <Content Include="Seguridad\wf_Ingreso.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
