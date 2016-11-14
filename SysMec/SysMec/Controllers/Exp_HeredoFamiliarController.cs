@@ -27,7 +27,9 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_HeredoFamiliar exp_HeredoFamiliar = db.Exp_HeredoFamiliar.Find(expediente.i_fk_HereFamiliar);
+
             if (exp_HeredoFamiliar == null)
             {
                 return HttpNotFound();

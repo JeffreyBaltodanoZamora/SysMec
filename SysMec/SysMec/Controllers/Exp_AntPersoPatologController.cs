@@ -27,7 +27,8 @@ namespace SysMec.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(id);
+            Cat_ExpMedico expediente = db.Cat_ExpMedico.Find(id);
+            Exp_AntPersoPatolog exp_AntPersoPatolog = db.Exp_AntPersoPatolog.Find(expediente.i_fk_AntPatoPersonales);
             if (exp_AntPersoPatolog == null)
             {
                 return HttpNotFound();
